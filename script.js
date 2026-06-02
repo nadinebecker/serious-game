@@ -1,7 +1,5 @@
 // Startwerte
-let currentPostIndex = 0;
 let posts = [];
-
 
 // Posts laden
 fetch("posts.json")
@@ -48,18 +46,24 @@ function renderAllPosts() {
     commentBtn.src = "images/comment.PNG";
     shareBtn.src = "images/share.PNG";
 
+    // Quelle klickbar machen
+    source.style.cursor = "pointer";
+    source.onclick = () => openSource(post);
+
     // Events
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
       handleAction("like", post);
     };
+
     shareBtn.onclick = () => handleAction("share", post);
+
     commentBtn.onclick = () => toggleComments(post, commentsSection);
 
     wrapper.appendChild(clone);
   });
-
 }
+
 
 // Aktionen (Like / Share)
 function handleAction(action, post) {
@@ -88,8 +92,28 @@ function toggleComments(post, section) {
 }
 
 
-// Tracking-Funktion 
+// Fake-Website öffnen
+function openSource(post) {
+  const modalBody = document.getElementById("modal-body");
 
+  modalBody.innerHTML = `
+    <div class="fake-header">${post.source}</div>
+    <div class="fake-tag">${post.fakeSite.tag}</div>
+    <h1 class="fake-title">${post.fakeSite.headline}</h1>
+    <p class="fake-text">${post.fakeSite.text}</p>
+  `;
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+
+// Modal schließen
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+
+// Tracking-Funktion 
 async function trackClick(postId, userChoice, isCorrect) {
   try {
     await fetch("https://seriousgame.42web.io/save.php", {
@@ -108,10 +132,9 @@ async function trackClick(postId, userChoice, isCorrect) {
   }
 }
 
+
+// Testbutton
 document.getElementById("testBtn").addEventListener("click", () => {
-
-
-  //  Testwert
   const testPostId = 999;
   const testChoice = "test-button";
   const testCorrect = false;
