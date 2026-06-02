@@ -13,70 +13,87 @@ document.getElementById("points").textContent = points;
 // Posts laden
 fetch("posts.json")
   .then(response => response.json())
-   .then(data => {
+  .then(data => {
     posts = data;
-    showPost(posts[0]);
+    renderAllPosts();
   })
   .catch(error => {
     console.error("Fehler beim Laden der Posts:", error);
   });
 
 
-// Post anzeigen
+// Alle Posts untereinander anzeigen
+function renderAllPosts() {
+  const wrapper = document.getElementById("postsWrapper");
+  const template = document.getElementById("postTemplate");
 
-function showPost(post) {
-  console.log("Aktueller Post:", post);
-  document.getElementById("postAccount").src = post.account;
-  document.getElementById("postAuthor").textContent = post.author;
-  document.getElementById("postContent").textContent = post.content;
-  document.getElementById("postSource").textContent = "Quelle: " + post.source;
-  document.getElementById("postImage").src = post.image;
+  wrapper.textContent = "";
 
-  // Kommentare ausblenden
-  document.getElementById("commentsSection").innerHTML = "";
-  document.getElementById("commentsSection").style.display = "none";
+  posts.forEach(post => {
+    const clone = template.content.cloneNode(true);
 
-  // Icons verbinden
-  document.getElementById("likeIcon").onclick = () => handleAction("like", post);
-  document.getElementById("shareIcon").onclick = () => handleAction("share", post);
-  document.getElementById("commentIcon").onclick = () => toggleComments(post);
+    // Elemente holen
+    const account = clone.querySelector(".postAccount");
+    const author = clone.querySelector(".postAuthor");
+    const image = clone.querySelector(".postImage");
+    const content = clone.querySelector(".postContent");
+    const source = clone.querySelector(".postSource");
+    const commentsSection = clone.querySelector(".comments");
+
+    const likeBtn = clone.querySelector(".likeIcon");
+    const commentBtn = clone.querySelector(".commentIcon");
+    const shareBtn = clone.querySelector(".shareIcon");
+
+    // Inhalte setzen
+    account.src = post.account;
+    author.textContent = post.author;
+    image.src = post.image;
+    content.textContent = post.content;
+    source.textContent = "Quelle: " + post.source;
+
+    likeBtn.src = "images/like.PNG";
+    commentBtn.src = "images/comment.PNG";
+    shareBtn.src = "images/share.PNG";
+
+    // Events
+    likeBtn.onclick = () => {
+      likeBtn.src = "images/like-red.PNG";
+      handleAction("like", post);
+    };
+    shareBtn.onclick = () => handleAction("share", post);
+    commentBtn.onclick = () => toggleComments(post, commentsSection);
+
+    wrapper.appendChild(clone);
+  });
+
 }
 
 // Aktionen (Like / Share)
 function handleAction(action, post) {
   console.log("Aktion:", action, "für Post:", post.id);
-  // Nächster Post
-  loadNextPost();
 }
 
 
 // Kommentare ein-/ausblenden
-function toggleComments(post) {
-  const section = document.getElementById("commentsSection");
+function toggleComments(post, section) {
+  if (section.classList.contains("hidden")) {
+    section.classList.remove("hidden");
+    section.textContent = "";
 
-  if (section.style.display === "none") {
-    section.style.display = "block";
+    post.comments.forEach(c => {
+      const p = document.createElement("p");
+      const strong = document.createElement("strong");
+      strong.textContent = c.user + ": ";
+      p.appendChild(strong);
+      p.appendChild(document.createTextNode(c.text));
+      section.appendChild(p);
+    });
 
-    section.innerHTML = post.comments
-      .map(c => `<p><strong>${c.user}:</strong> ${c.text}</p>`)
-      .join("");
   } else {
-    section.style.display = "none";
+    section.classList.add("hidden");
   }
 }
 
-
-// Nächsten Post laden
-function loadNextPost() {
-  currentPostIndex++;
-
-  if (currentPostIndex >= posts.length) {
-    alert("Keine Posts mehr!");
-    return;
-  }
-
-  showPost(posts[currentPostIndex]);
-}
 
 // Tracking-Funktion 
 
@@ -99,8 +116,8 @@ async function trackClick(postId, userChoice, isCorrect) {
 }
 
 document.getElementById("testBtn").addEventListener("click", () => {
-  
-  
+
+
   //  Testwert
   const testPostId = 999;
   const testChoice = "test-button";
