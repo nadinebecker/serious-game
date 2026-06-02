@@ -7,7 +7,17 @@
     "image": "images/ki-anwendung.jpg",
     "isFake": false,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-05-03T10:15:00Z"
+    "timestamp": "2026-05-03T10:15:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Wir leben in der Zukunft!"
+    },
+    {
+      "user": "Tom",
+      "text": "Hab ich schon bei einem Praktikum gesehen!"
+    }
+  ]
   },
 
   {
@@ -18,6 +28,24 @@
     "isFake": true,
     "image": "images/energie.jpg",
     "source": "FlashNews24.net",
-    "timestamp": "2026-05-03T10:15:00Z"
+    "timestamp": "2026-05-03T10:15:00Z",
+    "comments": [
+    {
+      "user": "Emma",
+      "text": "Bei mir lädt die Quellenseite gar nicht?"
+    },
+    {
+      "user": "Lara",
+      "text": "Totaler Fake! Ich hab da was ganz anderes gehört!"
+    },
+      {
+      "user": "Tom",
+      "text": "Stimmt das?!"
+    },
+      {
+      "user": "Emma",
+      "text": "Quatsch das kann doch gar nicht gehen? So viel Energie wie KI frisst..."
+    }
+  ]
   }
 ]
