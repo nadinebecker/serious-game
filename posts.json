@@ -22,6 +22,34 @@
 
   {
     "id": 2,
+    "account":"images/infoBlitz24.jpg", 
+    "author": "InfoBlitz24",
+    "content": "So Krass! Kündigungen sind raus! Firmen entlassen hunderte Mitarbeitenden!",
+    "isFake": true,
+    "image": "images/bürojobs.jpg",
+    "source": "InfoBlitz24.de",
+    "timestamp": "2026-05-03T10:15:00Z",
+    "comments": [
+    {
+      "user": "Hening423",
+      "text": "Ich hab immer Gedacht mein Job ist sicher!"
+    },
+    {
+      "user": "19Amelie",
+      "text": "Lohnt dann überhaupt noch eine Ausbildung?"
+    },
+      {
+      "user": "Erika",
+      "text": "Das ist das erste mal das ich davon höre?"
+    },
+      {
+      "user": "Sofie",
+      "text": "Andere Nachrichten berichten darüber nicht, endlich klärt hier einer auf!"
+    }
+  ]
+  },
+  {
+    "id": 3,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
     "content": "Mit KI gegen den Klimawandel! Endlich gibt es Lösungen.",

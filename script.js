@@ -1,13 +1,6 @@
 // Startwerte
-let level = 1;
-let points = 0;
 let currentPostIndex = 0;
 let posts = [];
-
-
-// Werte in die HTML-Elemente schreiben
-document.getElementById("level").textContent = level;
-document.getElementById("points").textContent = points;
 
 
 // Posts laden
