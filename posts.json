@@ -3,10 +3,21 @@
     "id": 1,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
-    "content": "Unglaublich KI ist ÜBERALL! Selbst im Krankenhaus werden jetzt Roboter eingesetzt! Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
+    "content": "KI ist jetzt schon überall. Selbst in Krankenhäusern werden Roboter eingesetzt: zum Transport und Sortieren von Proben. Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
     "image": "images/ki-anwendung.jpg",
     "isFake": false,
     "source": "nachrichtenportal.de",
+    "timestamp": "2026-05-03T10:15:00Z"
+  },
+
+  {
+    "id": 2,
+    "account":"images/RoboticsDaily.jpg", 
+    "author": "RoboticsDaily",
+    "content": "Mit KI gegen den Klimawandel! Endlich gibt es Lösungen.",
+    "isFake": true,
+    "image": "images/energie.jpg",
+    "source": "FlashNews24.net",
     "timestamp": "2026-05-03T10:15:00Z"
   }
 ]
