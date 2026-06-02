@@ -75,5 +75,33 @@
       "text": "Quatsch das kann doch gar nicht gehen? So viel Energie wie KI frisst..."
     }
   ]
+  },
+   {
+    "id": 4,
+    "account":"images/nordnachrichten.jpg", 
+    "author": "NordlichtNachrichten",
+    "content": "Künstliche Intelligenz kann als Lernhilfe an Schulen eingesetzt werden.",
+    "isFake": false,
+    "image": "images/schule2.jpg",
+    "source": "nordlichtnachrichten.de",
+    "timestamp": "2026-05-03T10:15:00Z",
+    "comments": [
+    {
+      "user": "19Amelie",
+      "text": "Super Sache ich hab gerade mal auf die Seite geschaut."
+    },
+    {
+      "user": "Erika",
+      "text": "Sowas gab es bei mir nicht!"
+    },
+      {
+      "user": "Tom",
+      "text": "Wo finde ich Infos dazu?"
+    },
+      {
+      "user": "Hening423",
+      "text": "Schau mal, da gibts einige Infos auch auf anderen Seiten zu."
+    }
+  ]
   }
 ]
