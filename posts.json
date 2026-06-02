@@ -1,10 +1,12 @@
 [
   {
     "id": 1,
-    "author": "Name",
-    "content": "Inhalt",
+    "account":"images/RoboticsDaily.jpg", 
+    "author": "RoboticsDaily",
+    "content": "Unglaublich KI ist ÜBERALL! Selbst im Krankenhaus werden jetzt Roboter eingesetzt! Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
+    "image": "images/ki-anwendung.jpg",
     "isFake": false,
-    "source": "Quelle",
+    "source": "nachrichtenportal.de",
     "timestamp": "2026-05-03T10:15:00Z"
   }
 ]

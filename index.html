@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <title>Serious Game</title>
@@ -8,12 +9,13 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-200 min-h-screen flex flex-col items-center justify-start p-8">
 
   <h1 class="text-3xl font-bold mb-2 text-center">
     Medienkompetenz-Projekt
   </h1>
-     <p>Dies ist eine erste einfache Seite, die später ein Spiel anzeigen wird.</p>
+  <p>Dies ist eine erste einfache Seite, die später ein Spiel anzeigen wird.</p>
 
   <div class="text-center mb-8 text-gray-700">
     Level: <span id="level">1</span><br>
@@ -21,7 +23,8 @@
   </div>
 
   <!-- Handy-Rahmen -->
-  <div class="bg-black w-[380px] h-[780px] rounded-[40px] shadow-2xl border-8 border-black relative overflow-hidden flex justify-center">
+  <div
+    class="bg-black w-[380px] h-[780px] rounded-[40px] shadow-2xl border-8 border-black relative overflow-hidden flex justify-center">
 
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-black rounded-b-3xl z-20"></div>
 
@@ -29,21 +32,21 @@
 
       <div id="postContainer" class="p-6 bg-white rounded-xl shadow-md border border-gray-200">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+          <img id="postAccount" class="w-10 h-10 bg-gray-300 rounded-full"></img>
           <h2 id="postAuthor" class="font-semibold text-lg text-gray-800"></h2>
         </div>
-
+        <img id="postImage" class="w-full rounded-lg mb-4" alt="Post Bild">
         <p id="postContent" class="text-gray-700 mb-4"></p>
-
         <div id="postSource" class="text-sm text-gray-500"></div>
       </div>
 
     </div>
   </div>
-<button id="testBtn" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-  Test in DB schreiben
-</button>
+  <button id="testBtn" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+    Test in DB schreiben
+  </button>
 
   <script src="script.js"></script>
 </body>
+
 </html>

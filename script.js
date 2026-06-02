@@ -24,10 +24,11 @@ fetch("posts.json")
 
 function showPost(post) {
   console.log("Aktueller Post:", post);
-
+  document.getElementById("postAccount").src = post.account;
   document.getElementById("postAuthor").textContent = post.author;
   document.getElementById("postContent").textContent = post.content;
   document.getElementById("postSource").textContent = "Quelle: " + post.source;
+  document.getElementById("postImage").src = post.image;
 }
 
 
