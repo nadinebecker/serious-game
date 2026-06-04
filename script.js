@@ -1,6 +1,11 @@
 // Startwerte
 let posts = [];
 
+// Start Seite
+document.getElementById("startBtn").addEventListener("click", () => {
+  document.getElementById("startScreen").style.display = "none";
+});
+
 // Posts laden
 fetch("posts.json")
   .then(response => response.json())
@@ -62,7 +67,10 @@ function renderAllPosts() {
       handleAction("like", post);
     };
 
-    shareBtn.onclick = () => handleAction("share", post);
+    shareBtn.onclick = () => {
+      shareBtn.src = "images/share-green.PNG";
+      handleAction("share", post);
+    };
 
     commentBtn.onclick = () => toggleComments(post, commentsSection);
 
