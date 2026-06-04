@@ -40,8 +40,12 @@ function renderAllPosts() {
     author.textContent = post.author;
     image.src = post.image;
     content.textContent = post.content;
-    source.textContent = "Quelle: " + post.source;
 
+    if (post.source && post.source.trim() !== "") {
+      source.textContent = "Quelle: " + post.source;
+    } else {
+      source.style.display = "none";
+    }
     likeBtn.src = "images/like.PNG";
     commentBtn.src = "images/comment.PNG";
     shareBtn.src = "images/share.PNG";

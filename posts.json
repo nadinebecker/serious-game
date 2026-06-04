@@ -1,79 +1,152 @@
 [
-  {
+    {
     "id": 1,
-    "account":"images/RoboticsDaily.jpg", 
-    "author": "RoboticsDaily",
-    "content": "KI ist jetzt schon überall. Selbst in Krankenhäusern werden Roboter eingesetzt: zum Transport und Sortieren von Proben. Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
-    "image": "images/ki-anwendung.jpg",
-    "isFake": false,
-    "source": "nachrichtenportal.de",
-    "timestamp": "2026-05-03T10:15:00Z",
+    "account":"images/jungsprofilbild.jpg", 
+    "author": "Hening423",
+    "content": "Das Wochenende mit den Jungs unterwegs. #weekendvibes",
+    "image": "images/jungs.jpg",
+  
+
+    "timestamp": "2026-08-03T10:15:00Z",
     "comments": [
     {
+      "user": "Tom",
+      "text": "Was ein Tag, gerne wieder!"
+    },
+    {
       "user": "Anna",
-      "text": "Wir leben in der Zukunft!"
+      "text": "Habt ihr euch verdient!"
+    }
+  ]
+  },
+ {
+    "id": 2,
+    "account":"images/feierabendprofil.jpg", 
+    "author": "FeierabendGefühle",
+    "content": "Wenn es wieder EWIG dauert bis endlich wieder Wochenende ist. Wer kennt das Gefühl?",
+    "image": "images/feierabend2.jpg",
+    "timestamp": "2026-08-03T12:15:00Z",
+    "comments": [
+    {
+      "user": "Hening423",
+      "text": "Ich brauch Wochenende vom Wochenende!"
     },
     {
       "user": "Tom",
-      "text": "Hab ich schon bei einem Praktikum gesehen!"
+      "text": "Da sagst du was!"
+    }
+  ]
+  },
+    {
+    "id": 3,
+    "account":"images/RoboticsDaily.jpg", 
+    "author": "RoboticsDaily",
+    "content": "Technik ist nur was für Jüngere? Der Homanoide Roboter wurde super im Seniorenheim angenommen.",
+    "image": "images/einsamkeit.jpg",
+    "isFake": false,
+    "source": "nachrichtenportal.de",
+    "timestamp": "2026-08-03T12:30:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Eh? Was sind denn die Aufgaben von dem?"
+    },
+    {
+      "user": "Hening423",
+      "text": "Ich glaub zum Unterhalten, ist glaub ein Forschungsprojekt?"
+    },
+     {
+      "user": "19Amelie",
+      "text": "Das klingt nicht so als wäre das Wahr..."
     }
   ],
     "fakeSite": {
     "tag": "Nachrichten",
-    "headline": "Wo überall KI eingesetzt wird",
-    "text": "unter anderm in Krankenhäuser sollen Roboter eingesetzt werden um Transport von Proben oder zum Sortieren. Viele Medien Berichteten."
+    "headline": "Projekt ROBUST wurde durchgeführt von dem Forschungs- und Entwicklungszentrum der Fachhochschule Kiel",
+    "text": "Mehrere Quellen berichteten. Und Pepper, Charlie, Greta und Piet die Roboter sind auch in Fernsehsendungen zu sehen, die über das Projekt berichteten. "
   }
   },
-
-  {
-    "id": 2,
-    "account":"images/infoBlitz24.jpg", 
-    "author": "InfoBlitz24",
-    "content": "So Krass! Kündigungen sind raus! Firmen entlassen hunderte Mitarbeitenden!",
-    "isFake": true,
-    "image": "images/bürojobs.jpg",
-    "source": "InfoBlitz24.de",
-    "timestamp": "2026-05-03T10:15:00Z",
+   {
+    "id": 4,
+    "account":"images/feierabendprofil.jpg", 
+    "author": "FeierabendGefühle",
+    "content": "Die nächste Veranstaltung in deiner Nähe!",
+    "image": "images/.jpg",
+    "timestamp": "2026-08-04T10:15:00Z",
     "comments": [
     {
-      "user": "Hening423",
-      "text": "Ich hab immer Gedacht mein Job ist sicher!"
+      "user": "Anna",
+      "text": "Da müssen wir hin!"
     },
     {
+      "user": "Hening423",
+      "text": "Jungs tragt euch das schon mal in den Kalender ein!"
+    }
+  ]
+  },
+ {
+    "id": 5,
+    "account":"images/nordnachrichten.jpg", 
+    "author": "NordlichtNachrichten",
+    "content": "Autonome Busse in Frankfurt per Anruf bestellen!",
+    "image": "images/mobilität.jpg",
+    "isFake": false,
+    "source": "nachrichtenportal.de",
+    "timestamp": "2026-08-04T11:15:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Ist das nicht super gefährlich?!"
+    },
+    {
+      "user": "Hening423",
+      "text": "Da fahr ich nicht mit!"
+    },
+     {
       "user": "19Amelie",
-      "text": "Lohnt dann überhaupt noch eine Ausbildung?"
-    },
-      {
-      "user": "Erika",
-      "text": "Das ist das erste mal das ich davon höre?"
-    },
-      {
-      "user": "Sofie",
-      "text": "Andere Nachrichten berichten darüber nicht, endlich klärt hier einer auf!"
+      "text": "Ich bin schon mit gefahren, ging ganz gut."
     }
   ],
     "fakeSite": {
-    "tag": "",
-    "headline": "Seite wurde nicht gefunden",
-    "text": ""
+    "tag": "Verkehrsnachrichten",
+    "headline": "Am 18. November 2022 ist das autonome On-Demand-Shuttle EASY in Frankfurt-Riederwald gestartet.",
+    "text": "Mehrere Quellen berichteten. Bis Ende Juli 2023 testete der Rhein-Main-Verkehrsverbund (RMV) zusammen mit der Frankfurter Nahverkehrsgesellschaft traffiQ und der Verkehrsgesellschaft Frankfurt (VGF) den autonomen Shuttle-Dienst."
   }
   },
-  {
-    "id": 3,
+   {
+    "id": 4,
+    "account":"images/cafeprofil.jpg", 
+    "author": "Anna",
+    "content": "Im Cafe mit Freunden, was gibt es besseres?",
+    "image": "images/cafe.jpg",
+    "timestamp": "2026-08-04T13:15:00Z",
+    "comments": [
+    {
+      "user": "Tom",
+      "text": "Oh ihr seid in der Stadt! Sagt Bescheid dann treffen wir uns!"
+    },
+    {
+      "user": "19Amelie",
+      "text": "Genießt es! Morgen soll es wieder regnen :("
+    }
+  ]
+  },
+{
+    "id": 5,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
     "content": "Mit KI gegen den Klimawandel! Endlich gibt es Lösungen.",
     "isFake": true,
     "image": "images/energie.jpg",
     "source": "FlashNews24.net",
-    "timestamp": "2026-05-03T10:15:00Z",
+    "timestamp": "2026-08-04T15:16:00Z",
     "comments": [
     {
-      "user": "Emma",
+      "user": "19Amelie",
       "text": "Bei mir lädt die Quellenseite gar nicht?"
     },
     {
-      "user": "Lara",
+      "user": "Hening423",
       "text": "Totaler Fake! Ich hab da was ganz anderes gehört!"
     },
       {
@@ -81,7 +154,7 @@
       "text": "Stimmt das?!"
     },
       {
-      "user": "Emma",
+      "user": "Anna",
       "text": "Quatsch das kann doch gar nicht gehen? So viel Energie wie KI frisst..."
     }
   ],
@@ -91,23 +164,38 @@
     "text": ""
   }
   },
+
    {
-    "id": 4,
+    "id": 7,
+    "account":"images/strandprofil.jpg", 
+    "author": "19Amelie",
+    "content": "Kurzurlaub. Spanien '26",
+    "image": "images/strand.jpg",
+    "timestamp": "2026-08-04T19:00:00Z",
+    "comments": [
+    {
+      "user": "Tom",
+      "text": "Wann kommt ihr wieder?"
+    },
+    {
+      "user": "19Amelie",
+      "text": "Erst am Samstag :)"
+    }
+  ]
+  },
+  {
+    "id": 8,
     "account":"images/nordnachrichten.jpg", 
     "author": "NordlichtNachrichten",
     "content": "Künstliche Intelligenz kann als Lernhilfe an Schulen eingesetzt werden.",
     "isFake": false,
     "image": "images/schule2.jpg",
     "source": "nordlichtnachrichten.de",
-    "timestamp": "2026-05-03T10:15:00Z",
+    "timestamp": "2026-08-05T08:10:00Z",
     "comments": [
     {
       "user": "19Amelie",
       "text": "Super Sache ich hab gerade mal auf die Seite geschaut."
-    },
-    {
-      "user": "Erika",
-      "text": "Sowas gab es bei mir nicht!"
     },
       {
       "user": "Tom",
@@ -119,9 +207,154 @@
     }
   ],
   "fakeSite": {
-    "tag": "Aktuelles",
-    "headline": "KI jetzt an Schulen",
-    "text": "Laut Regierung können jetzt an vielen Schulen KI eingesetzt werden. Wie Verschiedene Nachrichten berichten."
+    "tag": "Bildung",
+    "headline": "Künstliche Intelligenz in Schule und Unterricht",
+    "text": "Es gibt Seiten auf denen Lehrende sich über das Thema informieren können und einzelne KI-Tools von dort nutzen können. Außerdem hat auch die Bundeszentrale für Politische Bildung darüber berichtet."
+  }
+  },
+{
+    "id": 9,
+    "account":"images/infoBlitz24.jpg", 
+    "author": "InfoBlitz24",
+    "content": "",
+    "image": "images/.jpg",
+    "isFake": true,
+    "source": "nachrichtenportal.de",
+    "timestamp": "2026-08-05T09:55:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": ""
+    },
+    {
+      "user": "Tom",
+      "text": "K.."
+    }
+  ],
+    "fakeSite": {
+    "tag": "Nachrichten",
+    "headline": "S",
+    "text": "."
+  }
+  },
+
+  {
+    "id": 10,
+    "account":"images/RoboticsDaily.jpg", 
+    "author": "RoboticsDaily",
+    "content": "KI ist jetzt schon überall. Selbst in Krankenhäusern werden Roboter eingesetzt: zum Transport und Sortieren von Proben. Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
+    "image": "images/ki-anwendung.jpg",
+    "isFake": false,
+    "source": "nachrichtenportal.de",
+    "timestamp": "2026-08-05T13:05:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Wir leben in der Zukunft!"
+    },
+    {
+      "user": "Hening423",
+      "text": "Hab ich schon bei einem Praktikum im Studium gesehen!"
+    },
+     {
+      "user": "19Amelie",
+      "text": "Wie Gruselig!"
+    }
+  ],
+    "fakeSite": {
+    "tag": "Nachrichten",
+    "headline": "Wo überall KI eingesetzt wird",
+    "text": "So gibt es eine Bochumer Firma, die zusammen mit einem KI-Robotik-Unternehmen aus München erste Krankenhäuser mit autonomen Robotern ausstattet, die dort den Transport und das Sortieren von Blut-, Urin- oder Stuhlproben übernehmen sollen."
+  }
+  },
+ 
+  {
+    "id": 11,
+    "account":"images/infoBlitz24.jpg", 
+    "author": "InfoBlitz24",
+    "content": "So Krass! Kündigungen sind raus! Firmen entlassen hunderte Mitarbeitenden!",
+    "isFake": true,
+    "image": "images/bürojobs.jpg",
+    "source": "InfoBlitz24.de",
+    "timestamp": "2026-08-05T15:32:00Z",
+    "comments": [
+    {
+      "user": "Hening423",
+      "text": "Ich hab immer Gedacht mein Job ist sicher!"
+    },
+    {
+      "user": "19Amelie",
+      "text": "Lohnt dann überhaupt noch eine Ausbildung?"
+    },
+      {
+      "user": "Anna",
+      "text": "Das ist das erste mal das ich davon höre?"
+    },
+      {
+      "user": "Tom",
+      "text": "Andere Nachrichten berichten darüber nicht, endlich klärt hier einer auf!"
+    },
+      {
+      "user": "Hening423",
+      "text": "Irgendwann wird es uns allen so gehen!"
+    }
+  ],
+    "fakeSite": {
+    "tag": "",
+    "headline": "Impressum ist nicht vorhanden. ",
+    "text": "KI wird den Arbeitsmarkt verändern, allerdings gibt es keinen Konkreten Zahlen."
+  }
+  },
+    {
+    "id": 12,
+    "account":"images/nordnachrichten.jpg", 
+    "author": "NordlichtNachrichten",
+    "content": "Polizei umstellt Haus aus wegen Roboter!",
+    "image": "images/saugroboter.jpg",
+    "isFake": false,
+    "source": "nachrichtenportal.de",
+    "timestamp": "2026-08-05T18:45:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Was ist da denn passiert?"
+    },
+    {
+      "user": "Tom",
+      "text": "Klingt irgendwie seltsam..."
+    }
+  ],
+    "fakeSite": {
+    "tag": "Nachrichten",
+    "headline": "Saugroboter löst Polizeieinsatz aus",
+    "text": "In einem Fall: Nach dem Zugang ins Haus zeigte sich schnell, dass die Beamten keinesfalls einem mutmaßlichen Dieb auf der Spur waren. Das irritierende Licht kam von einem Saugroboter. Weitere Fälle sind bekannt."
+  }
+  },
+   {
+    "id": 13,
+    "account":"images/infoBlitz24.jpg", 
+    "author": "InfoBlitz24",
+    "content": "Wir werden ALLE jeder Zeit Überwacht, ohne das wir es mitbekommen!",
+    "image": "images/smart-home2.jpg",
+    "isFake": true,
+    "source": "nachrichtenportal.de",
+    "timestamp": "2026-08-05T20:15:00Z",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Uff ein Glück hab ich sowas nicht..."
+    },
+    {
+      "user": "Tom",
+      "text": "Alle und jeder Zeit?!"
+    }
+  ],
+    "fakeSite": {
+    "tag": "Nachrichten",
+    "headline": "Jeder Zeit und alle ist Falsch. Aber Technisch das Überwachen über Smarte Geräte!",
+    "text": "Die meisten Nutzerinnen und Nutzer ergreifen zu wenige Schutzmaßnahmen, zeigt eine repräsentative Befragung des Bundesamtes für Sicherheit in der Informationstechnik. Es könnten also Smarte Geräte genutzt werden um zu überwachen. Aber nicht alle und jeder Zeit."
   }
   }
+  
+   
 ]
