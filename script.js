@@ -40,6 +40,7 @@ function renderAllPosts() {
     const likeBtn = clone.querySelector(".likeIcon");
     const commentBtn = clone.querySelector(".commentIcon");
     const shareBtn = clone.querySelector(".shareIcon");
+    const warnBtn = clone.querySelector(".warnIcon");
 
     // Inhalte setzen
     account.src = post.account;
@@ -56,21 +57,39 @@ function renderAllPosts() {
     likeBtn.src = "images/like.PNG";
     commentBtn.src = "images/comment.PNG";
     shareBtn.src = "images/share.PNG";
+    warnBtn.src = "images/warning.png";
 
     // Quelle klickbar machen
     source.style.cursor = "pointer";
     source.onclick = () => openSource(post);
 
-    // Events
+
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
+      disableOtherButtons(warnBtn, likeBtn);
       handleAction("like", post);
     };
 
     shareBtn.onclick = () => {
       shareBtn.src = "images/share-green.PNG";
+      disableOtherButtons(warnBtn, shareBtn);
       handleAction("share", post);
     };
+
+    warnBtn.onclick = () => {
+      warnBtn.src = "images/warning-red.png";
+      disableOtherButtons(warnBtn, likeBtn, shareBtn);
+      handleAction("warning", post);
+    };
+
+function disableOtherButtons(active, ...others) {
+  others.forEach(btn => {
+    btn.style.pointerEvents = "none";
+    btn.style.opacity = "0.4";
+  });
+
+  active.style.pointerEvents = "none";
+}
 
     commentBtn.onclick = () => toggleComments(post, commentsSection);
 
