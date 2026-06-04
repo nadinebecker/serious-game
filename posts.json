@@ -5,9 +5,7 @@
     "author": "Hening423",
     "content": "Das Wochenende mit den Jungs unterwegs. #weekendvibes",
     "image": "images/jungs.jpg",
-  
-
-    "timestamp": "2026-08-03T10:15:00Z",
+    "timestamp": "Vor 5 Minuten",
     "comments": [
     {
       "user": "Tom",
@@ -25,7 +23,7 @@
     "author": "FeierabendGefühle",
     "content": "Wenn es wieder EWIG dauert bis endlich wieder Wochenende ist. Wer kennt das Gefühl?",
     "image": "images/feierabend2.jpg",
-    "timestamp": "2026-08-03T12:15:00Z",
+    "timestamp": "Vor 10 Minuten",
     "comments": [
     {
       "user": "Hening423",
@@ -45,7 +43,7 @@
     "image": "images/einsamkeit.jpg",
     "isFake": false,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-08-03T12:30:00Z",
+    "timestamp": "Vor 10 Minuten",
     "comments": [
     {
       "user": "Anna",
@@ -60,7 +58,7 @@
       "text": "Das klingt nicht so als wäre das Wahr..."
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "Nachrichten",
     "headline": "Projekt ROBUST wurde durchgeführt von dem Forschungs- und Entwicklungszentrum der Fachhochschule Kiel",
     "text": "Mehrere Quellen berichteten. Und Pepper, Charlie, Greta und Piet die Roboter sind auch in Fernsehsendungen zu sehen, die über das Projekt berichteten. "
@@ -72,7 +70,7 @@
     "author": "FeierabendGefühle",
     "content": "Die nächste Veranstaltung in deiner Nähe!",
     "image": "images/.jpg",
-    "timestamp": "2026-08-04T10:15:00Z",
+    "timestamp": "Vor 1 Stunde",
     "comments": [
     {
       "user": "Anna",
@@ -92,7 +90,7 @@
     "image": "images/mobilität.jpg",
     "isFake": false,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-08-04T11:15:00Z",
+    "timestamp": "Vor 1 Stunde",
     "comments": [
     {
       "user": "Anna",
@@ -107,7 +105,7 @@
       "text": "Ich bin schon mit gefahren, ging ganz gut."
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "Verkehrsnachrichten",
     "headline": "Am 18. November 2022 ist das autonome On-Demand-Shuttle EASY in Frankfurt-Riederwald gestartet.",
     "text": "Mehrere Quellen berichteten. Bis Ende Juli 2023 testete der Rhein-Main-Verkehrsverbund (RMV) zusammen mit der Frankfurter Nahverkehrsgesellschaft traffiQ und der Verkehrsgesellschaft Frankfurt (VGF) den autonomen Shuttle-Dienst."
@@ -119,7 +117,7 @@
     "author": "Anna",
     "content": "Im Cafe mit Freunden, was gibt es besseres?",
     "image": "images/cafe.jpg",
-    "timestamp": "2026-08-04T13:15:00Z",
+    "timestamp": "Vor 2 Stunde",
     "comments": [
     {
       "user": "Tom",
@@ -139,7 +137,7 @@
     "isFake": true,
     "image": "images/energie.jpg",
     "source": "FlashNews24.net",
-    "timestamp": "2026-08-04T15:16:00Z",
+    "timestamp": "Vor 2 Stunde",
     "comments": [
     {
       "user": "19Amelie",
@@ -158,7 +156,7 @@
       "text": "Quatsch das kann doch gar nicht gehen? So viel Energie wie KI frisst..."
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "",
     "headline": "Seite wurde nicht gefunden",
     "text": ""
@@ -171,7 +169,7 @@
     "author": "19Amelie",
     "content": "Kurzurlaub. Spanien '26",
     "image": "images/strand.jpg",
-    "timestamp": "2026-08-04T19:00:00Z",
+    "timestamp": "Vor 2 Stunde",
     "comments": [
     {
       "user": "Tom",
@@ -191,7 +189,7 @@
     "isFake": false,
     "image": "images/schule2.jpg",
     "source": "nordlichtnachrichten.de",
-    "timestamp": "2026-08-05T08:10:00Z",
+    "timestamp": "Vor 5 Stunden",
     "comments": [
     {
       "user": "19Amelie",
@@ -206,7 +204,7 @@
       "text": "Schau mal, da gibts einige Infos auch auf anderen Seiten zu."
     }
   ],
-  "fakeSite": {
+  "info": {
     "tag": "Bildung",
     "headline": "Künstliche Intelligenz in Schule und Unterricht",
     "text": "Es gibt Seiten auf denen Lehrende sich über das Thema informieren können und einzelne KI-Tools von dort nutzen können. Außerdem hat auch die Bundeszentrale für Politische Bildung darüber berichtet."
@@ -220,7 +218,7 @@
     "image": "images/.jpg",
     "isFake": true,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-08-05T09:55:00Z",
+    "timestamp": "Vor 7 Stunden",
     "comments": [
     {
       "user": "Anna",
@@ -231,7 +229,7 @@
       "text": "K.."
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "Nachrichten",
     "headline": "S",
     "text": "."
@@ -246,7 +244,7 @@
     "image": "images/ki-anwendung.jpg",
     "isFake": false,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-08-05T13:05:00Z",
+    "timestamp": "Vor 1 Tag ",
     "comments": [
     {
       "user": "Anna",
@@ -261,7 +259,7 @@
       "text": "Wie Gruselig!"
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "Nachrichten",
     "headline": "Wo überall KI eingesetzt wird",
     "text": "So gibt es eine Bochumer Firma, die zusammen mit einem KI-Robotik-Unternehmen aus München erste Krankenhäuser mit autonomen Robotern ausstattet, die dort den Transport und das Sortieren von Blut-, Urin- oder Stuhlproben übernehmen sollen."
@@ -276,7 +274,7 @@
     "isFake": true,
     "image": "images/bürojobs.jpg",
     "source": "InfoBlitz24.de",
-    "timestamp": "2026-08-05T15:32:00Z",
+    "timestamp": "Vor 1 Tag",
     "comments": [
     {
       "user": "Hening423",
@@ -299,7 +297,7 @@
       "text": "Irgendwann wird es uns allen so gehen!"
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "",
     "headline": "Impressum ist nicht vorhanden. ",
     "text": "KI wird den Arbeitsmarkt verändern, allerdings gibt es keinen Konkreten Zahlen."
@@ -313,7 +311,7 @@
     "image": "images/saugroboter.jpg",
     "isFake": false,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-08-05T18:45:00Z",
+    "timestamp": "Vor 2 Tagen",
     "comments": [
     {
       "user": "Anna",
@@ -324,7 +322,7 @@
       "text": "Klingt irgendwie seltsam..."
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "Nachrichten",
     "headline": "Saugroboter löst Polizeieinsatz aus",
     "text": "In einem Fall: Nach dem Zugang ins Haus zeigte sich schnell, dass die Beamten keinesfalls einem mutmaßlichen Dieb auf der Spur waren. Das irritierende Licht kam von einem Saugroboter. Weitere Fälle sind bekannt."
@@ -338,7 +336,7 @@
     "image": "images/smart-home2.jpg",
     "isFake": true,
     "source": "nachrichtenportal.de",
-    "timestamp": "2026-08-05T20:15:00Z",
+    "timestamp": "Vor 2 Tagen",
     "comments": [
     {
       "user": "Anna",
@@ -349,7 +347,7 @@
       "text": "Alle und jeder Zeit?!"
     }
   ],
-    "fakeSite": {
+    "info": {
     "tag": "Nachrichten",
     "headline": "Jeder Zeit und alle ist Falsch. Aber Technisch das Überwachen über Smarte Geräte!",
     "text": "Die meisten Nutzerinnen und Nutzer ergreifen zu wenige Schutzmaßnahmen, zeigt eine repräsentative Befragung des Bundesamtes für Sicherheit in der Informationstechnik. Es könnten also Smarte Geräte genutzt werden um zu überwachen. Aber nicht alle und jeder Zeit."

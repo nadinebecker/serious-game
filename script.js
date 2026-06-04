@@ -30,6 +30,7 @@ function renderAllPosts() {
     const content = clone.querySelector(".postContent");
     const source = clone.querySelector(".postSource");
     const commentsSection = clone.querySelector(".comments");
+    const timestamp = clone.querySelector(".postTimestamp");
 
     const likeBtn = clone.querySelector(".likeIcon");
     const commentBtn = clone.querySelector(".commentIcon");
@@ -40,6 +41,7 @@ function renderAllPosts() {
     author.textContent = post.author;
     image.src = post.image;
     content.textContent = post.content;
+    timestamp.textContent = post.timestamp;
 
     if (post.source && post.source.trim() !== "") {
       source.textContent = "Quelle: " + post.source;
@@ -96,15 +98,14 @@ function toggleComments(post, section) {
 }
 
 
-// Fake-Website öffnen
+// Info öffnen
 function openSource(post) {
   const modalBody = document.getElementById("modal-body");
 
   modalBody.innerHTML = `
-    <div class="fake-header">${post.source}</div>
-    <div class="fake-tag">${post.fakeSite.tag}</div>
-    <h1 class="fake-title">${post.fakeSite.headline}</h1>
-    <p class="fake-text">${post.fakeSite.text}</p>
+    <div class="fake-tag">${post.info.tag}</div>
+    <h1 class="fake-title">${post.info.headline}</h1>
+    <p class="fake-text">${post.info.text}</p>
   `;
 
   document.getElementById("modal").style.display = "flex";
