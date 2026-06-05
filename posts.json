@@ -69,7 +69,7 @@
     "account":"images/feierabendprofil.jpg", 
     "author": "FeierabendGefühle",
     "content": "Die nächste Veranstaltung in deiner Nähe!",
-    "image": "images/.jpg",
+    "image": "images/veranstaltungen.jpg",
     "timestamp": "Vor 1 Stunde",
     "comments": [
     {
@@ -112,7 +112,7 @@
   }
   },
    {
-    "id": 4,
+    "id": 6,
     "account":"images/cafeprofil.jpg", 
     "author": "Anna",
     "content": "Im Cafe mit Freunden, was gibt es besseres?",
@@ -130,7 +130,7 @@
   ]
   },
 {
-    "id": 5,
+    "id": 7,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
     "content": "Mit KI gegen den Klimawandel! Endlich gibt es Lösungen.",
@@ -164,7 +164,7 @@
   },
 
    {
-    "id": 7,
+    "id": 8,
     "account":"images/strandprofil.jpg", 
     "author": "19Amelie",
     "content": "Kurzurlaub. Spanien '26",
@@ -182,7 +182,7 @@
   ]
   },
   {
-    "id": 8,
+    "id": 9,
     "account":"images/nordnachrichten.jpg", 
     "author": "NordlichtNachrichten",
     "content": "Künstliche Intelligenz kann als Lernhilfe an Schulen eingesetzt werden.",
@@ -211,33 +211,26 @@
   }
   },
 {
-    "id": 9,
-    "account":"images/infoBlitz24.jpg", 
-    "author": "InfoBlitz24",
-    "content": "",
-    "image": "images/.jpg",
-    "isFake": true,
-    "source": "nachrichtenportal.de",
+    "id": 10,
+    "account":"images/werbung-profil.jpg", 
+    "author": "Kartenverkauf",
+    "content": "Jetzt hier Karten sichern! DAS Festival in deiner Nähe!",
+    "image": "images/werbung.jpg",
     "timestamp": "Vor 7 Stunden",
     "comments": [
     {
       "user": "Anna",
-      "text": ""
+      "text": "Ich hab meine Karten gerade gekauft!"
     },
     {
       "user": "Tom",
-      "text": "K.."
+      "text": "Endlich geht der Ticketverkauf los!"
     }
-  ],
-    "info": {
-    "tag": "Nachrichten",
-    "headline": "S",
-    "text": "."
-  }
+  ]
   },
 
   {
-    "id": 10,
+    "id": 11,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
     "content": "KI ist jetzt schon überall. Selbst in Krankenhäusern werden Roboter eingesetzt: zum Transport und Sortieren von Proben. Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
@@ -267,7 +260,7 @@
   },
  
   {
-    "id": 11,
+    "id": 12,
     "account":"images/infoBlitz24.jpg", 
     "author": "InfoBlitz24",
     "content": "So Krass! Kündigungen sind raus! Firmen entlassen hunderte Mitarbeitenden!",
@@ -304,7 +297,7 @@
   }
   },
     {
-    "id": 12,
+    "id": 13,
     "account":"images/nordnachrichten.jpg", 
     "author": "NordlichtNachrichten",
     "content": "Polizei umstellt Haus aus wegen Roboter!",
@@ -328,8 +321,33 @@
     "text": "In einem Fall: Nach dem Zugang ins Haus zeigte sich schnell, dass die Beamten keinesfalls einem mutmaßlichen Dieb auf der Spur waren. Das irritierende Licht kam von einem Saugroboter. Weitere Fälle sind bekannt."
   }
   },
+    {
+    "id": 14,
+    "account":"images/nordnachrichten.jpg", 
+    "author": "NordlichtNachrichten",
+    "content": "Mit KI wird alles einfacher, besser und schneller!",
+    "image": "images/ki-alles-besser.jpg",
+    "isFake": true,
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 2 Tagen",
+    "comments": [
+    {
+      "user": "Anna",
+      "text": "Definitv! Ich nutz KI täglich"
+    },
+    {
+      "user": "Tom",
+      "text": "mh, ich bin unsicher."
+    }
+  ],
+    "info": {
+    "tag": "Nachrichten",
+    "headline": "KI wird sich entwickeln, aber",
+    "text": "In welche Richtung sich KI zukünftig weiter entwickelt kann nur spekuliert werden."
+  }
+  },
    {
-    "id": 13,
+    "id": 15,
     "account":"images/infoBlitz24.jpg", 
     "author": "InfoBlitz24",
     "content": "Wir werden ALLE jeder Zeit Überwacht, ohne das wir es mitbekommen!",
@@ -352,7 +370,6 @@
     "headline": "Jeder Zeit und alle ist Falsch. Aber Technisch das Überwachen über Smarte Geräte!",
     "text": "Die meisten Nutzerinnen und Nutzer ergreifen zu wenige Schutzmaßnahmen, zeigt eine repräsentative Befragung des Bundesamtes für Sicherheit in der Informationstechnik. Es könnten also Smarte Geräte genutzt werden um zu überwachen. Aber nicht alle und jeder Zeit."
   }
-  }
-  
+  }  
    
 ]

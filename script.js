@@ -1,5 +1,16 @@
 // Startwerte
 let posts = [];
+let statLikes = 0;
+let statShares = 0;
+let statWarning = 0;
+
+let realLikes = 0;
+let fakeLikes = 0;
+let realShares = 0;
+let fakeShares = 0;
+let realWarning = 0;
+let fakeWarning = 0;
+
 
 // Start Seite
 document.getElementById("startBtn").addEventListener("click", () => {
@@ -18,7 +29,7 @@ fetch("posts.json")
   });
 
 
-// Alle Posts untereinander anzeigen
+// Alle Posts anzeigen
 function renderAllPosts() {
   const wrapper = document.getElementById("postsWrapper");
   const template = document.getElementById("postTemplate");
@@ -59,10 +70,8 @@ function renderAllPosts() {
     shareBtn.src = "images/share.PNG";
     warnBtn.src = "images/warning.png";
 
-    // Quelle klickbar machen
     source.style.cursor = "pointer";
     source.onclick = () => openSource(post);
-
 
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
@@ -81,6 +90,13 @@ function renderAllPosts() {
       disableOtherButtons(warnBtn, likeBtn, shareBtn);
       handleAction("warning", post);
     };
+    commentBtn.onclick = () => toggleComments(post, commentsSection);
+
+    wrapper.appendChild(clone);
+  });
+}
+
+
 
 function disableOtherButtons(active, ...others) {
   others.forEach(btn => {
@@ -91,16 +107,28 @@ function disableOtherButtons(active, ...others) {
   active.style.pointerEvents = "none";
 }
 
-    commentBtn.onclick = () => toggleComments(post, commentsSection);
-
-    wrapper.appendChild(clone);
-  });
-}
-
-
-// Aktionen (Like / Share)
 function handleAction(action, post) {
   console.log("Aktion:", action, "für Post:", post.id);
+
+  if (action === "like") {
+    statLikes++;
+    if (post.isFake) fakeLikes++;
+    else realLikes++;
+  }
+
+  if (action === "share") {
+    statShares++;
+    if (post.isFake) fakeShares++;
+    else realShares++;
+  }
+
+  if (action === "warning") {
+    statWarning++;
+    if (post.isFake) fakeWarning++;
+    else realWarning++;
+  }
+
+  trackClick(post.id, action, !post.isFake);
 }
 
 
@@ -130,9 +158,9 @@ function openSource(post) {
   const modalBody = document.getElementById("modal-body");
 
   modalBody.innerHTML = `
-    <div class="fake-tag">${post.info.tag}</div>
-    <h1 class="fake-title">${post.info.headline}</h1>
-    <p class="fake-text">${post.info.text}</p>
+    <div class="fake-tag">${post.info?.tag || ""}</div>
+    <h1 class="fake-title">${post.info?.headline || ""}</h1>
+    <p class="fake-text">${post.info?.text || ""}</p>
   `;
 
   document.getElementById("modal").style.display = "flex";
@@ -165,13 +193,25 @@ async function trackClick(postId, userChoice, isCorrect) {
 }
 
 
-// Testbutton
-document.getElementById("testBtn").addEventListener("click", () => {
-  const testPostId = 999;
-  const testChoice = "test-button";
-  const testCorrect = false;
+// Weiterleitung + Stats speichern
+function goToEndScreen() {
+  const stats = {
+    statLikes,
+    statShares,
+    statWarning,
 
-  trackClick(testPostId, testChoice, testCorrect);
+    realLikes,
+    fakeLikes,
+    realShares,
+    fakeShares,
+    realWarning,
+    fakeWarning,
+  };
 
-  console.log("Test-Tracking ausgelöst");
-});
+  localStorage.setItem("stats", JSON.stringify(stats));
+  window.location.href = "end.html";
+}
+
+
+// Button zur Auswertung
+document.getElementById("auswertungBtn").addEventListener("click", goToEndScreen);
