@@ -215,3 +215,4 @@ function goToEndScreen() {
 
 // Button zur Auswertung
 document.getElementById("auswertungBtn").addEventListener("click", goToEndScreen);
+

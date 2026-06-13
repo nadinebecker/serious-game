@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serious Game - Auswertung</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,38 +15,55 @@
 
 
 
-<div id="auswertung" class="text-lg text-gray-800"></div>
+  <div id="auswertung" class="text-lg text-gray-800"></div>
 
-<script>
-  const stats = JSON.parse(localStorage.getItem("stats"));
+  <script>
+    const stats = JSON.parse(localStorage.getItem("stats"));
 
-  if (stats) {
-    document.getElementById("auswertung").innerHTML = `
-      Deine Auswertung für das Spiel:<br><br>
-
+    if (stats) {
+      document.getElementById("auswertung").innerHTML = `
+      <h2 class="text-xl font-semibold mb-4">Deine Auswertung für das Spiel:</h2>
       Du hast <strong>${stats.statLikes + stats.statShares}</strong> Beiträge geliked und/oder geteilt.<br>
-      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> real und 
+      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> Real und 
       <strong>${stats.fakeLikes + stats.fakeShares}</strong> Desinformation.<br><br>
 
       Du hast <strong>${stats.statWarning}</strong> Beiträge kritisch markiert.<br>
-      Davon waren <strong>${stats.realWarning}</strong> real und 
+      Davon waren <strong>${stats.realWarning}</strong> Real und 
       <strong>${stats.fakeWarning}</strong> Desinformation.<br>
     `;
-  } else {
-    document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
-  }
-</script>
+    } else {
+      document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
+    }
+  </script>
+
+  <br>
+
+  <a href="index.html">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+      Noch einmal Versuchen
+    </button>
+  </a>
+
+  <br>
+  <br>
+  <h2 class="text-xl font-semibold mb-4">Kurzes Feedback</h2>
+
+  <label for="feedbackHard" class="flex items-center gap-3 text-gray-800 cursor-pointer">
+    <input type="checkbox" id="feedbackHard" class="w-5 h-5">
+    <span>Es fiel mir schwer, Desinformation zu erkennen.</span>
+  </label>
+  <label for="feedbackEasy" class="flex items-center gap-3 text-gray-800 cursor-pointer">
+    <input type="checkbox" id="feedbackEasy" class="w-5 h-5">
+    <span>Es fiel mir leicht, Desinformation zu erkennen.</span>
+  </label>
 
 
-
-    <a href="index.html">
-  <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-    Noch einmal Versuchen
+  <button id="feedbackSubmit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+    Feedback senden
   </button>
-</a>
 
 
-  <script src="script.js"></script>
+  <script src="scriptend.js"></script>
 </body>
 
 </html>
