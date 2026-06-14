@@ -1,3 +1,4 @@
+const sessionId = localStorage.getItem("sessionId");
 
 // --- FEEDBACK TRACKING ---
 
@@ -30,7 +31,10 @@ document.getElementById("feedbackSubmit")?.addEventListener("click", () => {
     fetch("https://seriousgame.42web.io/save.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ feedback: feedbackValue })
+        body: JSON.stringify({
+            feedback: feedbackValue,
+            session_id: sessionId
+        })
     })
         .then(() => alert("Danke für dein Feedback!"))
         .catch(err => console.error("Feedback-Fehler:", err));

@@ -1,3 +1,8 @@
+// Session-ID erzeugen, falls noch nicht vorhanden
+if (!localStorage.getItem("sessionId")) {
+    localStorage.setItem("sessionId", crypto.randomUUID());
+}
+
 // Startwerte
 let posts = [];
 let statLikes = 0;
@@ -182,7 +187,8 @@ async function trackClick(postId, userChoice, isCorrect) {
       body: JSON.stringify({
         post_id: postId,
         user_choice: userChoice,
-        correct: isCorrect ? 1 : 0
+        correct: isCorrect ? 1 : 0,
+        session_id: localStorage.getItem("sessionId")
       })
     });
 
