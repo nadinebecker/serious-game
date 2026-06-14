@@ -1,4 +1,9 @@
-const sessionId = localStorage.getItem("sessionId");
+let sessionId = localStorage.getItem("sessionId");
+
+if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    localStorage.setItem("sessionId", sessionId);
+}
 
 // --- FEEDBACK TRACKING ---
 
@@ -8,12 +13,10 @@ const feedbackEasy = document.getElementById("feedbackEasy");
 // Nur eine Auswahl gleichzeitig erlauben
 feedbackHard?.addEventListener("change", () => {
     if (feedbackHard.checked) feedbackEasy.checked = false;
-    sendFeedbackToDB();
 });
 
 feedbackEasy?.addEventListener("change", () => {
     if (feedbackEasy.checked) feedbackHard.checked = false;
-    sendFeedbackToDB();
 });
 
 // Feedback an die Datenbank senden
