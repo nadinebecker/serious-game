@@ -111,8 +111,37 @@
     "text": "Mehrere Quellen berichteten. Bis Ende Juli 2023 testete der Rhein-Main-Verkehrsverbund (RMV) zusammen mit der Frankfurter Nahverkehrsgesellschaft traffiQ und der Verkehrsgesellschaft Frankfurt (VGF) den autonomen Shuttle-Dienst."
   }
   },
-   {
+ {
     "id": 6,
+    "account":"images/nordnachrichten.jpg", 
+    "author": "NordlichtNachrichten",
+    "content": "Kaum zu Glauben! Nur noch Autonome Fahrzeuge werden gefördert.",
+    "image": "images/e-mobilität2.jpg",
+    "isFake": true,
+    "timestamp": "Vor 1 Stunde",
+    "comments": [
+    {
+      "user": "Tom",
+      "text": "Was soll das? Sollen doch erst mal E-Autos gefördert werden."
+    },
+    {
+      "user": "Hening423",
+      "text": "Keine gute Idee, die sind doch super Unischer."
+    },
+     {
+      "user": "19Amelie",
+      "text": "Schon seltsam das hier keine Quelle angegeben ist, oder?"
+    }
+  ],
+    "info": {
+    "tag": "-",
+    "headline": "Keine Quelle gefunden",
+    "text": " "
+  }
+  },
+
+   {
+    "id": 7,
     "account":"images/cafeprofil.jpg", 
     "author": "Anna",
     "content": "Im Cafe mit Freunden, was gibt es besseres?",
@@ -130,7 +159,7 @@
   ]
   },
 {
-    "id": 7,
+    "id": 8,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
     "content": "Mit KI gegen den Klimawandel! Endlich gibt es Lösungen.",
@@ -164,7 +193,7 @@
   },
 
    {
-    "id": 8,
+    "id": 9,
     "account":"images/strandprofil.jpg", 
     "author": "19Amelie",
     "content": "Kurzurlaub. Spanien '26",
@@ -182,7 +211,7 @@
   ]
   },
   {
-    "id": 9,
+    "id": 10,
     "account":"images/nordnachrichten.jpg", 
     "author": "NordlichtNachrichten",
     "content": "Künstliche Intelligenz kann als Lernhilfe an Schulen eingesetzt werden.",
@@ -211,7 +240,7 @@
   }
   },
 {
-    "id": 10,
+    "id": 11,
     "account":"images/werbung-profil.jpg", 
     "author": "Kartenverkauf",
     "content": "Jetzt hier Karten sichern! DAS Festival in deiner Nähe!",
@@ -230,7 +259,7 @@
   },
 
   {
-    "id": 11,
+    "id": 12,
     "account":"images/RoboticsDaily.jpg", 
     "author": "RoboticsDaily",
     "content": "KI ist jetzt schon überall. Selbst in Krankenhäusern werden Roboter eingesetzt: zum Transport und Sortieren von Proben. Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
@@ -260,7 +289,7 @@
   },
  
   {
-    "id": 12,
+    "id": 13,
     "account":"images/infoBlitz24.jpg", 
     "author": "InfoBlitz24",
     "content": "So Krass! Kündigungen sind raus! Firmen entlassen hunderte Mitarbeitenden!",
@@ -297,7 +326,7 @@
   }
   },
     {
-    "id": 13,
+    "id": 14,
     "account":"images/nordnachrichten.jpg", 
     "author": "NordlichtNachrichten",
     "content": "Polizei umstellt Haus aus wegen Roboter!",
@@ -322,7 +351,7 @@
   }
   },
     {
-    "id": 14,
+    "id": 15,
     "account":"images/nordnachrichten.jpg", 
     "author": "NordlichtNachrichten",
     "content": "Mit KI wird alles einfacher, besser und schneller!",
@@ -347,7 +376,7 @@
   }
   },
    {
-    "id": 15,
+    "id": 16,
     "account":"images/infoBlitz24.jpg", 
     "author": "InfoBlitz24",
     "content": "Wir werden ALLE jeder Zeit Überwacht, ohne das wir es mitbekommen!",
