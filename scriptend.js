@@ -5,12 +5,7 @@ if (!sessionId) {
     localStorage.setItem("sessionId", sessionId);
 }
 
-// --- FEEDBACK TRACKING ---
-
-const feedbackHard = document.getElementById("feedbackHard");
-const feedbackEasy = document.getElementById("feedbackEasy");
-
-// Nur eine Auswahl gleichzeitig erlauben
+// Card 1
 feedbackHard?.addEventListener("change", () => {
     if (feedbackHard.checked) feedbackEasy.checked = false;
 });
@@ -19,17 +14,47 @@ feedbackEasy?.addEventListener("change", () => {
     if (feedbackEasy.checked) feedbackHard.checked = false;
 });
 
-// Feedback an die Datenbank senden
+// Card 2
+feedbackYes?.addEventListener("change", () => {
+    if (feedbackYes.checked) feedbackNo.checked = false;
+});
+
+feedbackNo?.addEventListener("change", () => {
+    if (feedbackNo.checked) feedbackYes.checked = false;
+});
+
+// Card 3
+feedbackConfident?.addEventListener("change", () => {
+    if (feedbackConfident.checked) feedbackUncertain.checked = false;
+});
+
+feedbackUncertain?.addEventListener("change", () => {
+    if (feedbackUncertain.checked) feedbackConfident.checked = false;
+});
+
+
+// --- Feedback senden ---
 document.getElementById("feedbackSubmit")?.addEventListener("click", () => {
-    let feedbackValue = null;
 
-    if (feedbackHard.checked) feedbackValue = "schwer";
-    if (feedbackEasy.checked) feedbackValue = "leicht";
+    // Werte sammeln
+    let difficulty = null;
+    if (feedbackHard.checked) difficulty = "schwer";
+    if (feedbackEasy.checked) difficulty = "leicht";
 
-    if (!feedbackValue) {
-        alert("Bitte wähle eine Option aus.");
+    let exposure = null;
+    if (feedbackYes.checked) exposure = "begegnet";
+    if (feedbackNo.checked) exposure = "nicht_begegnet";
+
+    let confidence = null;
+    if (feedbackConfident.checked) confidence = "sicher";
+    if (feedbackUncertain.checked) confidence = "unsicher";
+
+    // Prüfen ob alles ausgefüllt ist
+    if (!difficulty || !exposure || !confidence) {
+        alert("Bitte beantworte alle drei Fragen.");
         return;
     }
+
 
     fetch("https://seriousgame.42web.io/save.php", {
         method: "POST",
