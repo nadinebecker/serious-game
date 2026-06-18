@@ -17,10 +17,7 @@ let realWarning = 0;
 let fakeWarning = 0;
 
 
-// Start Seite
-document.getElementById("startBtn").addEventListener("click", () => {
-  document.getElementById("startScreen").style.display = "none";
-});
+
 
 // Posts laden
 fetch("posts.json")
