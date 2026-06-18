@@ -15,6 +15,31 @@
 <body class="bg-gray-200 min-h-screen flex flex-col items-center gap-2 p-2">
 
 
+  <!-- Neon Glow Left -->
+  <div class="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 
+            w-40 h-72 bg-gradient-to-b from-pink-500 to-purple-500 
+            opacity-40 blur-3xl rounded-full"></div>
+
+  <!-- Neon Glow Right -->
+  <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 
+            w-40 h-72 bg-gradient-to-b from-blue-500 to-cyan-400 
+            opacity-40 blur-3xl rounded-full"></div>
+
+  <!-- Schriftzug -->
+  <div class="pointer-events-none hidden md:flex flex-col items-center
+            absolute left-80 top-1/2 -translate-y-1/2 
+            rotate-180 [writing-mode:vertical-rl]">
+
+    <span class="text-gray-500 font-extrabold text-5xl tracking-widest drop-shadow-xl">
+      Medienkompetenz
+    </span>
+
+    <span class="text-gray-500 font-semibold text-3xl tracking-wide drop-shadow">
+      und Sozialen Medien
+    </span>
+  </div>
+
+
   <!-- Handy-Rahmen -->
   <div class="bg-black 
          w-[90vw] max-w-[380px]
@@ -26,113 +51,97 @@
 
     <div class="bg-gray-100 w-full h-full p-4 sm:p-6 overflow-y-auto">
 
-<div class="w-full h-full flex flex-col justify-between">
+      <div class="w-full h-full flex flex-col justify-between">
 
-  <div class="space-y-6 mt-4">
-
-
-    <h1 class="text-2xl font-bold text-black-800 text-center">
-      Willkommen im Feed
-    </h1>
-
-    <p class="text-center text-black-600 text-sm">
-      Lerne echte Inhalte von Desinformation zu unterscheiden.
-    </p>
+        <div class="space-y-6 mt-4">
 
 
-    <div class="space-y-4">
+          <h1 class="text-2xl font-bold text-black-800 text-center">
+            Willkommen in deinem fiktiven <br>
+            Social - Media - Feed
+          </h1>
 
-      <!-- Card 1 -->
-      <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
-        <img src="images/like.PNG" class="w-10">
-        <p class="text-gray-700 text-sm">
-          Like Beiträge, die dir gefallen.
-        </p>
+          <p class="text-center text-black-600 text-m">
+            Dieses Spiel thematisiert Desinformation und emotionalisierende Inhalte auf Sozialen Medien.
+          </p>
+
+
+          <div class="space-y-4">
+
+
+            <!-- Card 1 -->
+            <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
+              <p class="text-black-700 text-m">
+                Dieses Spiel simuliert ein Social Media Feed. 
+                Wie in echten Feeds siehst du Beiträge von Freunden und Nachrichtenquellen. <br>
+                Deine Aufgabe ist es, dir die Posts anzusehen und interagieren.
+                Bleib aufmerksam: Sowohl falsche als auch echte Inhalte können übertrieben, 
+                emotional oder irreführend dargestellt sein.  <br>
+                Du kannst unterschiedlich reagieren:
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
+              <img src="images/like.PNG" class="w-5">
+              <p class="text-black-700 text-m">
+                Like Beiträge, die dir gefallen
+              </p>
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
+              <img src="images/share.PNG" class="w-5">
+              <p class="text-black-700 text-m">
+                Teile Beiträge fiktiv mit Freunden
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
+              <img src="images/warning.png" class="w-5">
+              <p class="text-black-700 text-m">
+                Markiere Inhalte als kritisch, wenn du Zweifel hast
+              </p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
+              <p class="text-black-700 text-m">
+                Deine Interaktionen im Spiel sowie dein anschließendes Feedback werden anonym erfasst und ausschließlich
+                im Rahmen einer wissenschaftlichen Arbeit ausgewertet.
+                Es werden keine personenbezogenen Daten gespeichert oder verarbeitet.
+                <strong> Mit dem Start des Spiels erklärst du dich mit der anonymen Datenerhebung einverstanden.
+                </strong>
+              </p>
+            </div>
+
+          </div>
+
+          <p class="text-center text-black-500 text-xs px-4">
+            Alle Profile, Bilder und Beiträge sind fiktiv und wurden speziell für dieses Spiel mit KI erstellt.
+          </p>
+
+        </div>
+
+
+        <div class="pb-4">
+          <a href="spiel.html">
+            <button class="w-full bg-blue-600 text-white py-3 rounded-xl text-lg font-semibold shadow">
+              Spiel beginnen
+            </button>
+          </a>
+        </div>
+
       </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
-        <img src="images/comment.PNG" class="w-10">
-        <p class="text-gray-700 text-sm">
-          Lies Kommentare und entdecke verschiedene Perspektiven.
-        </p>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
-        <img src="images/share.PNG" class="w-10">
-        <p class="text-gray-700 text-sm">
-          Teile Beiträge fiktiv mit Freunden.
-        </p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
-        <img src="images/warning.png" class="w-10">
-        <p class="text-gray-700 text-sm">
-          Markiere Inhalte als kritisch, wenn du Zweifel hast.
-        </p>
-      </div>
-
-    </div>
-
-    <p class="text-center text-gray-500 text-xs px-4">
-      Alle Profile, Bilder und Inhalte sind fiktiv und wurden speziell für dieses Spiel erstellt.
-    </p>
-
-  </div>
-
-  
-  <div class="pb-4">
-    <a href="spiel.html">
-      <button class="w-full bg-blue-600 text-white py-3 rounded-xl text-lg font-semibold shadow">
-        Spiel beginnen
-      </button>
-    </a>
-  </div>
-
-</div>
-
-
- <!-- 
-<div class="bg-white p-4 rounded-xl shadow-md space-y-3">
-      Dieses Spiel zeigt ein Smartphone mit einer Social-Media-Plattform. <br>
-        Wie in realen Feeds siehst du Beiträge von Freunden und Nachrichtenquellen.
-        Alle Profile, Bilder und Inhalte sind künstlich erzeugt und gehören zu der fiktiven Spielwelt.
-        Die dargestellten Personen existieren nicht, und die Posts sind speziell für dieses Spiel erstellt worden. <br>
-        Du kannst Posts liken, die Kommentare lesen oder Beiträge fiktiv mit Freunden teilen. <br>
-        <img src="images/like.PNG" class="w-8 inline-block">
-        <img src="images/comment.PNG" class="w-8 inline-block">
-        <img src="images/share.PNG" class="w-8 inline-block">
-        <br>
-        Zusätzlich kannst du Inhalte auch als Kritisch makieren, denn
-        nicht alle Inhalte sind auch wahr. <br>
-        <img src="images/warning.png" class="w-8 inline-block">
-        <br>
-        Inhalte die als Kritisch makiert wurden, kannst du nicht mehr Liken oder Teilen. <br>
-        Einmal geliked, geteilt oder makiert kannst du es nicht mehr zurück nehmen.
-        Achte also darauf, nicht auf Desinformation hereinzufallen.
-    </div>
-
- -->
       <div id="postsWrapper" class="space-y-6"></div>
 
     </div>
   </div>
 
-
-
-
-<div class="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 
-            bg-gradient-to-b from-blue-500 to-cyan-400 
-            opacity-40 blur-2xl rounded-full"></div>
-
-
-<a href="spiel.html">
-  <button id="startBtn" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg">
-        Spiel beginnen
-      </button>
-</a>
 
   <script src="script.js"></script>
 </body>
