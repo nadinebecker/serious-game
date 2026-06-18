@@ -15,52 +15,106 @@
 
 
 
-  <div id="auswertung" class="text-lg text-gray-800"></div>
+  <!-- Neon Glow Left -->
+  <div class="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 
+            w-40 h-72 bg-gradient-to-b from-pink-500 to-purple-500 
+            opacity-40 blur-3xl rounded-full"></div>
 
-  <script>
-    const stats = JSON.parse(localStorage.getItem("stats"));
+  <!-- Neon Glow Right -->
+  <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 
+            w-40 h-72 bg-gradient-to-b from-blue-500 to-cyan-400 
+            opacity-40 blur-3xl rounded-full"></div>
 
-    if (stats) {
-      document.getElementById("auswertung").innerHTML = `
+  <!-- Schriftzug -->
+  <div class="pointer-events-none hidden md:flex flex-col items-center
+            absolute left-80 top-1/2 -translate-y-1/2 
+            rotate-180 [writing-mode:vertical-rl]">
+
+    <span class="text-gray-500 font-extrabold text-5xl tracking-widest drop-shadow-xl">
+      Medienkompetenz
+    </span>
+
+    <span class="text-gray-500 font-semibold text-3xl tracking-wide drop-shadow">
+      und Soziale Medien
+    </span>
+  </div>
+
+
+
+  <!-- Handy-Rahmen -->
+  <div class="bg-black 
+         w-[90vw] max-w-[380px]
+         h-[90vh] max-h-[780px]
+         rounded-[40px] shadow-2xl border-8 border-black 
+         relative overflow-hidden flex justify-center">
+
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-20"></div>
+
+    <div class="bg-gray-100 w-full h-full p-4 sm:p-6 overflow-y-auto">
+
+      <div class="w-full h-full flex flex-col justify-between">
+
+        <div class="space-y-6 mt-4">
+
+
+          <h1 class="text-2xl font-bold text-black-800 text-center">
+            Feedback
+          </h1>
+
+
+          <div class="space-y-4">
+
+
+            <!-- Card 1 -->
+            <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+
+              <div id="auswertung" class="text-lg text-gray-800"></div>
+
+              <script>
+                const stats = JSON.parse(localStorage.getItem("stats"));
+
+                if (stats) {
+                  document.getElementById("auswertung").innerHTML = `
       <h2 class="text-xl font-semibold mb-4">Deine Auswertung für das Spiel:</h2>
       Du hast <strong>${stats.statLikes + stats.statShares}</strong> Beiträge geliked und/oder geteilt.<br>
-      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> Real und 
+      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> wahr und 
       <strong>${stats.fakeLikes + stats.fakeShares}</strong> Desinformation.<br><br>
 
       Du hast <strong>${stats.statWarning}</strong> Beiträge kritisch markiert.<br>
-      Davon waren <strong>${stats.realWarning}</strong> Real und 
+      Davon waren <strong>${stats.realWarning}</strong> wahr und 
       <strong>${stats.fakeWarning}</strong> Desinformation.<br>
     `;
-    } else {
-      document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
-    }
-  </script>
-
-  <br>
-
-  <a href="spiel.html">
-    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-      Noch einmal Versuchen
-    </button>
-  </a>
-
-  <br>
-  <br>
-  <h2 class="text-xl font-semibold mb-4">Kurzes Feedback</h2>
-
-  <label for="feedbackHard" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-    <input type="checkbox" id="feedbackHard" class="w-5 h-5">
-    <span>Es fiel mir schwer, Desinformation zu erkennen.</span>
-  </label>
-  <label for="feedbackEasy" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-    <input type="checkbox" id="feedbackEasy" class="w-5 h-5">
-    <span>Es fiel mir leicht, Desinformation zu erkennen.</span>
-  </label>
+                } else {
+                  document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
+                }
+              </script>
+            </div>
 
 
-  <button id="feedbackSubmit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-    Feedback senden
-  </button>
+
+          </div>
+
+
+        </div>
+
+        <div class="pb-4 flex justify-center">
+          <div class="pb-4">
+            <a href="spiel.html">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+                Noch einmal Versuchen
+              </button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div id="postsWrapper" class="space-y-6"></div>
+
+    </div>
+  </div>
+
 
 
   <script src="scriptend.js"></script>
