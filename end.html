@@ -75,57 +75,64 @@
 
                 if (stats) {
                   document.getElementById("auswertung").innerHTML = `
-      <h2 class="text-xl font-semibold mb-4">Deine Auswertung für das Spiel:</h2>
       Du hast <strong>${stats.statLikes + stats.statShares}</strong> Beiträge geliked und/oder geteilt.<br>
-      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> wahr und 
-      <strong>${stats.fakeLikes + stats.fakeShares}</strong> Desinformation.<br><br>
+      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> korrekt eingestuft 
+      und <strong>${stats.fakeLikes + stats.fakeShares}</strong> falsch eingestuft.<br><br>
 
       Du hast <strong>${stats.statWarning}</strong> Beiträge kritisch markiert.<br>
-      Davon waren <strong>${stats.realWarning}</strong> wahr und 
-      <strong>${stats.fakeWarning}</strong> Desinformation.<br>
+      Davon waren <strong>${stats.realWarning}</strong> korrekt gewarnt 
+      und <strong>${stats.fakeWarning}</strong> fälschlicherweise gewarnt.<br>
     `;
                 } else {
                   document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
                 }
               </script>
+
             </div>
 
             <!-- Card 2 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
-              Informationen auf Sozialen Medien solltest du immer noch einmal prüfen.
-              Emotionale Inhalte erkennst du daran das sie schnell weg von der Sachlichen Ebene führen und "Aufreger"
-              sind.
+              Emotionalisierende Nachrichten gelten nicht als neutrale Nachrichten,
+              weil sie gezielt Gefühle verstärken und damit die Wahrnehmung beeinflussen,
+              statt sachlich und ausgewogen zu informieren.
             </div>
 
+            <!-- Card 3 -->
+            <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+              Desinformation sind absichtlich falsche oder irreführende Inhalte,
+              die erstellt werden, um Menschen zu täuschen oder ihre Meinung gezielt
+              zu beeinflussen.
+            </div>
 
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+              Prüfe Informationen aus sozialen Medien immer noch einmal,
+              denn emotionale Inhalte erkennst du daran,
+              dass sie schnell von der sachlichen Ebene wegführen und vor allem darauf abzielen,
+              dich aufzuregen.
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+              Hast du schon entdeckt, dass du die Quellen auch im Spiel "recherchieren" kannst in dem du sie anklickst?
+            </div>
           </div>
-
-          <!-- Card 3 -->
-          <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
-            Ist dir aufgefallen das die Quellen angeklickt werden können?
-
-          </div>
-
-
         </div>
-
       </div>
 
-      <div class="pb-4 flex justify-center">
-        <div class="pb-4">
-          <a href="spiel.html">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-              Noch einmal Versuchen
-            </button>
-          </a>
-        </div>
-        <div id="postsWrapper" class="space-y-6"></div>
-      </div>
+
     </div>
   </div>
-
-
-
+  <div class="pb-4 flex justify-center">
+    <div class="pb-4">
+      <a href="spiel.html">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Noch einmal Versuchen
+        </button>
+      </a>
+    </div>
+    <div id="postsWrapper" class="space-y-6"></div>
+  </div>
 
   <script src="scriptend.js"></script>
 </body>

@@ -27,6 +27,15 @@ fetch("posts.json")
   .catch(error => console.error("Fehler beim Laden der Posts:", error));
 
 
+// Bewertungslogik: Nur „Neutrale Nachricht“ ist korrekt
+function isCorrectCategory(category) {
+  return (
+    category === "Neutrale Nachricht" ||
+    category === "Neutraler Beitrag"
+  );
+}
+
+
 // Posts rendern
 function renderAllPosts() {
   const wrapper = document.getElementById("postsWrapper");
@@ -128,22 +137,24 @@ function disableOtherButtons(active, ...others) {
 
 // Aktionen zählen
 function handleAction(action, post) {
+  const correct = isCorrectCategory(post.category);
+
   if (action === "like") {
     statLikes++;
-    post.isFake ? fakeLikes++ : realLikes++;
+    correct ? realLikes++ : fakeLikes++;
   }
 
   if (action === "share") {
     statShares++;
-    post.isFake ? fakeShares++ : realShares++;
+    correct ? realShares++ : fakeShares++;
   }
 
   if (action === "warning") {
     statWarning++;
-    post.isFake ? fakeWarning++ : realWarning++;
+    correct ? realWarning++ : fakeWarning++;
   }
 
-  trackClick(post.id, action, !post.isFake);
+  trackClick(post.id, action, correct);
 }
 
 
@@ -172,7 +183,6 @@ function toggleComments(post, section) {
 function openSource(post) {
   const modalBody = document.getElementById("modal-body");
 
-  // Wenn tag "-" ist → kein Bild anzeigen
   const showImage = post.info?.tag !== "-";
 
   modalBody.innerHTML = `
@@ -197,7 +207,6 @@ function openSource(post) {
 
   document.getElementById("modal").style.display = "flex";
 }
-
 
 
 // Modal schließen
