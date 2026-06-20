@@ -172,14 +172,32 @@ function toggleComments(post, section) {
 function openSource(post) {
   const modalBody = document.getElementById("modal-body");
 
+  // Wenn tag "-" ist → kein Bild anzeigen
+  const showImage = post.info?.tag !== "-";
+
   modalBody.innerHTML = `
-    <div class="fake-tag">${post.info?.tag || ""}</div>
-    <h1 class="fake-title">${post.info?.headline || ""}</h1>
-    <p class="fake-text">${post.info?.text || ""}</p>
+    <div class="info-page">
+
+      <div class="info-banner">${post.info?.tag || ""}</div>
+
+      ${showImage ? `<img src="${post.image}" class="info-image" alt="Artikelbild">` : ""}
+
+      <h1 class="info-headline">
+        ${post.info?.headline || ""}
+      </h1>
+
+      <p class="info-text">
+        ${post.info?.text || ""}
+      </p>
+
+      <div class="info-fade"></div>
+
+    </div>
   `;
 
   document.getElementById("modal").style.display = "flex";
 }
+
 
 
 // Modal schließen
