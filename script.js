@@ -1,9 +1,9 @@
 // Session-ID erzeugen, falls noch nicht vorhanden
 if (!localStorage.getItem("sessionId")) {
-    localStorage.setItem("sessionId", crypto.randomUUID());
+  localStorage.setItem("sessionId", crypto.randomUUID());
 }
 
-// Startwerte
+// Statistiken
 let posts = [];
 let statLikes = 0;
 let statShares = 0;
@@ -17,8 +17,6 @@ let realWarning = 0;
 let fakeWarning = 0;
 
 
-
-
 // Posts laden
 fetch("posts.json")
   .then(response => response.json())
@@ -26,12 +24,10 @@ fetch("posts.json")
     posts = data;
     renderAllPosts();
   })
-  .catch(error => {
-    console.error("Fehler beim Laden der Posts:", error);
-  });
+  .catch(error => console.error("Fehler beim Laden der Posts:", error));
 
 
-// Alle Posts anzeigen
+// Posts rendern
 function renderAllPosts() {
   const wrapper = document.getElementById("postsWrapper");
   const template = document.getElementById("postTemplate");
@@ -51,7 +47,9 @@ function renderAllPosts() {
     const timestamp = clone.querySelector(".postTimestamp");
 
     const likeBtn = clone.querySelector(".likeIcon");
+    const likeCount = clone.querySelector(".likeCount");
     const commentBtn = clone.querySelector(".commentIcon");
+    const commentCount = clone.querySelector(".commentCount");
     const shareBtn = clone.querySelector(".shareIcon");
     const warnBtn = clone.querySelector(".warnIcon");
 
@@ -62,36 +60,54 @@ function renderAllPosts() {
     content.textContent = post.content;
     timestamp.textContent = post.timestamp;
 
+    // Kommentare sicher zählen
+    commentCount.textContent = post.comments?.length ?? 0;
+
+    // Likes aus JSON übernehmen
+    likeCount.textContent = post.likes ?? 0;
+
+    // Quelle
     if (post.source && post.source.trim() !== "") {
       source.textContent = "Quelle: " + post.source;
     } else {
       source.style.display = "none";
     }
+
+    // Icons setzen
     likeBtn.src = "images/like.PNG";
     commentBtn.src = "images/comment.PNG";
     shareBtn.src = "images/share.PNG";
     warnBtn.src = "images/warning.png";
 
-    source.style.cursor = "pointer";
+    // Quelle öffnen
     source.onclick = () => openSource(post);
 
+    // LIKE
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
       disableOtherButtons(warnBtn, likeBtn);
+
+      let count = parseInt(likeCount.textContent);
+      likeCount.textContent = count + 1;
+
       handleAction("like", post);
     };
 
+    // SHARE
     shareBtn.onclick = () => {
       shareBtn.src = "images/share-green.PNG";
       disableOtherButtons(warnBtn, shareBtn);
       handleAction("share", post);
     };
 
+    // WARNING
     warnBtn.onclick = () => {
       warnBtn.src = "images/warning-red.png";
       disableOtherButtons(warnBtn, likeBtn, shareBtn);
       handleAction("warning", post);
     };
+
+    // Kommentare ein-/ausblenden
     commentBtn.onclick = () => toggleComments(post, commentsSection);
 
     wrapper.appendChild(clone);
@@ -99,7 +115,7 @@ function renderAllPosts() {
 }
 
 
-
+// Buttons deaktivieren
 function disableOtherButtons(active, ...others) {
   others.forEach(btn => {
     btn.style.pointerEvents = "none";
@@ -109,25 +125,22 @@ function disableOtherButtons(active, ...others) {
   active.style.pointerEvents = "none";
 }
 
-function handleAction(action, post) {
-  console.log("Aktion:", action, "für Post:", post.id);
 
+// Aktionen zählen
+function handleAction(action, post) {
   if (action === "like") {
     statLikes++;
-    if (post.isFake) fakeLikes++;
-    else realLikes++;
+    post.isFake ? fakeLikes++ : realLikes++;
   }
 
   if (action === "share") {
     statShares++;
-    if (post.isFake) fakeShares++;
-    else realShares++;
+    post.isFake ? fakeShares++ : realShares++;
   }
 
   if (action === "warning") {
     statWarning++;
-    if (post.isFake) fakeWarning++;
-    else realWarning++;
+    post.isFake ? fakeWarning++ : realWarning++;
   }
 
   trackClick(post.id, action, !post.isFake);
@@ -140,7 +153,7 @@ function toggleComments(post, section) {
     section.classList.remove("hidden");
     section.textContent = "";
 
-    post.comments.forEach(c => {
+    (post.comments ?? []).forEach(c => {
       const p = document.createElement("p");
       const strong = document.createElement("strong");
       strong.textContent = c.user + ": ";
@@ -175,7 +188,7 @@ function closeModal() {
 }
 
 
-// Tracking-Funktion 
+// Tracking
 async function trackClick(postId, userChoice, isCorrect) {
   try {
     await fetch("https://seriousgame.42web.io/save.php", {
@@ -188,8 +201,6 @@ async function trackClick(postId, userChoice, isCorrect) {
         session_id: localStorage.getItem("sessionId")
       })
     });
-
-    console.log("Tracking gespeichert");
   } catch (error) {
     console.error("Tracking-Fehler:", error);
   }
@@ -202,7 +213,6 @@ function goToEndScreen() {
     statLikes,
     statShares,
     statWarning,
-
     realLikes,
     fakeLikes,
     realShares,
@@ -218,4 +228,3 @@ function goToEndScreen() {
 
 // Button zur Auswertung
 document.getElementById("auswertungBtn").addEventListener("click", goToEndScreen);
-
