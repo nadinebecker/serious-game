@@ -133,9 +133,29 @@
   },
   {
     "id": 6,
+    "account": "images/freunde-kino.jpg",
+    "author": "Lena_07",
+    "content": "Gestern mit dem lieben @Tom im Kino gewesen",
+    "image": "images/freunde-kino.jpg",
+    "category": "Neutraler Beitrag",
+    "timestamp": "Vor 1 Stunde",
+    "likes": 8,
+    "comments": [
+      {
+        "user": "Tom",
+        "text": "Der Film hat sich gelohnt!"
+      },
+      {
+        "user": "Hening423",
+        "text": "Welchen Film habt ihr euch angesehen?"
+      }
+    ]
+  },
+  {
+    "id": 7,
     "account": "images/nordnachrichten.jpg",
     "author": "NordlichtNachrichten",
-    "content": "Kaum zu Glauben! Nur noch Autonome Fahrzeuge werden gefördert.",
+    "content": "Nur noch Autonome Fahrzeuge werden gefördert.",
     "image": "images/e-mobilität2.jpg",
     "category": "Desinformation",
     "timestamp": "Vor 1 Stunde",
@@ -169,7 +189,7 @@
     }
   },
   {
-    "id": 7,
+    "id": 8,
     "account": "images/cafeprofil.jpg",
     "author": "Anna",
     "content": "Im Cafe mit Freunden, was gibt es besseres?",
@@ -189,7 +209,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 9,
     "account": "images/RoboticsDaily.jpg",
     "author": "RoboticsDaily",
     "content": "Mit KI gegen den Klimawandel! Endlich gibt es Lösungen.",
@@ -231,7 +251,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 10,
     "account": "images/strandprofil.jpg",
     "author": "19Amelie",
     "content": "Kurzurlaub. Spanien '26",
@@ -241,7 +261,7 @@
     "likes": 123,
     "comments": [
       {
-        "user": "Tom",
+        "user": "Lena_07",
         "text": "Wann kommt ihr wieder?"
       },
       {
@@ -251,7 +271,54 @@
     ]
   },
   {
-    "id": 10,
+    "id": 11,
+    "account": "images/infoBlitz24.jpg",
+    "author": "InfoBlitz24",
+    "content": "EU Gesetz: Smartphones MÜSSEN Gesundheitsdaten an Krankenkassen senden, automatisch und ohne Nachfrage!",
+    "category": "Emotionalisierende Desinformation",
+    "image": "images/eu-gesetz.jpg",
+    "source": "InfoBlitz24.de",
+    "timestamp": "Vor 1 Tag",
+    "likes": 25981,
+    "comments": [
+      {
+        "user": "Lena_07",
+        "text": "Ohaaaa… was soll das denn heißen?"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Okay wow… das klingt schon wieder nach Stress."
+      },
+      {
+        "user": "Anna",
+        "text": "Ich so: erstmal Quelle checken..."
+      },
+      {
+        "user": "Tom",
+        "text": "Das dürfen die doch nicht einfach machen!!! Oder???"
+      },
+      {
+        "user": "Hening423",
+        "text": "Leute, checkt eure Einstellungen!!!"
+      },
+      {
+        "user": "Lena_07",
+        "text": "Das ist ein Skandal, warum berichtet niemand darüber?!"
+      },
+      {
+        "user": "MaximTech",
+        "text": "Wieso sagt niemand offiziell was dazu? Und das Gesetz der EU find ich auch nicht..."
+      }
+    ],
+    "info": {
+      "tag": "Was soll das!?",
+      "headline": "EU zwingt zur Datenweitergabe: Krankenkassen sollen heimlich Gesundheitsinfos erhalten!!!",
+      "text": "Was viele nicht wissen: Hinter verschlossenen Türen soll die EU ein Gesetz vorbereitet haben, das jedes Smartphone dazu verpflichtet, Gesundheitsdaten direkt an Krankenkassen zu senden - automatisch, ständig und ohne Zustimmung!!! Pass also auf was dein Handy über "
+    }
+
+  },
+  {
+    "id": 12,
     "account": "images/nordnachrichten.jpg",
     "author": "NordlichtNachrichten",
     "content": "Künstliche Intelligenz kann als Lernhilfe an Schulen eingesetzt werden.",
@@ -284,8 +351,46 @@
       "text": "Für Lehrkräfte stehen erste Plattformen bereit, die den Umgang mit KI im Unterricht erklären. Selbst die Bundeszentrale für politische Bildung informiert inzwischen regelmäßig über Chancen"
     }
   },
+    {
+    "id": 13,
+    "account": "images/RoboticsDaily.jpg",
+    "author": "RoboticsDaily",
+    "content": "Digitalminister sorgt für Aufsehen: Geheim eingesetzte KI entdeckt!!",
+    "category": "Emotionalisierende Nachricht",
+    "image": "images/digitalminiser.jpg",
+    "source": "FlashNews24.net",
+    "timestamp": "Vor 5 Stunde",
+    "likes": 45092,
+    "comments": [
+      {
+        "user": "19Amelie",
+        "text": "Transparenz sieht anders aus!"
+      },
+      {
+        "user": "Hening423",
+        "text": "Wenn selbst Minister KI heimlich nutzen, was passiert dann als Nächstes?"
+      },
+      {
+        "user": "Tom",
+        "text": "Ich versteh nicht, warum man sowas verheimlicht."
+      },
+      {
+        "user": "Lena_07",
+        "text": "Das hätte man doch einfach kennzeichnen können…"
+      },
+      {
+        "user": "Anna",
+        "text": "Vielleicht war der KI-Text sogar besser als der echte… wer weiß. :D"
+      }
+    ],
+    "info": {
+      "tag": "Digitales",
+      "headline": "Skandal im Ministerium: Digitalminister lässt KI heimlich schreiben - Bürger völlig im Dunkeln!!!",
+      "text": "Ein politischer Paukenschlag erschüttert Berlin: Der Bundesdigitalminister soll mehrere offiziellen Rede mithilfe von KI verfasst haben - und das völlig ohne Hinweis an die Öffentlichkeit!!! Viele Menschen fühlen sich getäuscht, denn"
+    }
+  },
   {
-    "id": 11,
+    "id": 14,
     "account": "images/werbung-profil.jpg",
     "author": "Kartenverkauf",
     "content": "Jetzt hier Karten sichern! DAS Festival in deiner Nähe!",
@@ -308,8 +413,46 @@
       }
     ]
   },
+ {
+    "id": 15,
+    "account": "images/nordnachrichten.jpg",
+    "author": "NordlichtNachrichten",
+    "content": "Erst smart, jetzt wachsam: Neue Straßenlaternen sollen mehr erfassen als nur Licht.",
+    "image": "images/laternen.jpg",
+     "source": "nordlichtnachrichten.de",
+    "category": "Desinformation",
+    "timestamp": "Vor 1 Stunde",
+    "likes": 13573,
+    "comments": [
+      {
+        "user": "Tom",
+        "text": "Ich find's komisch, dass nichts klar erklärt wird."
+      },
+      {
+        "user": "Hening423",
+        "text": "Muss eine Straßenlaterne wirklich so viel können?"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Das ist Fake. Die Laternen haben keine Überwachungsfunktionen, das wurde längst widerlegt."
+      },
+      {
+        "user": "Lena_07",
+        "text": "Ich frag mich, wer die Daten am Ende sieht."
+      },
+      {
+        "user": "MaximTech",
+        "text": "Hab mal recherchiert… finde keine vollständige Liste der Sensoren und den Hersteller gibt es gar nicht."
+      }
+    ],
+    "info": {
+      "tag": "Innovation",
+      "headline": "Erst smart, jetzt wachsam: Neue Straßenlaternen sollen mehr erfassen als nur Licht.",
+      "text": "Laut inoffiziellen Hinweisen könnten die Laternen zusätzliche Sensoren enthalten, die Bewegungen oder Geräusche erfassen. Genaue Informationen zu den verbauten Modulen wurden bisher nicht veröffentlicht, aber hier lest ihr alles was ihr"
+    }
+  },
   {
-    "id": 12,
+    "id": 16,
     "account": "images/RoboticsDaily.jpg",
     "author": "RoboticsDaily",
     "content": "KI ist jetzt schon überall. Selbst in Krankenhäusern werden Roboter eingesetzt: zum Transport und Sortieren von Proben. Bochumer Firma liefert autonome Roboter in Münchener Krankenhaus. Lies hier mehr:",
@@ -347,7 +490,27 @@
     }
   },
   {
-    "id": 13,
+    "id": 17,
+    "account": "images/freunde-nacht.jpg",
+    "author": "MaximTech",
+    "content": "Es geht nichts über Lagerfeuer und Sternhimmel!",
+    "image": "images/freunde-nacht.jpg",
+    "category": "Neutraler Beitrag",
+    "timestamp": "Vor 1 Tag",
+    "likes": 12,
+    "comments": [
+      {
+        "user": "Lena_07",
+        "text": "Sowas von dir zu lesen ist lustig!"
+      },
+      {
+        "user": "MaximTech",
+        "text": "Auch ich kann mal mit Freunden draußen sein ohne Technik ;)"
+      }
+    ]
+  },
+  {
+    "id": 18,
     "account": "images/infoBlitz24.jpg",
     "author": "InfoBlitz24",
     "content": "So Krass! Kündigungen sind raus! Firmen entlassen hunderte Mitarbeitenden!",
@@ -396,8 +559,84 @@
       "text": "Anonyme Insider melden uns exlusiv, dass Firmen heimlich hunderte Jobs streichen. Offizielle Stellen schweigen, während die Lage laut mehreren Posts und Social Media „viel schlimmer ist, als alle denken“."
     }
   },
+ {
+    "id": 19,
+    "account": "images/RoboticsDaily.jpg",
+    "author": "RoboticsDaily",
+    "content": "Was du siehst, sieht sie auch!!",
+    "category": "Emotionalisierende Nachricht",
+    "image": "images/smart-glases.jpg",
+    "source": "FlashNews24.net",
+    "timestamp": "Vor 5 Stunde",
+    "likes": 45092,
+    "comments": [
+      {
+        "user": "19Amelie",
+        "text": "Ein Freund von mir hat so eine!"
+      },
+      {
+        "user": "Hening423",
+        "text": "Ja ich kenn solche Brillen aber ist schon etwas übertrieben geschrieben der Artikel oder?"
+      },
+      {
+        "user": "Tom",
+        "text": "Das geht viel zu weit!"
+      },
+      {
+        "user": "Lena_07",
+        "text": "Wenn die wirklich alles analysieren, dann ist das doch totale Überwachung!"
+      },
+      {
+        "user": "Anna",
+        "text": "Ich dachte, das wäre nur ein cooles Gadget… jetzt weiß ich nicht mehr."
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Was du siehst, sieht sie auch!!",
+      "text": "Die Brille nimmt nicht nur deine Umgebung wahr - sie analysiert sie! Jede Bewegung. Jedes Gesicht. Jeden Blick. Besonders beunruhigend: Die Brille entscheidet selbst, was sie erkennt - und was sie weiterleitet!!! Räume, Menschen sogar Bildschirme! Viele fragen sich: Wer sieht eigentlich mit, wenn ich durch diese Brille schaue?"
+    }
+  },
   {
-    "id": 14,
+    "id": 20,
+    "account": "images/infoBlitz24.jpg",
+    "author": "InfoBlitz24",
+    "content": "Kein Strom, keine Verzögerung, keine Grenzen!",
+    "category": "Emotionalisierende Nachricht",
+    "image": "images/ki-chip.jpg",
+    "source": "FlashNews24.net",
+    "timestamp": "Vor 5 Stunde",
+    "likes": 45092,
+    "comments": [
+      {
+        "user": "Anna",
+        "text": "das klingt richtig unheimlich. Warum redet niemand darüber?!"
+      },
+      {
+        "user": "Hening423",
+        "text": "Der Artikel übertreibt total. Photonische Chips sind spannend, aber nicht gefährlich. Ich hab das Thema letztens in der Uni gehabt."
+      },
+      {
+        "user": "Tom",
+        "text": "Kein Strom, keine Grenzen… das klingt wie ein Albtraum."
+      },
+      {
+        "user": "Lena_07",
+        "text": "Wenn Maschinen schneller denken als wir, sind wir doch komplett ausgeliefert!"
+      },
+      {
+        "user": "Anna",
+        "text": "Ich hab gerade im Netz mehrere Seiten gelesen: das hier ist eine verzerrte Darstellung! Die Forschung ist weit davon entfernt, uns zu ‚überholen‘."
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Wer kontrolliert eine Technologie, die keine Grenzen kennt?!!??",
+      "text": "Photonische Chips, die Informationen nicht mehr mit Elektrizität, sondern mit Lichtgeschwindigkeit verarbeiten, werden als „Durchbruch“ gefeiert. Kaum zu glauben, denn hinter den glänzenden Versprechen verbirgt sich eine Entwicklung, die vielen Menschen zurecht Angst macht!! Denn diese Chips sind nicht nur schneller — sie sind grenzenlos!"
+    }
+  },
+  {
+    "id": 21,
     "account": "images/nordnachrichten.jpg",
     "author": "NordlichtNachrichten",
     "content": "Polizei umstellt Haus aus wegen Roboter!",
@@ -430,8 +669,42 @@
       "text": "Bei einem Einsatz stellte sich nach Betreten des Hauses schnell heraus, dass die Polizei keinem Einbrecher folgte. Das auffällige Licht stammte von einem Saugroboter, der sich im Dunkeln bewegte. Ähnliche Vorfälle wurden bereits mehrfach gemeldet."
     }
   },
+ {
+    "id": 22,
+    "account": "images/RoboticsDaily.jpg",
+    "author": "RoboticsDaily",
+    "content": "Ein Schweizer Chip-Unternehmen macht's möglich: Träume jetzt als VIDEO!!",
+    "image": "images/traum-chip.jpg",
+    "category": "Desinformation",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 2 Tagen",
+    "likes": 69814,
+    "comments": [
+      {
+        "user": "19Amelie",
+        "text": "Ich will nicht, dass irgendwer meine Träume sieht!!"
+      },
+      {
+        "user": "Hening423",
+        "text": "Ich weiß nicht, ob ich das glauben soll, aber es macht mir Angst."
+      },
+      {
+        "user": "Lena_07",
+        "text": "Das ist der Stoff aus Albträumen."
+      },
+      {
+        "user": "MaximTech",
+        "text": "Das ist Fake. Traumvideos sind technisch noch lange nicht möglich."
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Senn Träume zu Videos werden, wer entscheidet dann, wer sie sehen darf?!",
+      "text": "Offiziell heißt es, die Technologie sei „noch in der Forschung“. Doch interne Quellen sprechen von ersten Tests, bei denen Schlafbilder in „überraschend hoher Genauigkeit“ nachgebildet worden sein sollen. Kritiker warnen bereits vor einem „massiven Eingriff in die intimste Privatsphäre, die ein Mensch besitzt“."
+    }
+  },
   {
-    "id": 15,
+    "id": 23,
     "account": "images/nordnachrichten.jpg",
     "author": "NordlichtNachrichten",
     "content": "Mit KI wird alles einfacher, besser und schneller!",
@@ -464,8 +737,38 @@
       "text": "Laut NordlichtNachrichten soll KI in wenigen Wochen ALLES revolutionieren — vom Frühstück bis zur Weltordnung. Kritische Stimmen? Alle gekauft. Offizielle Stellen? Vertuschen alles. Fans feiern die Meldung als"
     }
   },
+{
+    "id": 23,
+    "account": "images/infoBlitz24.jpg",
+    "author": "InfoBlitz24",
+    "content": "Europas neuer Supercomputer Jupiter nimmt Form an",
+    "image": "images/super-rechner.jpg",
+    "category": "Neutrale Nachricht",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 2 Tagen",
+    "likes": 14508,
+    "comments": [
+      {
+        "user": "Anna",
+        "text": "Bin gespannt, welche Fortschritte das für Klimamodelle bringt."
+      },
+      {
+        "user": "19Amelie",
+        "text": "Gut, dass Europa in dem Bereich unabhängiger wird."
+      },
+      {
+        "user": "Lena_07",
+        "text": "Klingt solide. Freu mich auf die ersten Forschungsergebnisse."
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Europas neuer Supercomputer Jupiter nimmt Form an",
+      "text": "Der europäische Supercomputer Blue-Lion Jupiter nimmt in Jülich Gestalt an und soll nach seiner Fertigstellung zu den leistungsstärksten Rechnern weltweit gehören. Das System basiert auf einer modularen Architektur und ist darauf ausgelegt, große Datenmengen effizient zu verarbeiten."
+    }
+  },
   {
-    "id": 16,
+    "id": 25,
     "account": "images/infoBlitz24.jpg",
     "author": "InfoBlitz24",
     "content": "Wir werden ALLE jeder Zeit Überwacht, ohne das wir es mitbekommen!",
