@@ -1000,5 +1000,47 @@
       "headline": "Der Einsatz von KI im Sicherheitsbereich wirft zentrale Fragen nach Verantwortung, Transparenz und dem Schutz von Menschenleben auf.",
       "text": "In verschiedenen Bereichen der Sicherheitsforschung werden KI-Systeme getestet, um Daten schneller auszuwerten und mögliche Risiken frühzeitig zu erkennen. Forschende warnen zudem davor, Systeme ohne ausreichende Tests in kritischen Bereichen einzusetzen. Fehlerquoten, Verzerrungen und unklare Entscheidungslogiken könnten im Ernstfall schwerwiegende Folgen haben."
     }
+  },
+       {
+    "id": 31,
+    "account": "images/RoboticsDaily.jpg",
+    "author": "RoboticsDaily",
+    "content": "Wenn Technik Trost spendet, der erste Fernseher der Emotien erkennt!",
+    "image": "images/smart-tv.jpg",
+    "category": "Emotionalisierende Desinformation",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 4 Tagen",
+    "likes": 25904,
+    "comments": [
+      {
+        "user": "Lena_07",
+        "text": "Ehrlich? Wenn mein Fernseher merkt, dass ich traurig bin und mir eine Komödie zeigt? Ich würd's feiern!"
+      },
+      {
+        "user": "Anna",
+        "text": "Solange das freiwillig bleibt, ist es okay. Aber bitte keine automatische Gefühlsanalyse ohne Zustimmung!!"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Emotionserkennung ist spannend, aber technisch noch sehr ungenau, wenn ich das richtig gelesen habe..."
+      },
+      {
+        "user": "Tom",
+        "text": "Find ich gut! Ich schau mir das Ding auf jeden Fall an!"
+      },
+      {
+        "user": "Hening423",
+          "text": "Ich arbeite ja in ner Technik Firma daher: Kleiner Faktencheck: Emotionserkennung ist in der EU sogar reguliert und der Artikel bezieht sich auf Gerüchte, nicht auf echte Ankündigungen :)"
+      },
+       {
+        "user": "MaximTech",
+          "text": "Schade! Emotionserkennung über TV-Kameras ist technisch möglich, aber extrem unzuverlässig, daher hätte ich es gern ausprobiert!"
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Wenn Technik Trost spendet <3",
+      "text": "Stell dir vor, dein Fernseher erkennt, wenn du einen schlechten Tag hast - und zeigt dir genau das, was dich wieder aufmuntert!! Wir sind die Ersten die KI so einsetzt das sie postiv genutzt wird! Hier erfährst du wie du an das erste Gerät kommt was dich wieder aufmuntert! Klingt fast zu schön, um wahr zu sein:“"
+    }
   }
 ]
