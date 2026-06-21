@@ -70,23 +70,48 @@
 
               <div id="auswertung" class="text-lg text-gray-800"></div>
 
-              <script>
-                const stats = JSON.parse(localStorage.getItem("stats"));
+          <script>
+  const stats = JSON.parse(localStorage.getItem("stats"));
 
-                if (stats) {
-                  document.getElementById("auswertung").innerHTML = `
-      Du hast <strong>${stats.statLikes + stats.statShares}</strong> Beiträge geliked und/oder geteilt.<br>
-      Davon waren <strong>${stats.realLikes + stats.realShares}</strong> korrekt eingestuft 
-      und <strong>${stats.fakeLikes + stats.fakeShares}</strong> falsch eingestuft.<br><br>
+  if (stats) {
+    document.getElementById("auswertung").innerHTML = `
+      <h2 class="text-xl font-semibold mb-4">Deine Auswertung</h2>
 
-      Du hast <strong>${stats.statWarning}</strong> Beiträge kritisch markiert.<br>
-      Davon waren <strong>${stats.realWarning}</strong> korrekt gewarnt 
-      und <strong>${stats.fakeWarning}</strong> fälschlicherweise gewarnt.<br>
+      <strong>Gesamtreaktionen:</strong><br>
+      Likes/Shares: <strong>${stats.statLikes + stats.statShares}</strong><br>
+      Kritische Markierungen: <strong>${stats.statWarning}</strong><br><br>
+
+      <h3 class="font-semibold mt-4">Reaktionen nach Kategorien</h3>
+
+      <strong>Neutrale Beiträge:</strong><br>
+      Likes/Shares: ${stats.neutralPostLikes + stats.neutralPostShares}<br>
+      Kritische Markierungen: ${stats.neutralPostWarning}<br><br>
+
+      <strong>Neutrale Nachrichten:</strong><br>
+      Likes/Shares: ${stats.neutralNewsLikes + stats.neutralNewsShares}<br>
+      Kritische Markierungen: ${stats.neutralNewsWarning}<br><br>
+
+      <strong>Emotionalisierende Nachrichten:</strong><br>
+      Likes/Shares: ${stats.emotionalNewsLikes + stats.emotionalNewsShares}<br>
+      Kritische Markierungen: ${stats.emotionalNewsWarning}<br><br>
+
+      <strong>Desinformation:</strong><br>
+      Likes/Shares: ${stats.disinfoLikes + stats.disinfoShares}<br>
+      Kritische Markierungen: ${stats.disinfoWarning}<br><br>
+
+      <strong>Emotionalisierende Desinformation:</strong><br>
+      Likes/Shares: ${stats.emotionalDisinfoLikes + stats.emotionalDisinfoShares}<br>
+      Kritische Markierungen: ${stats.emotionalDisinfoWarning}<br><br>
+
+      <h3 class="font-semibold mt-4">Endergebnis:</h3>
+      Korrekt eingestuft: <strong>${stats.realLikes + stats.realShares + stats.realWarning}</strong><br>
+      Nicht ganz passend eingestuft: <strong>${stats.fakeLikes + stats.fakeShares + stats.fakeWarning}</strong> -probier's direkt nochmal <br>
     `;
-                } else {
-                  document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
-                }
-              </script>
+  } else {
+    document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
+  }
+</script>
+
 
             </div>
 
@@ -125,11 +150,10 @@
   </div>
   <div class="pb-4 flex justify-center">
     <div class="pb-4">
-      <a href="spiel.html">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-          Noch einmal Versuchen
-        </button>
-      </a>
+ <button onclick="restartGame()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+  Noch einmal versuchen
+</button>
+
     </div>
     <div id="postsWrapper" class="space-y-6"></div>
   </div>

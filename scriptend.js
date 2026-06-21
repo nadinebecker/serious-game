@@ -67,3 +67,8 @@ document.getElementById("feedbackSubmit")?.addEventListener("click", () => {
         .then(() => alert("Danke für dein Feedback!"))
         .catch(err => console.error("Feedback-Fehler:", err));
 });
+
+function restartGame() {
+  localStorage.removeItem("stats");
+  window.location.href = "spiel.html";
+}

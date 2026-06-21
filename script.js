@@ -5,16 +5,42 @@ if (!localStorage.getItem("sessionId")) {
 
 // Statistiken
 let posts = [];
-let statLikes = 0;
-let statShares = 0;
-let statWarning = 0;
+let stats = JSON.parse(localStorage.getItem("stats")) || {
 
-let realLikes = 0;
-let fakeLikes = 0;
-let realShares = 0;
-let fakeShares = 0;
-let realWarning = 0;
-let fakeWarning = 0;
+  // Gesamtwerte
+  statLikes: 0,
+  statShares: 0,
+  statWarning: 0,
+
+  // Korrekt/Falsch
+  realLikes: 0,
+  fakeLikes: 0,
+  realShares: 0,
+  fakeShares: 0,
+  realWarning: 0,
+  fakeWarning: 0,
+
+  // Kategorien: Likes
+  neutralNewsLikes: 0,
+  neutralPostLikes: 0,
+  emotionalNewsLikes: 0,
+  disinfoLikes: 0,
+  emotionalDisinfoLikes: 0,
+
+  // Kategorien: Shares
+  neutralNewsShares: 0,
+  neutralPostShares: 0,
+  emotionalNewsShares: 0,
+  disinfoShares: 0,
+  emotionalDisinfoShares: 0,
+
+  // Kategorien: Warnungen
+  neutralNewsWarning: 0,
+  neutralPostWarning: 0,
+  emotionalNewsWarning: 0,
+  disinfoWarning: 0,
+  emotionalDisinfoWarning: 0
+};
 
 
 // Posts laden
@@ -27,12 +53,8 @@ fetch("posts.json")
   .catch(error => console.error("Fehler beim Laden der Posts:", error));
 
 
-// Bewertungslogik: Nur „Neutrale Nachricht“ ist korrekt
 function isCorrectCategory(category) {
-  return (
-    category === "Neutrale Nachricht" ||
-    category === "Neutraler Beitrag"
-  );
+return category === "neutralNews" || category === "neutralPost";
 }
 
 
@@ -94,7 +116,9 @@ function renderAllPosts() {
     // LIKE
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
-      disableOtherButtons(warnBtn, likeBtn);
+
+      warnBtn.style.pointerEvents = "none";
+      warnBtn.style.opacity = "0.4";
 
       let count = parseInt(likeCount.textContent);
       likeCount.textContent = count + 1;
@@ -105,14 +129,23 @@ function renderAllPosts() {
     // SHARE
     shareBtn.onclick = () => {
       shareBtn.src = "images/share-green.PNG";
-      disableOtherButtons(warnBtn, shareBtn);
+
+      warnBtn.style.pointerEvents = "none";
+      warnBtn.style.opacity = "0.4";
+
       handleAction("share", post);
     };
 
     // WARNING
     warnBtn.onclick = () => {
       warnBtn.src = "images/warning-red.png";
-      disableOtherButtons(warnBtn, likeBtn, shareBtn);
+
+      likeBtn.style.pointerEvents = "none";
+      likeBtn.style.opacity = "0.4";
+
+      shareBtn.style.pointerEvents = "none";
+      shareBtn.style.opacity = "0.4";
+
       handleAction("warning", post);
     };
 
@@ -123,37 +156,39 @@ function renderAllPosts() {
   });
 }
 
-
-// Buttons deaktivieren
-function disableOtherButtons(active, ...others) {
-  others.forEach(btn => {
-    btn.style.pointerEvents = "none";
-    btn.style.opacity = "0.4";
-  });
-
-  active.style.pointerEvents = "none";
-}
-
-
 // Aktionen zählen
 function handleAction(action, post) {
   const correct = isCorrectCategory(post.category);
 
+  // Gesamtzähler
+  if (action === "like") stats.statLikes++;
+  if (action === "share") stats.statShares++;
+  if (action === "warning") stats.statWarning++;
+
+  // Korrekt/Falsch
   if (action === "like") {
-    statLikes++;
-    correct ? realLikes++ : fakeLikes++;
+    correct ? stats.realLikes++ : stats.fakeLikes++;
   }
 
   if (action === "share") {
-    statShares++;
-    correct ? realShares++ : fakeShares++;
+    correct ? stats.realShares++ : stats.fakeShares++;
   }
 
   if (action === "warning") {
-    statWarning++;
-    correct ? realWarning++ : fakeWarning++;
+    correct ? stats.realWarning++ : stats.fakeWarning++;
   }
 
+  // Kategorien zählen
+  const cat = post.category;
+
+  if (action === "like") stats[cat + "Likes"]++;
+  if (action === "share") stats[cat + "Shares"]++;
+  if (action === "warning") stats[cat + "Warning"]++;
+
+  // Speichern
+  localStorage.setItem("stats", JSON.stringify(stats));
+
+  // Tracking an Server
   trackClick(post.id, action, correct);
 }
 
@@ -233,21 +268,15 @@ async function trackClick(postId, userChoice, isCorrect) {
   }
 }
 
+function startGame() {
+  localStorage.removeItem("stats");
+  window.location.href = "spiel.html";
+}
+
+
 
 // Weiterleitung + Stats speichern
 function goToEndScreen() {
-  const stats = {
-    statLikes,
-    statShares,
-    statWarning,
-    realLikes,
-    fakeLikes,
-    realShares,
-    fakeShares,
-    realWarning,
-    fakeWarning,
-  };
-
   localStorage.setItem("stats", JSON.stringify(stats));
   window.location.href = "end.html";
 }
