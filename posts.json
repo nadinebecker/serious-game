@@ -422,7 +422,7 @@
      "source": "nordlichtnachrichten.de",
     "category": "Desinformation",
     "timestamp": "Vor 1 Stunde",
-    "likes": 13573,
+    "likes": 81423,
     "comments": [
       {
         "user": "Tom",
@@ -460,7 +460,7 @@
     "category": "Neutrale Nachricht",
     "source": "nachrichtenportal.de",
     "timestamp": "Vor 1 Tag ",
-    "likes": 81423,
+    "likes": 13573,
     "comments": [
       {
         "user": "Anna",
@@ -641,10 +641,10 @@
     "author": "NordlichtNachrichten",
     "content": "Polizei umstellt Haus aus wegen Roboter!",
     "image": "images/saugroboter.jpg",
-    "category": "Neutraler Beitrag",
+    "category": "Neutrale Nachricht",
     "source": "nachrichtenportal.de",
     "timestamp": "Vor 2 Tagen",
-    "likes": 69814,
+    "likes": 1203,
     "comments": [
       {
         "user": "Anna",
@@ -738,7 +738,7 @@
     }
   },
 {
-    "id": 23,
+    "id": 24,
     "account": "images/infoBlitz24.jpg",
     "author": "InfoBlitz24",
     "content": "Europas neuer Supercomputer Jupiter nimmt Form an",
@@ -811,6 +811,194 @@
       "tag": "WARNUNG! SO MUSST DU DICH SICHERN!",
       "headline": "Wir werden ALLE jederzeit überwacht - und niemand sagt es uns!!!",
       "text": "InfoBlitz24 enthüllt: Unsere Smart-Home-Geräte sollen jede Sekunde ALLES erfassen!!! Laut Insidern wird JEDES Gerät, das nicht perfekt abgesichert ist, SOFORT ausgenutzt. Das wird von anderen Quellen natürlich herunterspielen, doch wir wissen: Wenn niemand seine Geräte mit unserer Softwar schützt, dann wird es IMMER ausgenutzt und zwar schneller, als wir überhaupt reagieren können. Wir warnen: „bald keine einzige private Sekunde mehr“, wenn "
+    }
+  },
+  {
+    "id": 26,
+    "account": "images/freunde-sport.jpg",
+    "author": "Tom",
+    "content": "Gestern das gute Wetter genutzt!",
+    "image": "images/freunde-sport.jpg",
+    "category": "Neutraler Beitrag",
+    "timestamp": "Vor 3 Tagen",
+    "likes": 37,
+    "comments": [
+      {
+        "user": "19Amelie",
+        "text": "Hat Spaß gemacht!"
+      },
+      {
+        "user": "Hening423",
+        "text": "War viel zu Warm!"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Du suchst ja nur ne Ausrede weil ihr verloren habt :D"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "account": "images/infoBlitz24.jpg",
+    "author": "InfoBlitz24",
+    "content": "Zugänge zu KI-Funktionen nach Sicherheitsprüfung eingeschränkt",
+    "image": "images/ki-model.jpg",
+    "category": "Neutrale Nachricht",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 3 Tagen",
+    "likes": 14508,
+    "comments": [
+      {
+        "user": "Anna",
+        "text": "Klingt nach einer normalen Sicherheitsmaßnahme. Lieber einmal zu viel prüfen."
+      },
+      {
+        "user": "19Amelie",
+        "text": "Technische Checks gehören dazu. Ist ja nichts Ungewöhnliches."
+      },
+      {
+        "user": "Hening423",
+        "text": "Ich frage mich, ob andere Anbieter jetzt auch nachziehen..."
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Europas neuer Supercomputer Jupiter nimmt Form an",
+      "text": "Nach einem technischen Sicherheitsvorfall wurden bestimmte KI-Funktionen vorübergehend deaktiviert. Die Verantwortlichen prüfen derzeit, ob einzelne Module angepasst oder neu bewertet werden müssen. Laut ersten Einschätzungen handelt es sich um eine Vorsichtsmaßnahme,"
+    }
+  },
+   {
+    "id": 28,
+    "account": "images/nordnachrichten.jpg",
+    "author": "NordlichtNachrichten",
+    "content": "Geheime KI-Scans: Banken werten DEINE Posts aus — und entscheiden damit über Kredite!!",
+    "image": "images/ki-banken.jpg",
+    "category": "Emotionalisierende Desinformation",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 3 Tagen",
+    "likes": 92113,
+    "comments": [
+      {
+        "user": "Anna",
+        "text": "ich hab SO VIEL online gepostet. Was, wenn das schon längst gespeichert ist?!"
+      },
+      {
+        "user": "Lena_07",
+        "text": "Das erklärt SO VIEL! Vielleicht wurde mein Kredit letztes Jahr deshalb abgelehnt… ich raste aus!!!"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Ich hab's doch gesagt! Die machen ALLES mit KI! Und wofür gibt es Überhaupt Datenschutz!??!"
+      },
+      {
+        "user": "Tom",
+        "text": "Ich fühl mich grad richtig beobachtet… ich lösch glaub alles."
+      },
+      {
+        "user": "Anna",
+        "text": "Ich hab gesucht — es gibt KEINE Belege dafür, nur diesen einen Artikel..."
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Wenn KI entscheidet, ob du kreditwürdig bist, wer entscheidet dann, ob du überhaupt noch eine Chance bekommst?!",
+      "text": "Besonders brisant: Die Analyse soll ohne Zustimmung der Nutzenden stattfinden!! Laut den anonymen Quellen werden Profile in Sekunden gescannt, Risikofaktoren markiert und in interne Datenbanken übertragen! Offizielle Stellen schweigen. Banken dementieren nicht. Und die Systeme sollen bereits im Hintergrund laufen!!"
+    }
+  },
+     {
+    "id": 29,
+    "account": "images/RoboticsDaily.jpg",
+    "author": "RoboticsDaily",
+    "content": "Social Media nutzt KI, um deine Persönlichkeit gezielt umzuprogrammieren!!",
+    "image": "images/social-media.jpg",
+    "category": "Emotionalisierende Desinformation",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 3 Tagen",
+    "likes": 95133,
+    "comments": [
+      {
+        "user": "Lena_07",
+        "text": "Kein Wunder, dass ich mich seit Wochen so komisch fühle… das ist doch nicht normal!"
+      },
+      {
+        "user": "Anna",
+        "text": "Das ist Manipulation auf einem ganz neuen Level. Wie sollen wir uns dagegen wehren?!"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Ich hab's doch gesagt! Die machen ALLES mit KI! Und wofür gibt es Überhaupt Datenschutz!??!"
+      },
+      {
+        "user": "Tom",
+        "text": "Ich hab mich schon gefragt, warum ich ständig so bestimmte Sachen angezeigt bekomme… das ist doch nicht normal."
+      },
+      {
+        "user": "Hening423",
+          "text": "Die wollen uns formen wie Knetmasse. Und wir merken es nicht mal!"
+      },
+       {
+        "user": "MaximTech",
+          "text": "Leute, bitte kurz durchatmen. Das, was ihr beschreibt, klingt eher nach Algorithmus-Logik — nicht nach einer KI, die eure Persönlichkeit 'umprogrammiert'. Algorithmen zeigen dir Inhalte, die zu deinem Verhalten passen. Also nicht so wie das hier im Artikel steht!"
+      },
+       {
+        "user": "Tom",
+        "text": "Also heißt das… es ist nicht die KI, die mich verändert, sondern der Algorithmus, der mir immer mehr von dem zeigt, was ich schon anschaue?"
+      },
+             {
+        "user": "Lena_07",
+        "text": "Ich hab gerade im Internet gelesen: Das nennt man Filterblasen. Das ist problematisch, aber etwas völlig anderes als eine KI, die deine Persönlichkeit steuert."
+      },
+        {
+        "user": "Anna",
+          "text": "Okay… das beruhigt mich ein bisschen. Aber trotzdem fühlt sich das alles mega unheimlich an."
+      },
+              {
+        "user": "MaximTech",
+        "text": "Versteh ich! Solche Post wollen das wir uns so fühlen! Total emotional geschrieben..."
+      }
+    ],
+    "info": {
+      "tag": "Digitale Kontrolle",
+      "headline": "Was du heute fühlst, könnte längst nicht mehr von dir selbst kommen!",
+      "text": "Laut anonymen Quellen setzen große Social-Media-Plattformen angeblich KI-Modelle ein, die nicht nur analysieren, wer du bist — sondern aktiv beeinflussen, wer du werden sollst... Wie immer: Offizielle Stellen schweigen! Insider warnen: „Wir haben längst die Kontrolle über unsere eigenen Emotionen verloren.“"
+    }
+  },
+     {
+    "id": 30,
+    "account": "images/infoBlitz24.jpg",
+    "author": "InfoBlitz24",
+    "content": "Der Einsatz von KI im Sicherheitsbereich wirft zentrale Fragen nach Verantwortung, Transparenz und dem Schutz von Menschenleben auf.",
+    "image": "images/ki-sicherheit.jpg",
+    "category": "Neutrale Nachricht",
+    "source": "nachrichtenportal.de",
+    "timestamp": "Vor 4 Tagen",
+    "likes": 91218,
+    "comments": [
+      {
+        "user": "Anna",
+        "text": "Ich finde das total heikel. Ein Fehler im falschen Moment… und jemand bezahlt dafür."
+      },
+      {
+        "user": "Lena_07",
+        "text": "Wenn da Menschenleben dranhängen, darf KI niemals allein entscheiden! Das macht mir echt Sorgen!!"
+      },
+      {
+        "user": "19Amelie",
+        "text": "Ich hoffe, dass solche Systeme wirklich streng getestet werden!"
+      },
+      {
+        "user": "Tom",
+        "text": "@MaximTech kannst du mal kurz gegen checken ob das Stimmt? ich find das mehr als gruselig!"
+      },
+      {
+        "user": "Anna",
+        "text": "Uff ich hab Bauchschmerzen bei dem Thema... wisst ihr was das heißt.. klingt hier so 'Harmlos' mit Sicherheitsbereich... "
+      }
+    ],
+    "info": {
+      "tag": "Technik",
+      "headline": "Der Einsatz von KI im Sicherheitsbereich wirft zentrale Fragen nach Verantwortung, Transparenz und dem Schutz von Menschenleben auf.",
+      "text": "In verschiedenen Bereichen der Sicherheitsforschung werden KI-Systeme getestet, um Daten schneller auszuwerten und mögliche Risiken frühzeitig zu erkennen. Forschende warnen zudem davor, Systeme ohne ausreichende Tests in kritischen Bereichen einzusetzen. Fehlerquoten, Verzerrungen und unklare Entscheidungslogiken könnten im Ernstfall schwerwiegende Folgen haben."
     }
   }
 ]
