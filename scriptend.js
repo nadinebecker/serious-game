@@ -72,3 +72,9 @@ function restartGame() {
   localStorage.removeItem("stats");
   window.location.href = "spiel.html";
 }
+
+const sensibilisierung = document.getElementById("sliderSensibilisierung").value;
+const realismus = document.getElementById("sliderRealismus").value;
+
+localStorage.setItem("sensibilisierung", sensibilisierung);
+localStorage.setItem("realismus", realismus);

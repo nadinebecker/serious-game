@@ -125,3 +125,24 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 300px;
+    max-width: 85vw;
+    padding: 16px;
+  }
+
+  .info-headline {
+    font-size: 1.1rem;
+  }
+
+  .info-text {
+    font-size: 0.9rem;
+  }
+
+  .info-banner {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+}
