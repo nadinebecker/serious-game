@@ -36,36 +36,43 @@ feedbackUncertain?.addEventListener("change", () => {
 // --- Feedback senden ---
 document.getElementById("feedbackSubmit")?.addEventListener("click", () => {
 
-    // Werte sammeln
-    let difficulty = null;
-    if (feedbackHard.checked) difficulty = "schwer";
-    if (feedbackEasy.checked) difficulty = "leicht";
+    // Checkbox‑Werte
+    let difficulty = feedbackHard.checked ? "schwer" :
+                     feedbackEasy.checked ? "leicht" : null;
 
-    let exposure = null;
-    if (feedbackYes.checked) exposure = "begegnet";
-    if (feedbackNo.checked) exposure = "nicht_begegnet";
+    let exposure = feedbackYes.checked ? "begegnet" :
+                   feedbackNo.checked ? "nicht_begegnet" : null;
 
-    let confidence = null;
-    if (feedbackConfident.checked) confidence = "sicher";
-    if (feedbackUncertain.checked) confidence = "unsicher";
+    let confidence = feedbackConfident.checked ? "sicher" :
+                     feedbackUncertain.checked ? "unsicher" : null;
+
+    // Radio‑Werte
+    const sensibilisierung = document.querySelector('input[name="sensibilisierung"]:checked')?.value || null;
+    const hinweise = document.querySelector('input[name="hinweise"]:checked')?.value || null;
+    const realismus = document.querySelector('input[name="realismus"]:checked')?.value || null;
 
     // Prüfen ob alles ausgefüllt ist
-    if (!difficulty || !exposure || !confidence) {
-        alert("Bitte beantworte alle drei Fragen.");
+    if (!difficulty || !exposure || !confidence || !sensibilisierung || !hinweise || !realismus) {
+        alert("Bitte beantworte alle Fragen.");
         return;
     }
 
-
+    // Daten senden
     fetch("https://seriousgame.42web.io/save.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            feedback: feedbackValue,
-            session_id: sessionId
+            session_id: sessionId,
+            difficulty,
+            exposure,
+            confidence,
+            sensibilisierung,
+            hinweise,
+            realismus
         })
     })
-        .then(() => alert("Danke für dein Feedback!"))
-        .catch(err => console.error("Feedback-Fehler:", err));
+    .then(() => alert("Danke für dein Feedback!"))
+    .catch(err => console.error("Feedback-Fehler:", err));
 });
 
 function restartGame() {
