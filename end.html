@@ -81,9 +81,14 @@
       Likes/Shares: <strong>${stats.statLikes + stats.statShares}</strong><br>
       Kritische Markierungen: <strong>${stats.statWarning}</strong><br><br>
 
+      <strong>Punkte insgesamt:</strong>
+<div id="punkteAnzeige" class="text-lg font-bold text-blue-600"></div>
+<br>
+
+
       <h3 class="font-semibold mt-4">Reaktionen nach Kategorien</h3>
 
-      <strong>Neutrale Beiträge:</strong><br>
+      <strong>Beiträge von Freunden:</strong><br>
       Likes/Shares: ${stats.neutralPostLikes + stats.neutralPostShares}<br>
       Kritische Markierungen: ${stats.neutralPostWarning}<br><br>
 
@@ -147,20 +152,17 @@
         </div>
       </div>
 
+</div>
+</div>
 
-    </div>
-  </div>
-  <div class="pb-4 flex justify-center">
-    <div class="pb-4">
-      <button onclick="restartGame()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-        Noch einmal versuchen
-      </button>
+<div class="pb-4 flex justify-center">
+  <button onclick="restartGame()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+    Noch einmal versuchen
+  </button>
+</div>
 
-    </div>
-    <div id="postsWrapper" class="space-y-6"></div>
-  </div>
+<div id="postsWrapper" class="space-y-6"></div>
 
-  <script src="scriptend.js"></script>
+<script src="scriptend.js"></script>
 </body>
-
 </html>

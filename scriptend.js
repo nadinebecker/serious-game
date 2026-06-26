@@ -1,87 +1,102 @@
+// Session-ID laden oder erzeugen
 let sessionId = localStorage.getItem("sessionId");
-
 if (!sessionId) {
     sessionId = crypto.randomUUID();
     localStorage.setItem("sessionId", sessionId);
 }
 
-// Card 1
-feedbackHard?.addEventListener("change", () => {
-    if (feedbackHard.checked) feedbackEasy.checked = false;
-});
+/* ---------------------------------------------------------
+   1) FEEDBACK-SEITE ERKENNEN
+--------------------------------------------------------- */
+if (document.getElementById("feedbackSubmit")) {
 
-feedbackEasy?.addEventListener("change", () => {
-    if (feedbackEasy.checked) feedbackHard.checked = false;
-});
+    // Card 1
+    const feedbackHard = document.getElementById("feedbackHard");
+    const feedbackEasy = document.getElementById("feedbackEasy");
 
-// Card 2
-feedbackYes?.addEventListener("change", () => {
-    if (feedbackYes.checked) feedbackNo.checked = false;
-});
+    feedbackHard?.addEventListener("change", () => {
+        if (feedbackHard.checked) feedbackEasy.checked = false;
+    });
 
-feedbackNo?.addEventListener("change", () => {
-    if (feedbackNo.checked) feedbackYes.checked = false;
-});
+    feedbackEasy?.addEventListener("change", () => {
+        if (feedbackEasy.checked) feedbackHard.checked = false;
+    });
 
-// Card 3
-feedbackConfident?.addEventListener("change", () => {
-    if (feedbackConfident.checked) feedbackUncertain.checked = false;
-});
+    // Card 2
+    const feedbackYes = document.getElementById("feedbackYes");
+    const feedbackNo = document.getElementById("feedbackNo");
 
-feedbackUncertain?.addEventListener("change", () => {
-    if (feedbackUncertain.checked) feedbackConfident.checked = false;
-});
+    feedbackYes?.addEventListener("change", () => {
+        if (feedbackYes.checked) feedbackNo.checked = false;
+    });
 
+    feedbackNo?.addEventListener("change", () => {
+        if (feedbackNo.checked) feedbackYes.checked = false;
+    });
 
-// --- Feedback senden ---
-document.getElementById("feedbackSubmit")?.addEventListener("click", () => {
+    // Card 3
+    const feedbackConfident = document.getElementById("feedbackConfident");
+    const feedbackUncertain = document.getElementById("feedbackUncertain");
 
-    // Checkbox‑Werte
-    let difficulty = feedbackHard.checked ? "schwer" :
-                     feedbackEasy.checked ? "leicht" : null;
+    feedbackConfident?.addEventListener("change", () => {
+        if (feedbackConfident.checked) feedbackUncertain.checked = false;
+    });
 
-    let exposure = feedbackYes.checked ? "begegnet" :
-                   feedbackNo.checked ? "nicht_begegnet" : null;
+    feedbackUncertain?.addEventListener("change", () => {
+        if (feedbackUncertain.checked) feedbackConfident.checked = false;
+    });
 
-    let confidence = feedbackConfident.checked ? "sicher" :
-                     feedbackUncertain.checked ? "unsicher" : null;
+    // --- Feedback senden ---
+    document.getElementById("feedbackSubmit").addEventListener("click", () => {
 
-    // Radio‑Werte
-    const sensibilisierung = document.querySelector('input[name="sensibilisierung"]:checked')?.value || null;
-    const hinweise = document.querySelector('input[name="hinweise"]:checked')?.value || null;
-    const realismus = document.querySelector('input[name="realismus"]:checked')?.value || null;
+        let difficulty = feedbackHard.checked ? "schwer" :
+                         feedbackEasy.checked ? "leicht" : null;
 
-    // Prüfen ob alles ausgefüllt ist
-    if (!difficulty || !exposure || !confidence || !sensibilisierung || !hinweise || !realismus) {
-        alert("Bitte beantworte alle Fragen.");
-        return;
-    }
+        let exposure = feedbackYes.checked ? "begegnet" :
+                       feedbackNo.checked ? "nicht_begegnet" : null;
 
-    // Daten senden
-    fetch("https://seriousgame.42web.io/save.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            session_id: sessionId,
-            difficulty,
-            exposure,
-            confidence,
-            sensibilisierung,
-            hinweise,
-            realismus
+        let confidence = feedbackConfident.checked ? "sicher" :
+                         feedbackUncertain.checked ? "unsicher" : null;
+
+        const sensibilisierung = document.querySelector('input[name="sensibilisierung"]:checked')?.value || null;
+        const hinweise = document.querySelector('input[name="hinweise"]:checked')?.value || null;
+        const realismus = document.querySelector('input[name="realismus"]:checked')?.value || null;
+
+        if (!difficulty || !exposure || !confidence || !sensibilisierung || !hinweise || !realismus) {
+            alert("Bitte beantworte alle Fragen.");
+            return;
+        }
+
+        fetch("https://seriousgame.42web.io/save.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                session_id: sessionId,
+                difficulty,
+                exposure,
+                confidence,
+                sensibilisierung,
+                hinweise,
+                realismus
+            })
         })
-    })
-    .then(() => alert("Danke für dein Feedback!"))
-    .catch(err => console.error("Feedback-Fehler:", err));
-});
-
-function restartGame() {
-  localStorage.removeItem("stats");
-  window.location.href = "spiel.html";
+        .then(() => alert("Danke für dein Feedback!"))
+        .catch(err => console.error("Feedback-Fehler:", err));
+    });
 }
 
-const sensibilisierung = document.getElementById("sliderSensibilisierung").value;
-const realismus = document.getElementById("sliderRealismus").value;
+/* ---------------------------------------------------------
+   2) ENDSEITE ERKENNEN
+--------------------------------------------------------- */
+if (document.getElementById("punkteAnzeige")) {
+    const stats = JSON.parse(localStorage.getItem("stats")) || { points: 0 };
+    document.getElementById("punkteAnzeige").textContent = stats.points;
+}
 
-localStorage.setItem("sensibilisierung", sensibilisierung);
-localStorage.setItem("realismus", realismus);
+/* ---------------------------------------------------------
+   3) restartGame() FUNKTION
+--------------------------------------------------------- */
+function restartGame() {
+    localStorage.removeItem("stats");
+    window.location.href = "spiel.html";
+}

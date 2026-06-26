@@ -146,3 +146,40 @@ h1 {
     padding: 8px 10px;
   }
 }
+
+
+.points-popup {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.3s ease-out;
+}
+
+.points-popup.show {
+    animation: floatUp 1.2s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(-50%, -25px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -45px);
+    }
+}

@@ -39,7 +39,9 @@ let stats = JSON.parse(localStorage.getItem("stats")) || {
   neutralPostWarning: 0,
   emotionalNewsWarning: 0,
   disinfoWarning: 0,
-  emotionalDisinfoWarning: 0
+  emotionalDisinfoWarning: 0,
+
+    points: 0
 };
 
 
@@ -156,10 +158,25 @@ function renderAllPosts() {
   });
 }
 
+function showPointsPopup(value) {
+  const popup = document.getElementById("pointsPopup");
+
+  popup.textContent = (value > 0 ? "+" : "") + value;
+
+  // Reset Animation
+  popup.classList.remove("show");
+  void popup.offsetWidth; // Trick: Animation neu starten
+
+  // Start Animation
+  popup.classList.add("show");
+}
+
+
+
 // Aktionen zählen
 function handleAction(action, post) {
   const correct = isCorrectCategory(post.category);
-
+  
   // Gesamtzähler
   if (action === "like") stats.statLikes++;
   if (action === "share") stats.statShares++;
@@ -190,6 +207,59 @@ function handleAction(action, post) {
 
   // Tracking an Server
   trackClick(post.id, action, correct);
+// Punktevergabe für LIKE & SHARE
+if (action === "like" || action === "share") {
+
+  let points = 0;
+
+  switch (post.category) {
+
+    case "neutralPost":
+      points = 1;
+      break;
+
+    case "neutralNews":
+      points = 5;
+      break;
+
+    case "disinfo":
+      points = -2;
+      break;
+
+    case "emotionalNews":
+    case "emotionalDisinfo":
+      points = -5;
+      break;
+  }
+
+  stats.points += points;
+  showPointsPopup(points);
+}
+
+
+//  Punktevergabe für WARNING
+if (action === "warning") {
+
+  let points = 0;
+
+  switch (post.category) {
+
+    case "neutralPost":
+    case "neutralNews":
+      points = 0;
+      break;
+
+    case "disinfo":
+    case "emotionalNews":
+    case "emotionalDisinfo":
+      points = 5;
+      break;
+  }
+
+  stats.points += points;
+  if (points !== 0) showPointsPopup(points);
+}
+
 }
 
 
