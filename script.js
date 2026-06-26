@@ -287,6 +287,7 @@ function toggleComments(post, section) {
 // Info öffnen
 function openSource(post) {
   const modalBody = document.getElementById("modal-body");
+  const modalFooter = document.getElementById("modal-footer");
 
   const showImage = post.info?.tag !== "-";
 
@@ -309,6 +310,14 @@ function openSource(post) {
 
     </div>
   `;
+
+  if (post.sourcesCount > 1) {
+    modalFooter.textContent = `${post.sourcesCount} weitere unabhängige Medien im Netz gefunden`;
+    modalFooter.style.color = "#1f5e36";
+  } else {
+    modalFooter.textContent = `⚠️ Keine weiteren Quellen gefunden`;
+    modalFooter.style.color = "#f87171";
+  }
 
   document.getElementById("modal").style.display = "flex";
 }

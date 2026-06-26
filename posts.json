@@ -51,6 +51,7 @@
     "image": "images/einsamkeit.jpg",
     "category": "neutralNews",
     "source": "nachrichtenportal.de",
+    "sourcesCount": 6,
     "timestamp": "Vor 10 Minuten",
     "likes": 1223,
     "comments": [
@@ -105,6 +106,7 @@
     "image": "images/mobilität.jpg",
     "category": "neutralNews",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 4,
     "timestamp": "Vor 1 Stunde",
     "likes": 2458,
     "comments": [
@@ -157,6 +159,7 @@
     "author": "NordlichtNachrichten",
     "content": "Nur noch Autonome Fahrzeuge werden gefördert.",
     "image": "images/e-mobilität2.jpg",
+      "sourcesCount": 0,
     "category": "disinfo",
     "timestamp": "Vor 1 Stunde",
     "likes": 13493,
@@ -216,6 +219,7 @@
     "category": "emotionalDisinfo",
     "image": "images/energie.jpg",
     "source": "FlashNews24.net",
+      "sourcesCount": 0,
     "timestamp": "Vor 2 Stunde",
     "likes": 23457,
     "comments": [
@@ -278,6 +282,7 @@
     "category": "emotionalDisinfo",
     "image": "images/eu-gesetz.jpg",
     "source": "InfoBlitz24.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 1 Tag",
     "likes": 25981,
     "comments": [
@@ -324,6 +329,7 @@
     "category": "neutralNews",
     "image": "images/schule2.jpg",
     "source": "nordlichtnachrichten.de",
+      "sourcesCount": 8,
     "timestamp": "Vor 5 Stunden",
     "likes": 13457,
     "comments": [
@@ -358,6 +364,7 @@
     "category": "emotionalNews",
     "image": "images/digitalminiser.jpg",
     "source": "FlashNews24.net",
+      "sourcesCount": 2,
     "timestamp": "Vor 5 Stunde",
     "likes": 45092,
     "comments": [
@@ -419,6 +426,7 @@
     "content": "Erst smart, jetzt wachsam: Neue Straßenlaternen sollen mehr erfassen als nur Licht.",
     "image": "images/laternen.jpg",
     "source": "nordlichtnachrichten.de",
+      "sourcesCount": 1,
     "category": "disinfo",
     "timestamp": "Vor 1 Stunde",
     "likes": 81423,
@@ -458,6 +466,7 @@
     "image": "images/ki-anwendung.jpg",
     "category": "neutralNews",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 5,
     "timestamp": "Vor 1 Tag ",
     "likes": 13573,
     "comments": [
@@ -516,6 +525,7 @@
     "category": "emotionalDisinfo",
     "image": "images/bürojobs.jpg",
     "source": "InfoBlitz24.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 1 Tag",
     "likes": 70981,
     "comments": [
@@ -566,6 +576,7 @@
     "category": "emotionalNews",
     "image": "images/smart-glases.jpg",
     "source": "FlashNews24.net",
+      "sourcesCount": 2,
     "timestamp": "Vor 5 Stunde",
     "likes": 45092,
     "comments": [
@@ -604,6 +615,7 @@
     "category": "emotionalNews",
     "image": "images/ki-chip.jpg",
     "source": "FlashNews24.net",
+      "sourcesCount": 2,
     "timestamp": "Vor 5 Stunde",
     "likes": 45092,
     "comments": [
@@ -641,6 +653,7 @@
     "content": "Polizei umstellt Haus aus wegen Roboter!",
     "image": "images/saugroboter.jpg",
     "category": "neutralNews",
+      "sourcesCount": 4,
     "source": "nachrichtenportal.de",
     "timestamp": "Vor 2 Tagen",
     "likes": 1203,
@@ -676,6 +689,7 @@
     "image": "images/traum-chip.jpg",
     "category": "disinfo",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 2 Tagen",
     "likes": 69814,
     "comments": [
@@ -710,6 +724,7 @@
     "image": "images/ki-alles-besser.jpg",
     "category": "emotionalDisinfo",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 2 Tagen",
     "likes": 64120,
     "comments": [
@@ -744,6 +759,7 @@
     "image": "images/super-rechner.jpg",
     "category": "neutralNews",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 7,
     "timestamp": "Vor 2 Tagen",
     "likes": 14508,
     "comments": [
@@ -774,6 +790,7 @@
     "image": "images/smart-home2.jpg",
     "category": "emotionalDisinfo",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 2 Tagen",
     "likes": 96123,
     "comments": [
@@ -844,6 +861,7 @@
     "image": "images/ki-model.jpg",
     "category": "neutralNews",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 8,
     "timestamp": "Vor 3 Tagen",
     "likes": 14508,
     "comments": [
@@ -874,6 +892,7 @@
     "image": "images/ki-banken.jpg",
     "category": "emotionalDisinfo",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 3 Tagen",
     "likes": 92113,
     "comments": [
@@ -912,6 +931,7 @@
     "image": "images/social-media.jpg",
     "category": "emotionalDisinfo",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 3 Tagen",
     "likes": 95133,
     "comments": [
@@ -969,6 +989,7 @@
     "content": "Der Einsatz von KI im Sicherheitsbereich wirft zentrale Fragen nach Verantwortung, Transparenz und dem Schutz von Menschenleben auf.",
     "image": "images/ki-sicherheit.jpg",
     "category": "neutralNews",
+      "sourcesCount": 6,
     "source": "nachrichtenportal.de",
     "timestamp": "Vor 4 Tagen",
     "likes": 91218,
@@ -1008,6 +1029,7 @@
     "image": "images/smart-tv.jpg",
     "category": "emotionalDisinfo",
     "source": "nachrichtenportal.de",
+      "sourcesCount": 1,
     "timestamp": "Vor 4 Tagen",
     "likes": 25904,
     "comments": [
