@@ -24,12 +24,10 @@
   <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 
             w-40 h-72 bg-gradient-to-b from-blue-500 to-cyan-400 
             opacity-40 blur-3xl rounded-full"></div>
-<!-- Logo hinter dem Handy -->
-<img src="images/logo.png"
-     class="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2
-            opacity-10 blur-sm z-0"
-     alt="Logo Hintergrund" />
-            
+  <!-- Logo hinter dem Handy -->
+  <img src="images/logo.png" class="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2
+            opacity-10 blur-sm z-0" alt="Logo Hintergrund" />
+
   <!-- Schriftzug -->
   <div class="pointer-events-none hidden md:flex flex-col items-center
             absolute left-80 top-1/2 -translate-y-1/2 
@@ -42,7 +40,7 @@
     <span class="text-gray-500 font-semibold text-3xl tracking-wide drop-shadow">
       und Soziale Medien
     </span>
-    
+
   </div>
 
 
@@ -54,7 +52,7 @@
          rounded-[40px] shadow-2xl border-8 border-black 
          relative overflow-hidden flex justify-center">
 
-         
+
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-20"></div>
 
     <div class="bg-gray-100 w-full h-full p-4 sm:p-6 overflow-y-auto">
@@ -65,15 +63,16 @@
 
 
           <h1 class="text-2xl font-bold text-black-800 text-center">
-            Auswertung
+            Dein Ergebnis
           </h1>
 
 
           <div class="space-y-4">
 
-
             <!-- Card 1 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+              <img src="images/punkte.png" class="w-16 h-auto mx-auto">
+              <div id="miniFeedback" class="mt-6 text-black-700 leading-relaxed"></div>
 
               <div id="auswertung" class="text-lg text-gray-800"></div>
 
@@ -82,47 +81,48 @@
 
                 if (stats) {
                   document.getElementById("auswertung").innerHTML = `
-      <h2 class="text-xl font-semibold mb-4">Deine Auswertung</h2>
-
-         <img src="images/auswertung.png" class="w-16 h-auto mx-auto">
-      <strong>Gesamtreaktionen:</strong><br>
-      Likes/Shares: <strong>${stats.statLikes + stats.statShares}</strong><br>
-      Kritische Markierungen: <strong>${stats.statWarning}</strong><br><br>
-
-         <img src="images/punkte.png" class="w-16 h-auto mx-auto">
+     
+       
 
       <strong>Punkte insgesamt:</strong>
-<div id="punkteAnzeige" class="text-lg font-bold text-blue-600"></div>
-<br>
+      <div id="punkteAnzeige" class="text-lg font-bold text-blue-600"></div>
+      <br>
 
+                  <img src="images/auswertung.png" class="w-16 h-auto mx-auto">
+                  <h2 class="text-xl font-semibold mb-4">Deine detaillierte Auswertung </h2>
 
+    <div class="text-sm leading-relaxed">
+    <strong>Gesamtreaktionen:</strong><br>
+    Likes/Shares: <strong>${stats.statLikes + stats.statShares}</strong><br>
+    Kritische Markierungen: <strong>${stats.statWarning}</strong><br>
+    <h3 class="font-semibold mt-4">Reaktionen nach Kategorien</h3> <br>
 
-      <h3 class="font-semibold mt-4">Reaktionen nach Kategorien</h3>
+    <strong>Beiträge von Freunden:</strong><br>
+    Likes/Shares: ${stats.neutralPostLikes + stats.neutralPostShares}<br>
+    Kritische Markierungen: ${stats.neutralPostWarning}<br>
 
-      <strong>Beiträge von Freunden:</strong><br>
-      Likes/Shares: ${stats.neutralPostLikes + stats.neutralPostShares}<br>
-      Kritische Markierungen: ${stats.neutralPostWarning}<br><br>
+    <strong>Neutrale Nachrichten:</strong><br>
+    Likes/Shares: ${stats.neutralNewsLikes + stats.neutralNewsShares}<br>
+    Kritische Markierungen: ${stats.neutralNewsWarning}<br>
 
-      <strong>Neutrale Nachrichten:</strong><br>
-      Likes/Shares: ${stats.neutralNewsLikes + stats.neutralNewsShares}<br>
-      Kritische Markierungen: ${stats.neutralNewsWarning}<br><br>
+    <strong>Emotionalisierende Nachrichten:</strong><br>
+    Likes/Shares: ${stats.emotionalNewsLikes + stats.emotionalNewsShares}<br>
+    Kritische Markierungen: ${stats.emotionalNewsWarning}<br>
 
-      <strong>Emotionalisierende Nachrichten:</strong><br>
-      Likes/Shares: ${stats.emotionalNewsLikes + stats.emotionalNewsShares}<br>
-      Kritische Markierungen: ${stats.emotionalNewsWarning}<br><br>
+    <strong>Desinformation:</strong><br>
+    Likes/Shares: ${stats.disinfoLikes + stats.disinfoShares}<br>
+    Kritische Markierungen: ${stats.disinfoWarning}<br>
 
-      <strong>Desinformation:</strong><br>
-      Likes/Shares: ${stats.disinfoLikes + stats.disinfoShares}<br>
-      Kritische Markierungen: ${stats.disinfoWarning}<br><br>
+    <strong>Emotionalisierende Desinformation:</strong><br>
+    Likes/Shares: ${stats.emotionalDisinfoLikes + stats.emotionalDisinfoShares}<br>
+    Kritische Markierungen: ${stats.emotionalDisinfoWarning}<br>
 
-      <strong>Emotionalisierende Desinformation:</strong><br>
-      Likes/Shares: ${stats.emotionalDisinfoLikes + stats.emotionalDisinfoShares}<br>
-      Kritische Markierungen: ${stats.emotionalDisinfoWarning}<br><br>
+    <h3 class="font-semibold mt-4">Endergebnis:</h3>
+    Korrekt eingestuft: <strong>${stats.realLikes + stats.realShares + stats.realWarning}</strong><br>
+    Nicht ganz passend eingestuft: <strong>${stats.fakeLikes + stats.fakeShares + stats.fakeWarning}</strong> – probier's direkt nochmal<br>
 
-      <h3 class="font-semibold mt-4">Endergebnis:</h3>
-      Korrekt eingestuft: <strong>${stats.realLikes + stats.realShares + stats.realWarning}</strong><br>
-      Nicht ganz passend eingestuft: <strong>${stats.fakeLikes + stats.fakeShares + stats.fakeWarning}</strong> -probier's direkt nochmal <br>
-    `;
+  </div>
+`;
                 } else {
                   document.getElementById("auswertung").innerHTML = "Keine Daten gefunden.";
                 }
@@ -134,6 +134,8 @@
             <!-- Card 2 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
               <img src="images/blitz.png" class="w-16 h-auto mx-auto">
+
+
               <strong> Emotionalisierende Nachrichten </strong> gelten nicht als neutrale Informationen,
               weil sie gezielt Gefühle verstärken und damit die Wahrnehmung beeinflussen.
               Du erkennst solche Inhalte daran, dass sie schnell von der sachlichen Ebene
@@ -144,13 +146,13 @@
             <!-- Card 3 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
               <img src="images/warnung.png" class="w-16 h-auto mx-auto">
-             <strong>Desinformation </strong> sind absichtlich falsche oder irreführende Inhalte,
+              <strong>Desinformation </strong> sind absichtlich falsche oder irreführende Inhalte,
               die erstellt werden, um Menschen zu täuschen oder ihre Meinung gezielt zu beeinflussen.
             </div>
 
             <!-- Card 4 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
-             <img src="images/recherche.png" class="w-16 h-auto mx-auto">
+              <img src="images/recherche.png" class="w-16 h-auto mx-auto">
               <strong> Prüfe Inhalte </strong> aus sozialen Medien immer noch einmal.
               Vergleiche sie mit anderen, unabhängigen Quellen außerhalb der Plattform,
               um sicherzugehen, dass die Informationen stimmen.
@@ -159,33 +161,36 @@
 
             <!-- Card 4 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
-              Hast du schon entdeckt, dass du die Quellen auch im Spiel "recherchieren" 
+              Hast du schon entdeckt, dass du die Quellen auch im Spiel "recherchieren"
               kannst in dem du sie anklickst?
             </div>
 
-            
+
             <!-- Card 5 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
-             <img src="images/danke.png" class="w-16 h-auto mx-auto">
+              <img src="images/danke.png" class="w-16 h-auto mx-auto">
               Danke das du bei dem Spiel mit gemacht hast!
-              
+
             </div>
           </div>
         </div>
       </div>
 
-</div>
-</div>
+    </div>
+  </div>
 
 
-<div class="pb-4 flex justify-center">
-  <button onclick="restartGame()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-    Noch einmal versuchen
-  </button>
-</div>
+  <div class="pb-4 flex justify-center">
+    <button onclick="restartGame()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+      Noch einmal versuchen
+    </button>
+  </div>
 
-<div id="postsWrapper" class="space-y-6"></div>
+  <div id="postsWrapper" class="space-y-6"></div>
 
-<script src="scriptend.js"></script>
+  <script src="endfeedback.js"></script>
+  <script src="scriptend.js"></script>
+
 </body>
+
 </html>

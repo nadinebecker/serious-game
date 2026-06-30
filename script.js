@@ -360,6 +360,55 @@ function goToEndScreen() {
   window.location.href = "end.html";
 }
 
+function generateMiniFeedback(stats) {
+
+  const correct = stats.realLikes + stats.realShares + stats.realWarning;
+  const wrong = stats.fakeLikes + stats.fakeShares + stats.fakeWarning;
+
+  const disinfoClicked = stats.disinfoLikes + stats.disinfoShares;
+  const disinfoWarned = stats.disinfoWarning;
+
+  let level = "";
+  let text = "";
+
+  // Bewertung
+  if (correct > wrong + 5) {
+    level = "sehr gut";
+    text = "Du hast viele Inhalte richtig eingeschätzt und sehr aufmerksam reagiert.";
+  } else if (correct > wrong) {
+    level = "gut";
+    text = "Du hast die meisten Inhalte korrekt erkannt. Einige Posts waren tricky, aber insgesamt solide.";
+  } else if (wrong > correct) {
+    level = "mittelmäßig";
+    text = "Du hast einige Inhalte gut erkannt, aber auch viele Desinformation positiv bewertet. Achte stärker auf emotionale Sprache und übertriebene Behauptungen.";
+  } else {
+    level = "schwach";
+    text = "Du hast viele problematische Inhalte positiv bewertet. Schau dir kritisch an, welche Muster Desinformation oft nutzt.";
+  }
+
+  return `
+    <h3 class="font-semibold mt-6">Feedback</h3>
+
+    <strong>Einordnung:</strong> ${level}<br>
+    ${text}<br><br>
+
+    <strong>Umgang mit Desinformation:</strong><br>
+    Kritisch markiert: <strong>${disinfoWarned}</strong><br>
+    Positiv bewertet (Like/Share): <strong>${disinfoClicked}</strong><br><br>
+
+    <strong>Hinweis:</strong><br>
+    ${
+      level === "sehr gut"
+        ? "Du erkennst problematische Inhalte sehr zuverlässig. Weiter so!"
+        : level === "gut"
+        ? "Du bist auf einem guten Weg. Achte bei emotionalen Posts auf übertriebene Formulierungen."
+        : level === "mittelmäßig"
+        ? "Du hast einiges richtig erkannt, aber emotionale oder polarisierende Inhalte können täuschen. Schau genauer hin."
+        : "Viele Inhalte waren schwer einzuschätzen. Achte besonders auf Quellen, Sprache und unrealistische Behauptungen."
+    }
+  `;
+}
+
 
 // Button zur Auswertung
 document.getElementById("auswertungBtn").addEventListener("click", goToEndScreen);
