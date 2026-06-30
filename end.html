@@ -24,7 +24,12 @@
   <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 
             w-40 h-72 bg-gradient-to-b from-blue-500 to-cyan-400 
             opacity-40 blur-3xl rounded-full"></div>
-
+<!-- Logo hinter dem Handy -->
+<img src="images/logo.png"
+     class="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2
+            opacity-10 blur-sm z-0"
+     alt="Logo Hintergrund" />
+            
   <!-- Schriftzug -->
   <div class="pointer-events-none hidden md:flex flex-col items-center
             absolute left-80 top-1/2 -translate-y-1/2 
@@ -37,6 +42,7 @@
     <span class="text-gray-500 font-semibold text-3xl tracking-wide drop-shadow">
       und Soziale Medien
     </span>
+    
   </div>
 
 
@@ -48,6 +54,7 @@
          rounded-[40px] shadow-2xl border-8 border-black 
          relative overflow-hidden flex justify-center">
 
+         
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-20"></div>
 
     <div class="bg-gray-100 w-full h-full p-4 sm:p-6 overflow-y-auto">
@@ -77,13 +84,17 @@
                   document.getElementById("auswertung").innerHTML = `
       <h2 class="text-xl font-semibold mb-4">Deine Auswertung</h2>
 
+         <img src="images/auswertung.png" class="w-16 h-auto mx-auto">
       <strong>Gesamtreaktionen:</strong><br>
       Likes/Shares: <strong>${stats.statLikes + stats.statShares}</strong><br>
       Kritische Markierungen: <strong>${stats.statWarning}</strong><br><br>
 
+         <img src="images/punkte.png" class="w-16 h-auto mx-auto">
+
       <strong>Punkte insgesamt:</strong>
 <div id="punkteAnzeige" class="text-lg font-bold text-blue-600"></div>
 <br>
+
 
 
       <h3 class="font-semibold mt-4">Reaktionen nach Kategorien</h3>
@@ -122,6 +133,7 @@
 
             <!-- Card 2 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+              <img src="images/blitz.png" class="w-16 h-auto mx-auto">
               <strong> Emotionalisierende Nachrichten </strong> gelten nicht als neutrale Informationen,
               weil sie gezielt Gefühle verstärken und damit die Wahrnehmung beeinflussen.
               Du erkennst solche Inhalte daran, dass sie schnell von der sachlichen Ebene
@@ -131,13 +143,15 @@
 
             <!-- Card 3 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+              <img src="images/warnung.png" class="w-16 h-auto mx-auto">
              <strong>Desinformation </strong> sind absichtlich falsche oder irreführende Inhalte,
               die erstellt werden, um Menschen zu täuschen oder ihre Meinung gezielt zu beeinflussen.
             </div>
 
             <!-- Card 4 -->
             <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
-             <strong> Prüfe Inhalte </strong> aus sozialen Medien immer noch einmal.
+             <img src="images/recherche.png" class="w-16 h-auto mx-auto">
+              <strong> Prüfe Inhalte </strong> aus sozialen Medien immer noch einmal.
               Vergleiche sie mit anderen, unabhängigen Quellen außerhalb der Plattform,
               um sicherzugehen, dass die Informationen stimmen.
 
@@ -148,12 +162,21 @@
               Hast du schon entdeckt, dass du die Quellen auch im Spiel "recherchieren" 
               kannst in dem du sie anklickst?
             </div>
+
+            
+            <!-- Card 5 -->
+            <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3">
+             <img src="images/danke.png" class="w-16 h-auto mx-auto">
+              Danke das du bei dem Spiel mit gemacht hast!
+              
+            </div>
           </div>
         </div>
       </div>
 
 </div>
 </div>
+
 
 <div class="pb-4 flex justify-center">
   <button onclick="restartGame()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">

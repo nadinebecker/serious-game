@@ -25,6 +25,12 @@
             w-40 h-72 bg-gradient-to-b from-blue-500 to-cyan-400 
             opacity-40 blur-3xl rounded-full"></div>
 
+<!-- Logo hinter dem Handy -->
+<img src="images/logo.png"
+     class="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2
+            opacity-10 blur-sm z-0"
+     alt="Logo Hintergrund" />
+
   <!-- Schriftzug -->
   <div class="pointer-events-none hidden md:flex flex-col items-center
             absolute left-80 top-1/2 -translate-y-1/2 
@@ -56,14 +62,18 @@
         <div class="space-y-6 mt-4">
 
 
-          <h1 class="text-2xl font-bold text-black-800 text-center">
-            Willkommen in deinem fiktiven <br>
-            Social - Media - Feed
-          </h1>
+          <div class="flex flex-col items-center gap-1">
+            <h1 class="text-2xl font-bold text-black-800 text-center">
+              Willkommen in deinem fiktiven <br>
+              Social - Media - Feed
+            </h1>
 
-          <p class="text-center text-black-600 text-m">
-            Dieses Spiel thematisiert Desinformation und emotionalisierende Inhalte auf Sozialen Medien.
-          </p>
+            <img src="images/logo.png" class="w-40 h-auto">
+
+            <p class="text-center text-black-600 text-m">
+              Dieses Spiel thematisiert Desinformation und emotionalisierende Inhalte auf Sozialen Medien.
+            </p>
+          </div>
 
 
           <div class="space-y-4">
@@ -72,17 +82,20 @@
             <!-- Card 1 -->
             <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
               <p class="text-black-700 text-m">
+                <img src="images/feed.png" class="w-16 h-auto mx-auto">
                 Dieser Prototyp simuliert ein Social Media Feed.
                 Wie in realen Feeds siehst du Beiträge von Freunden aber auch Nachrichtenquellen. <br>
                 Es haben sich aber auch Desinformationen in diesen Feed geschlichen.
                 Deine Aufgabe ist es, dir die Posts genau anzusehen, sie inhaltlich zu bewerten und entsprechend darauf
-                zu reagieren.
+                zu reagieren. <br>
+                <img src="images/warnung.png" class="w-16 h-auto mx-auto">
                 ABER: Bleib aufmerksam! Sowohl falsche Nachrichten als auch reale Inhalte können übertrieben,
                 emotional oder irreführend dargestellt sein. <br>
                 Schau dir die Beiträge an und entscheide: ist der Inhalt seriös?
+               <img src="images/recherche.png" class="w-16 h-auto mx-auto">
                 Du kannst sie liken und/oder teilen ODER kritisch makieren.
                 Wichtig: Sobald du reagiert hast, kannst du deine Entscheidung nicht mehr ändern.
-                Du musst auch nicht bei jedem Post reagieren aber du kannst unterschiedlich reagieren:
+                Du musst auch nicht bei jedem Post reagieren aber du kannst unterschiedlich interagieren:
               </p>
             </div>
 
@@ -97,13 +110,22 @@
 
             <!-- Card 3 -->
             <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
+              <img src="images/comment.PNG" class="w-5">
+              <p class="text-black-700 text-m">
+               Kommentare aus der simulierten Community
+              </p>
+            </div>
+
+
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
               <img src="images/share.PNG" class="w-5">
               <p class="text-black-700 text-m">
                 Teile Beiträge fiktiv mit Freunden, wenn du Beiträge wichtig/ positiv findest
               </p>
             </div>
 
-            <!-- Card 4 -->
+            <!-- Card 5 -->
             <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
               <img src="images/warning.png" class="w-5">
               <p class="text-black-700 text-m">
@@ -111,9 +133,10 @@
               </p>
             </div>
 
-            <!-- Card 5 -->
+            <!-- Card 6 -->
             <div class="bg-white p-4 rounded-xl shadow flex items-center gap-4">
               <p class="text-black-700 text-m">
+                  <img src="images/auge.png" class="w-16 h-auto mx-auto">
                 Deine Interaktionen im Spiel (z.B. Likes, Bewertungen) werden in pseudonymisierter Form erfasst und
                 ausschließlich im Rahmen einer wissenschaftlichen Arbeit ausgewertet.
 
