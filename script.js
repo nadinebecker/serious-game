@@ -404,7 +404,7 @@ function generateMiniFeedback(stats) {
         ? "Du bist auf einem guten Weg. Achte bei emotionalen Posts auf übertriebene Formulierungen."
         : level === "mittelmäßig"
         ? "Du hast einiges richtig erkannt, aber emotionale oder polarisierende Inhalte können täuschen. Schau genauer hin."
-        : "Viele Inhalte waren schwer einzuschätzen. Achte besonders auf Quellen, Sprache und unrealistische Behauptungen."
+        : "Viele Inhalte waren schwer einzuschätzen. Achte besonders auf Quellen, Sprache und übertriebene Behauptungen."
     }
   `;
 }

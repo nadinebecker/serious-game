@@ -24,11 +24,9 @@
             w-40 h-72 bg-gradient-to-b from-blue-500 to-cyan-400 
             opacity-40 blur-3xl rounded-full"></div>
 
-            <!-- Logo hinter dem Handy -->
-<img src="images/logo.png"
-     class="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2
-            opacity-10 blur-sm z-0"
-     alt="Logo Hintergrund" />
+    <!-- Logo hinter dem Handy -->
+    <img src="images/logo.png" class="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2
+            opacity-10 blur-sm z-0" alt="Logo Hintergrund" />
 
     <!-- Schriftzug -->
     <div class="pointer-events-none hidden md:flex flex-col items-center
@@ -63,91 +61,121 @@
 
 
                     <h1 class="text-2xl font-bold text-black-800 text-center">
-                        Feedback zum Prototyp
+                        Dein Feedback zum Spiel
                     </h1>
-                       <img src="images/feedback.png" class="w-16 h-auto mx-auto">
+                    <img src="images/feedback.png" class="w-16 h-auto mx-auto">
 
 
                     <div class="space-y-4">
 
 
                         <!-- Card 1 -->
-                        <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3 text-sm">
-                            <label for="feedbackHard" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-                                <input type="checkbox" id="feedbackHard" class="w-5 h-5">
-                                <span>Es fiel mir schwer, Desinformation zu erkennen.</span>
-                            </label>
+                        <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-4 text-sm">
+                            <div class="flex flex-col gap-4">
+                                <span class="font-bold text-gray-800">Fragen zum Spielaufbau</span>
 
-                            <label for="feedbackEasy" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-                                <input type="checkbox" id="feedbackEasy" class="w-5 h-5">
-                                <span>Es fiel mir leicht, Desinformation zu erkennen.</span>
-                            </label>
+                                <!-- Frage 1 -->
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-gray-800 font-medium">
+                                        Es fiel mir leicht, Desinformation im Social-Media-Feed des Spiels zu erkennen.
+                                    </label>
+
+                                    <div class="flex justify-between text-center">
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_desinfo_erkennen" value="1" class="mb-1">
+                                            <span class="text-[11px]">1</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_desinfo_erkennen" value="2" class="mb-1">
+                                            <span class="text-[11px]">2</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_desinfo_erkennen" value="3" class="mb-1">
+                                            <span class="text-[11px]">3</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_desinfo_erkennen" value="4" class="mb-1">
+                                            <span class="text-[11px]">4</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_desinfo_erkennen" value="5" class="mb-1">
+                                            <span class="text-[11px]">5</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                        <span>stimme nicht zu</span>
+                                        <span>stimme voll zu</span>
+                                    </div>
+                                </div>
+
+                                <!-- Frage 2 -->
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-gray-800 font-medium">
+                                        Der Social-Media-Feed im Spiel fühlte sich echt an.
+                                    </label>
+
+                                    <div class="flex justify-between text-center">
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_realismus" value="1" class="mb-1">
+                                            <span class="text-[11px]">1</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_realismus" value="2" class="mb-1">
+                                            <span class="text-[11px]">2</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_realismus" value="3" class="mb-1">
+                                            <span class="text-[11px]">3</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_realismus" value="4" class="mb-1">
+                                            <span class="text-[11px]">4</span>
+                                        </label>
+                                        <label class="flex flex-col items-center">
+                                            <input type="radio" name="aufbau_realismus" value="5" class="mb-1">
+                                            <span class="text-[11px]">5</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                        <span>stimme nicht zu</span>
+                                        <span>stimme voll zu</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
 
                         <!-- Card 2 -->
-                        <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3 text-sm">
-                            <label for="feedbackYes" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-                                <input type="checkbox" id="feedbackYes" class="w-5 h-5">
-                                <span>Mir sind Desinformation oder emotionalisierende Inhalte schon auf Social Media
-                                    begegnet.</span>
-                            </label>
-
-                            <label for="feedbackNo" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-                                <input type="checkbox" id="feedbackNo" class="w-5 h-5">
-                                <span>Mir sind Desinformation oder emotionalisierende Inhalte noch nicht auf Social
-                                    Media begegnet.</span>
-                            </label>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-3 text-sm">
-                            <label for="feedbackConfident" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-                                <input type="checkbox" id="feedbackConfident" class="w-5 h-5">
-                                <span>Ich fühle mich sicher darin, kritische Inhalte auf Sozialen Medien zu
-                                    erkennen.</span>
-                            </label>
-
-                            <label for="feedbackUncertain" class="flex items-center gap-3 text-gray-800 cursor-pointer">
-                                <input type="checkbox" id="feedbackUncertain" class="w-5 h-5">
-                                <span>Ich bin mir unsicher, beim erkennen kritischer Inhalte auf Sozialen Medien.</span>
-                            </label>
-                        </div>
-
-                        <!-- Card 4 -->
                         <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-4 text-sm">
+                            <span class="font-bold text-gray-800">Fragen zum Ziel des Spiels</span>
 
                             <!-- Frage 1 -->
                             <div class="flex flex-col gap-2">
                                 <label class="text-gray-800 font-medium">
                                     Ich kann mir vorstellen, dass dieses Spiel mich für Desinformation und
-                                    emotionalisierende
-                                    Inhalte auf Social Media sensibilisiert hat.
+                                    emotionalisierende Inhalte auf Social Media sensibilisiert hat.
                                 </label>
 
                                 <div class="flex justify-between text-center">
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="sensibilisierung" value="1" class="mb-1">
+                                        <input type="radio" name="ziel_sensibilisierung" value="1" class="mb-1">
                                         <span class="text-[11px]">1</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="sensibilisierung" value="2" class="mb-1">
+                                        <input type="radio" name="ziel_sensibilisierung" value="2" class="mb-1">
                                         <span class="text-[11px]">2</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="sensibilisierung" value="3" class="mb-1">
+                                        <input type="radio" name="ziel_sensibilisierung" value="3" class="mb-1">
                                         <span class="text-[11px]">3</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="sensibilisierung" value="4" class="mb-1">
+                                        <input type="radio" name="ziel_sensibilisierung" value="4" class="mb-1">
                                         <span class="text-[11px]">4</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="sensibilisierung" value="5" class="mb-1">
+                                        <input type="radio" name="ziel_sensibilisierung" value="5" class="mb-1">
                                         <span class="text-[11px]">5</span>
                                     </label>
                                 </div>
@@ -167,27 +195,23 @@
 
                                 <div class="flex justify-between text-center">
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="hinweise" value="1" class="mb-1">
+                                        <input type="radio" name="ziel_hinweise" value="1" class="mb-1">
                                         <span class="text-[11px]">1</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="hinweise" value="2" class="mb-1">
+                                        <input type="radio" name="ziel_hinweise" value="2" class="mb-1">
                                         <span class="text-[11px]">2</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="hinweise" value="3" class="mb-1">
+                                        <input type="radio" name="ziel_hinweise" value="3" class="mb-1">
                                         <span class="text-[11px]">3</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="hinweise" value="4" class="mb-1">
+                                        <input type="radio" name="ziel_hinweise" value="4" class="mb-1">
                                         <span class="text-[11px]">4</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="hinweise" value="5" class="mb-1">
+                                        <input type="radio" name="ziel_hinweise" value="5" class="mb-1">
                                         <span class="text-[11px]">5</span>
                                     </label>
                                 </div>
@@ -197,36 +221,37 @@
                                     <span>stimme voll zu</span>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Frage 3 -->
+                        <!-- Card 3 -->
+                        <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-4 text-sm">
+                            <span class="font-bold text-gray-800">Fragen zur Weiterentwicklung des Spiels</span>
+
+                            <!-- Frage 1 -->
                             <div class="flex flex-col gap-2">
                                 <label class="text-gray-800 font-medium">
-                                    Der Social-Media-Feed im Spiel fühlte sich echt an.
+                                    Die Grundidee des Spiels empfinde ich als sinnvoll und nachvollziehbar.
                                 </label>
 
                                 <div class="flex justify-between text-center">
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="realismus" value="1" class="mb-1">
+                                        <input type="radio" name="weiter_entwicklung_idee" value="1" class="mb-1">
                                         <span class="text-[11px]">1</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="realismus" value="2" class="mb-1">
+                                        <input type="radio" name="weiter_entwicklung_idee" value="2" class="mb-1">
                                         <span class="text-[11px]">2</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="realismus" value="3" class="mb-1">
+                                        <input type="radio" name="weiter_entwicklung_idee" value="3" class="mb-1">
                                         <span class="text-[11px]">3</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="realismus" value="4" class="mb-1">
+                                        <input type="radio" name="weiter_entwicklung_idee" value="4" class="mb-1">
                                         <span class="text-[11px]">4</span>
                                     </label>
-
                                     <label class="flex flex-col items-center">
-                                        <input type="radio" name="realismus" value="5" class="mb-1">
+                                        <input type="radio" name="weiter_entwicklung_idee" value="5" class="mb-1">
                                         <span class="text-[11px]">5</span>
                                     </label>
                                 </div>
@@ -237,6 +262,122 @@
                                 </div>
                             </div>
 
+                            <!-- Frage 2 -->
+                            <div class="flex flex-col gap-2">
+                                <label class="text-gray-800 font-medium">
+                                    Ich kann mir vorstellen, dass eine Weiterentwicklung eines solchen Spiels in Zukunft
+                                    andere dabei unterstützen kann, Medienkompetenz aufzubauen.
+                                </label>
+
+                                <div class="flex justify-between text-center">
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="weiter_entwicklung_medienkompetenz" value="1"
+                                            class="mb-1">
+                                        <span class="text-[11px]">1</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="weiter_entwicklung_medienkompetenz" value="2"
+                                            class="mb-1">
+                                        <span class="text-[11px]">2</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="weiter_entwicklung_medienkompetenz" value="3"
+                                            class="mb-1">
+                                        <span class="text-[11px]">3</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="weiter_entwicklung_medienkompetenz" value="4"
+                                            class="mb-1">
+                                        <span class="text-[11px]">4</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="weiter_entwicklung_medienkompetenz" value="5"
+                                            class="mb-1">
+                                        <span class="text-[11px]">5</span>
+                                    </label>
+                                </div>
+
+                                <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                    <span>stimme nicht zu</span>
+                                    <span>stimme voll zu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="bg-white p-4 rounded-xl shadow flex flex-col gap-4 text-sm">
+                            <span class="font-bold text-gray-800">Fragen zur allgemeinen Social-Media-Erfahrung</span>
+
+                            <!-- Frage 1 -->
+                            <div class="flex flex-col gap-2">
+                                <label class="text-gray-800 font-medium">
+                                    Mir sind Desinformation oder emotionalisierende Inhalte schon auf Social Media
+                                    begegnet.
+                                </label>
+
+                                <div class="flex justify-between text-center">
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_desinfo" value="1" class="mb-1">
+                                        <span class="text-[11px]">1</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_desinfo" value="2" class="mb-1">
+                                        <span class="text-[11px]">2</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_desinfo" value="3" class="mb-1">
+                                        <span class="text-[11px]">3</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_desinfo" value="4" class="mb-1">
+                                        <span class="text-[11px]">4</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_desinfo" value="5" class="mb-1">
+                                        <span class="text-[11px]">5</span>
+                                    </label>
+                                </div>
+
+                                <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                    <span>stimme nicht zu</span>
+                                    <span>stimme voll zu</span>
+                                </div>
+                            </div>
+
+                            <!-- Frage 2 -->
+                            <div class="flex flex-col gap-2">
+                                <label class="text-gray-800 font-medium">
+                                    Ich fühle mich sicher darin, kritische Inhalte auf sozialen Medien zu erkennen.
+                                </label>
+
+                                <div class="flex justify-between text-center">
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_sicherheit" value="1" class="mb-1">
+                                        <span class="text-[11px]">1</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_sicherheit" value="2" class="mb-1">
+                                        <span class="text-[11px]">2</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_sicherheit" value="3" class="mb-1">
+                                        <span class="text-[11px]">3</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_sicherheit" value="4" class="mb-1">
+                                        <span class="text-[11px]">4</span>
+                                    </label>
+                                    <label class="flex flex-col items-center">
+                                        <input type="radio" name="erfahrung_sicherheit" value="5" class="mb-1">
+                                        <span class="text-[11px]">5</span>
+                                    </label>
+                                </div>
+
+                                <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                    <span>stimme nicht zu</span>
+                                    <span>stimme voll zu</span>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -248,18 +389,18 @@
             </div>
 
 
-<button id="feedbackSubmit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-    Feedback senden & zur Auswertung
-</button>
+            <button id="feedbackSubmit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+                Feedback senden & zur Auswertung
+            </button>
 
 
 
-        <div id="postsWrapper" class="space-y-6"></div>
+            <div id="postsWrapper" class="space-y-6"></div>
+
+        </div>
+
 
     </div>
-    
-    
-</div>
 
 
     <script src="scriptend.js"></script>

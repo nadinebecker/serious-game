@@ -10,84 +10,85 @@ if (!sessionId) {
 --------------------------------------------------------- */
 if (document.getElementById("feedbackSubmit")) {
 
-    // Card 1
-    const feedbackHard = document.getElementById("feedbackHard");
-    const feedbackEasy = document.getElementById("feedbackEasy");
-
-    feedbackHard?.addEventListener("change", () => {
-        if (feedbackHard.checked) feedbackEasy.checked = false;
-    });
-
-    feedbackEasy?.addEventListener("change", () => {
-        if (feedbackEasy.checked) feedbackHard.checked = false;
-    });
-
-    // Card 2
-    const feedbackYes = document.getElementById("feedbackYes");
-    const feedbackNo = document.getElementById("feedbackNo");
-
-    feedbackYes?.addEventListener("change", () => {
-        if (feedbackYes.checked) feedbackNo.checked = false;
-    });
-
-    feedbackNo?.addEventListener("change", () => {
-        if (feedbackNo.checked) feedbackYes.checked = false;
-    });
-
-    // Card 3
-    const feedbackConfident = document.getElementById("feedbackConfident");
-    const feedbackUncertain = document.getElementById("feedbackUncertain");
-
-    feedbackConfident?.addEventListener("change", () => {
-        if (feedbackConfident.checked) feedbackUncertain.checked = false;
-    });
-
-    feedbackUncertain?.addEventListener("change", () => {
-        if (feedbackUncertain.checked) feedbackConfident.checked = false;
-    });
-
     // --- Feedback senden ---
-document.getElementById("feedbackSubmit").addEventListener("click", () => {
+    document.getElementById("feedbackSubmit").addEventListener("click", () => {
 
-    let difficulty = feedbackHard.checked ? "schwer" :
-                     feedbackEasy.checked ? "leicht" : null;
+        // Card 1
+        const aufbau_desinfo_erkennen =
+            document.querySelector('input[name="aufbau_desinfo_erkennen"]:checked')?.value || null;
 
-    let exposure = feedbackYes.checked ? "begegnet" :
-                   feedbackNo.checked ? "nicht_begegnet" : null;
+        const aufbau_realismus =
+            document.querySelector('input[name="aufbau_realismus"]:checked')?.value || null;
 
-    let confidence = feedbackConfident.checked ? "sicher" :
-                     feedbackUncertain.checked ? "unsicher" : null;
+        // Card 2
+        const ziel_sensibilisierung =
+            document.querySelector('input[name="ziel_sensibilisierung"]:checked')?.value || null;
 
-    const sensibilisierung = document.querySelector('input[name="sensibilisierung"]:checked')?.value || null;
-    const hinweise = document.querySelector('input[name="hinweise"]:checked')?.value || null;
-    const realismus = document.querySelector('input[name="realismus"]:checked')?.value || null;
+        const ziel_hinweise =
+            document.querySelector('input[name="ziel_hinweise"]:checked')?.value || null;
 
-    if (!difficulty || !exposure || !confidence || !sensibilisierung || !hinweise || !realismus) {
-        alert("Bitte beantworte alle Fragen.");
-        return;
-    }
+        // Card 3
+        const weiter_entwicklung_idee =
+            document.querySelector('input[name="weiter_entwicklung_idee"]:checked')?.value || null;
 
-    fetch("https://seriousgame.42web.io/save.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            session_id: sessionId,
-            difficulty,
-            exposure,
-            confidence,
-            sensibilisierung,
-            hinweise,
-            realismus
+        const weiter_entwicklung_medienkompetenz =
+            document.querySelector('input[name="weiter_entwicklung_medienkompetenz"]:checked')?.value || null;
+
+        // Card 4
+        const erfahrung_desinfo =
+            document.querySelector('input[name="erfahrung_desinfo"]:checked')?.value || null;
+
+        const erfahrung_sicherheit =
+            document.querySelector('input[name="erfahrung_sicherheit"]:checked')?.value || null;
+
+
+        // --- Pflichtfelder prüfen ---
+        if (
+            !aufbau_desinfo_erkennen ||
+            !aufbau_realismus ||
+            !ziel_sensibilisierung ||
+            !ziel_hinweise ||
+            !weiter_entwicklung_idee ||
+            !weiter_entwicklung_medienkompetenz ||
+            !erfahrung_desinfo ||
+            !erfahrung_sicherheit
+        ) {
+            alert("Bitte beantworte alle Fragen.");
+            return;
+        }
+
+        // --- Daten senden ---
+        fetch("https://seriousgame.42web.io/save.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                session_id: sessionId,
+
+                // Card 1
+                aufbau_desinfo_erkennen,
+                aufbau_realismus,
+
+                // Card 2
+                ziel_sensibilisierung,
+                ziel_hinweise,
+
+                // Card 3
+                weiter_entwicklung_idee,
+                weiter_entwicklung_medienkompetenz,
+
+                // Card 4
+                erfahrung_desinfo,
+                erfahrung_sicherheit
+            })
         })
-    })
-    .then(() => {
-        alert("Danke für dein Feedback!");
-        window.location.href = "end.html";   // ← Weiterleitung hier!
-    })
-    .catch(err => console.error("Feedback-Fehler:", err));
-});
-
+        .then(() => {
+            alert("Danke für dein Feedback!");
+            window.location.href = "end.html";
+        })
+        .catch(err => console.error("Feedback-Fehler:", err));
+    });
 }
+
 /* ---------------------------------------------------------
    2) ENDSEITE ERKENNEN
 --------------------------------------------------------- */
