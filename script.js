@@ -112,10 +112,11 @@ function renderAllPosts() {
     shareBtn.src = "images/share.PNG";
     warnBtn.src = "images/warning.png";
 
-    // Quelle öffnen
-    source.onclick = () => openSource(post);
-
-    trackClick(post.id, "source_open", isCorrectCategory(post.category));
+    // Quelle öffnen + Tracking erst beim Klick
+    source.onclick = () => {
+      openSource(post);
+      trackClick(post.id, "source_open", isCorrectCategory(post.category));
+    };
 
     // LIKE
     likeBtn.onclick = () => {
@@ -153,12 +154,16 @@ function renderAllPosts() {
       handleAction("warning", post);
     };
 
-    // Kommentare ein-/ausblenden
-    commentBtn.onclick = () => toggleComments(post, commentsSection);
-    trackClick(post.id, "comment_open", isCorrectCategory(post.category));
+    // Kommentare ein-/ausblenden + Tracking erst beim Klick
+    commentBtn.onclick = () => {
+      toggleComments(post, commentsSection);
+      trackClick(post.id, "comment_open", isCorrectCategory(post.category));
+    };
+
     wrapper.appendChild(clone);
   });
 }
+wrapper.appendChild(clone);
 
 function showPointsPopup(value) {
   const popup = document.getElementById("pointsPopup");
@@ -340,7 +345,7 @@ async function trackClick(postId, userChoice, isCorrect) {
       body: JSON.stringify({
         session_id: localStorage.getItem("sessionId"),
         post_id: postId,
-        user_choice: action,
+        user_choice: userChoice,
         correct: isCorrect !== null ? (isCorrect ? 1 : 0) : null,
       })
     });
@@ -412,4 +417,12 @@ function generateMiniFeedback(stats) {
 
 
 // Button zur Auswertung
-document.getElementById("auswertungBtn").addEventListener("click", goToEndScreen);
+const auswertungBtn = document.getElementById("auswertungBtn");
+if (auswertungBtn) {
+  auswertungBtn.addEventListener("click", goToEndScreen);
+}
+
+const startBtn = document.getElementById("startGameBtn");
+if (startBtn) {
+  startBtn.addEventListener("click", startGame);
+}

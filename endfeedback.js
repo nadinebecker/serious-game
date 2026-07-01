@@ -9,7 +9,7 @@ function generateMiniFeedback(stats) {
   let level = "";
   let text = "";
 
-  if (correct > wrong + 5) {
+  if (correct > wrong + 2) {
     level = "sehr gut";
     text = "Du hast viele Inhalte richtig eingeschätzt und sehr aufmerksam reagiert.";
   } else if (correct > wrong) {
