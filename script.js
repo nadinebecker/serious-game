@@ -41,7 +41,7 @@ let stats = JSON.parse(localStorage.getItem("stats")) || {
   disinfoWarning: 0,
   emotionalDisinfoWarning: 0,
 
-    points: 0
+  points: 0
 };
 
 
@@ -56,7 +56,7 @@ fetch("posts.json")
 
 
 function isCorrectCategory(category) {
-return category === "neutralNews" || category === "neutralPost";
+  return category === "neutralNews" || category === "neutralPost";
 }
 
 
@@ -115,6 +115,8 @@ function renderAllPosts() {
     // Quelle öffnen
     source.onclick = () => openSource(post);
 
+    trackClick(post.id, "source_open", isCorrectCategory(post.category));
+
     // LIKE
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
@@ -153,7 +155,7 @@ function renderAllPosts() {
 
     // Kommentare ein-/ausblenden
     commentBtn.onclick = () => toggleComments(post, commentsSection);
-
+    trackClick(post.id, "comment_open", isCorrectCategory(post.category));
     wrapper.appendChild(clone);
   });
 }
@@ -176,7 +178,7 @@ function showPointsPopup(value) {
 // Aktionen zählen
 function handleAction(action, post) {
   const correct = isCorrectCategory(post.category);
-  
+
   // Gesamtzähler
   if (action === "like") stats.statLikes++;
   if (action === "share") stats.statShares++;
@@ -207,58 +209,58 @@ function handleAction(action, post) {
 
   // Tracking an Server
   trackClick(post.id, action, correct);
-// Punktevergabe für LIKE & SHARE
-if (action === "like" || action === "share") {
+  // Punktevergabe für LIKE & SHARE
+  if (action === "like" || action === "share") {
 
-  let points = 0;
+    let points = 0;
 
-  switch (post.category) {
+    switch (post.category) {
 
-    case "neutralPost":
-      points = 1;
-      break;
+      case "neutralPost":
+        points = 1;
+        break;
 
-    case "neutralNews":
-      points = 5;
-      break;
+      case "neutralNews":
+        points = 5;
+        break;
 
-    case "disinfo":
-      points = -2;
-      break;
+      case "disinfo":
+        points = -2;
+        break;
 
-    case "emotionalNews":
-    case "emotionalDisinfo":
-      points = -5;
-      break;
+      case "emotionalNews":
+      case "emotionalDisinfo":
+        points = -5;
+        break;
+    }
+
+    stats.points += points;
+    showPointsPopup(points);
   }
 
-  stats.points += points;
-  showPointsPopup(points);
-}
 
+  //  Punktevergabe für WARNING
+  if (action === "warning") {
 
-//  Punktevergabe für WARNING
-if (action === "warning") {
+    let points = 0;
 
-  let points = 0;
+    switch (post.category) {
 
-  switch (post.category) {
+      case "neutralPost":
+      case "neutralNews":
+        points = 0;
+        break;
 
-    case "neutralPost":
-    case "neutralNews":
-      points = 0;
-      break;
+      case "disinfo":
+      case "emotionalNews":
+      case "emotionalDisinfo":
+        points = 5;
+        break;
+    }
 
-    case "disinfo":
-    case "emotionalNews":
-    case "emotionalDisinfo":
-      points = 5;
-      break;
+    stats.points += points;
+    if (points !== 0) showPointsPopup(points);
   }
-
-  stats.points += points;
-  if (points !== 0) showPointsPopup(points);
-}
 
 }
 
@@ -336,10 +338,10 @@ async function trackClick(postId, userChoice, isCorrect) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        session_id: localStorage.getItem("sessionId"),
         post_id: postId,
-        user_choice: userChoice,
-        correct: isCorrect ? 1 : 0,
-        session_id: localStorage.getItem("sessionId")
+        user_choice: action,
+        correct: isCorrect !== null ? (isCorrect ? 1 : 0) : null,
       })
     });
   } catch (error) {
@@ -397,14 +399,13 @@ function generateMiniFeedback(stats) {
     Positiv bewertet (Like/Share): <strong>${disinfoClicked}</strong><br><br>
 
     <strong>Hinweis:</strong><br>
-    ${
-      level === "sehr gut"
-        ? "Du erkennst problematische Inhalte sehr zuverlässig. Weiter so!"
-        : level === "gut"
+    ${level === "sehr gut"
+      ? "Du erkennst problematische Inhalte sehr zuverlässig. Weiter so!"
+      : level === "gut"
         ? "Du bist auf einem guten Weg. Achte bei emotionalen Posts auf übertriebene Formulierungen."
         : level === "mittelmäßig"
-        ? "Du hast einiges richtig erkannt, aber emotionale oder polarisierende Inhalte können täuschen. Schau genauer hin."
-        : "Viele Inhalte waren schwer einzuschätzen. Achte besonders auf Quellen, Sprache und übertriebene Behauptungen."
+          ? "Du hast einiges richtig erkannt, aber emotionale oder polarisierende Inhalte können täuschen. Schau genauer hin."
+          : "Viele Inhalte waren schwer einzuschätzen. Achte besonders auf Quellen, Sprache und übertriebene Behauptungen."
     }
   `;
 }
