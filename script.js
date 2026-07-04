@@ -168,19 +168,19 @@ function showPointsPopup(value) {
 // Aktionen zählen
 function handleAction(action, post) {
   // --- Doppelaktionen verhindern ---
-let actionHistory = JSON.parse(localStorage.getItem("actionHistory")) || {};
-const postId = post.id;
+  let actionHistory = JSON.parse(localStorage.getItem("actionHistory")) || {};
+  const postId = post.id;
 
-if (!actionHistory[postId]) {
-  actionHistory[postId] = { like: false, share: false, warning: false };
-}
+  if (!actionHistory[postId]) {
+    actionHistory[postId] = { like: false, share: false, warning: false };
+  }
 
-if (actionHistory[postId][action] === true) {
-  return;
-}
+  if (actionHistory[postId][action] === true) {
+    return;
+  }
 
-actionHistory[postId][action] = true;
-localStorage.setItem("actionHistory", JSON.stringify(actionHistory));
+  actionHistory[postId][action] = true;
+  localStorage.setItem("actionHistory", JSON.stringify(actionHistory));
 
   const correct = isCorrectCategory(post.category);
 
@@ -215,14 +215,14 @@ localStorage.setItem("actionHistory", JSON.stringify(actionHistory));
     }
   }
 
-if (action === "warning") {
-  switch (post.category) {
-    case "neutralPost": points = -1; break;
-    case "neutralNews": points = -5; break;
-    case "disinfo":
-    case "emotionalNews":
-    case "emotionalDisinfo": points = 5; break;
-    default: points = 0;
+  if (action === "warning") {
+    switch (post.category) {
+      case "neutralPost": points = -1; break;
+      case "neutralNews": points = -5; break;
+      case "disinfo":
+      case "emotionalNews":
+      case "emotionalDisinfo": points = 5; break;
+      default: points = 0;
     }
   }
 

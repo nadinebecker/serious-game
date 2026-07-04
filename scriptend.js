@@ -81,11 +81,11 @@ if (document.getElementById("feedbackSubmit")) {
                 erfahrung_sicherheit
             })
         })
-        .then(() => {
-            alert("Danke für dein Feedback!");
-            window.location.href = "end.html";
-        })
-        .catch(err => console.error("Feedback-Fehler:", err));
+            .then(() => {
+                alert("Danke für dein Feedback!");
+                window.location.href = "end.html";
+            })
+            .catch(err => console.error("Feedback-Fehler:", err));
     });
 }
 
