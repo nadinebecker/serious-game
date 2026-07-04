@@ -1,7 +1,7 @@
 function generateMiniFeedback(stats) {
 
-  const correct = stats.realLikes + stats.realShares + stats.realWarning;
-  const wrong = stats.fakeLikes + stats.fakeShares + stats.fakeWarning;
+  const correct = stats.realLikes + stats.realShares + stats.fakeWarning;
+  const wrong = stats.fakeLikes + stats.fakeShares + stats.realWarning;
 
   const disinfoClicked = stats.disinfoLikes + stats.disinfoShares;
   const disinfoWarned = stats.disinfoWarning;
@@ -20,7 +20,7 @@ function generateMiniFeedback(stats) {
     text = "Du hast einige Inhalte gut erkannt, aber auch viele Desinformation positiv bewertet.";
   } else {
     level = "schwach";
-    text = "Du hast viele problematische Inhalte positiv bewertet.";
+    text = "Du hast mehrere Inhalte falsch eingeschätzt. Probier's direkt nochmal ";
   }
 
   return `

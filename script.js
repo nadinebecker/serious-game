@@ -1,18 +1,15 @@
-// Session-ID erzeugen, falls noch nicht vorhanden
+// Session-ID erzeugen
 if (!localStorage.getItem("sessionId")) {
   localStorage.setItem("sessionId", crypto.randomUUID());
 }
 
-// Statistiken
+// Globale Variablen
 let posts = [];
 let stats = JSON.parse(localStorage.getItem("stats")) || {
-
-  // Gesamtwerte
   statLikes: 0,
   statShares: 0,
   statWarning: 0,
 
-  // Korrekt/Falsch
   realLikes: 0,
   fakeLikes: 0,
   realShares: 0,
@@ -20,21 +17,18 @@ let stats = JSON.parse(localStorage.getItem("stats")) || {
   realWarning: 0,
   fakeWarning: 0,
 
-  // Kategorien: Likes
   neutralNewsLikes: 0,
   neutralPostLikes: 0,
   emotionalNewsLikes: 0,
   disinfoLikes: 0,
   emotionalDisinfoLikes: 0,
 
-  // Kategorien: Shares
   neutralNewsShares: 0,
   neutralPostShares: 0,
   emotionalNewsShares: 0,
   disinfoShares: 0,
   emotionalDisinfoShares: 0,
 
-  // Kategorien: Warnungen
   neutralNewsWarning: 0,
   neutralPostWarning: 0,
   emotionalNewsWarning: 0,
@@ -43,7 +37,6 @@ let stats = JSON.parse(localStorage.getItem("stats")) || {
 
   points: 0
 };
-
 
 // Posts laden
 fetch("posts.json")
@@ -54,23 +47,25 @@ fetch("posts.json")
   })
   .catch(error => console.error("Fehler beim Laden der Posts:", error));
 
-
+// Kategorie prüfen
 function isCorrectCategory(category) {
   return category === "neutralNews" || category === "neutralPost";
 }
 
-
-// Posts rendern
+// POSTS RENDERN
 function renderAllPosts() {
+
   const wrapper = document.getElementById("postsWrapper");
   const template = document.getElementById("postTemplate");
+
+  // Schutz für index.html
+  if (!wrapper || !template) return;
 
   wrapper.textContent = "";
 
   posts.forEach(post => {
     const clone = template.content.cloneNode(true);
 
-    // Elemente holen
     const account = clone.querySelector(".postAccount");
     const author = clone.querySelector(".postAuthor");
     const image = clone.querySelector(".postImage");
@@ -93,10 +88,7 @@ function renderAllPosts() {
     content.textContent = post.content;
     timestamp.textContent = post.timestamp;
 
-    // Kommentare sicher zählen
     commentCount.textContent = post.comments?.length ?? 0;
-
-    // Likes aus JSON übernehmen
     likeCount.textContent = post.likes ?? 0;
 
     // Quelle
@@ -106,13 +98,13 @@ function renderAllPosts() {
       source.style.display = "none";
     }
 
-    // Icons setzen
+    // Icons
     likeBtn.src = "images/like.PNG";
     commentBtn.src = "images/comment.PNG";
     shareBtn.src = "images/share.PNG";
     warnBtn.src = "images/warning.png";
 
-    // Quelle öffnen + Tracking erst beim Klick
+    // Quelle öffnen + Tracking
     source.onclick = () => {
       openSource(post);
       trackClick(post.id, "source_open", isCorrectCategory(post.category));
@@ -121,7 +113,6 @@ function renderAllPosts() {
     // LIKE
     likeBtn.onclick = () => {
       likeBtn.src = "images/like-red.PNG";
-
       warnBtn.style.pointerEvents = "none";
       warnBtn.style.opacity = "0.4";
 
@@ -134,7 +125,6 @@ function renderAllPosts() {
     // SHARE
     shareBtn.onclick = () => {
       shareBtn.src = "images/share-green.PNG";
-
       warnBtn.style.pointerEvents = "none";
       warnBtn.style.opacity = "0.4";
 
@@ -147,14 +137,13 @@ function renderAllPosts() {
 
       likeBtn.style.pointerEvents = "none";
       likeBtn.style.opacity = "0.4";
-
       shareBtn.style.pointerEvents = "none";
       shareBtn.style.opacity = "0.4";
 
       handleAction("warning", post);
     };
 
-    // Kommentare ein-/ausblenden + Tracking erst beim Klick
+    // Kommentare + Tracking
     commentBtn.onclick = () => {
       toggleComments(post, commentsSection);
       trackClick(post.id, "comment_open", isCorrectCategory(post.category));
@@ -163,110 +152,82 @@ function renderAllPosts() {
     wrapper.appendChild(clone);
   });
 }
-wrapper.appendChild(clone);
 
+
+// Punkte-Popup
 function showPointsPopup(value) {
   const popup = document.getElementById("pointsPopup");
-
   popup.textContent = (value > 0 ? "+" : "") + value;
 
-  // Reset Animation
   popup.classList.remove("show");
-  void popup.offsetWidth; // Trick: Animation neu starten
-
-  // Start Animation
+  void popup.offsetWidth;
   popup.classList.add("show");
 }
 
 
-
 // Aktionen zählen
 function handleAction(action, post) {
+  // --- Doppelaktionen verhindern ---
+let actionHistory = JSON.parse(localStorage.getItem("actionHistory")) || {};
+const postId = post.id;
+
+if (!actionHistory[postId]) {
+  actionHistory[postId] = { like: false, share: false, warning: false };
+}
+
+if (actionHistory[postId][action] === true) {
+  return;
+}
+
+actionHistory[postId][action] = true;
+localStorage.setItem("actionHistory", JSON.stringify(actionHistory));
+
   const correct = isCorrectCategory(post.category);
 
-  // Gesamtzähler
   if (action === "like") stats.statLikes++;
   if (action === "share") stats.statShares++;
   if (action === "warning") stats.statWarning++;
 
-  // Korrekt/Falsch
-  if (action === "like") {
-    correct ? stats.realLikes++ : stats.fakeLikes++;
-  }
+  if (action === "like") correct ? stats.realLikes++ : stats.fakeLikes++;
+  if (action === "share") correct ? stats.realShares++ : stats.fakeShares++;
+  if (action === "warning") correct ? stats.realWarning++ : stats.fakeWarning++;
 
-  if (action === "share") {
-    correct ? stats.realShares++ : stats.fakeShares++;
-  }
-
-  if (action === "warning") {
-    correct ? stats.realWarning++ : stats.fakeWarning++;
-  }
-
-  // Kategorien zählen
   const cat = post.category;
 
   if (action === "like") stats[cat + "Likes"]++;
   if (action === "share") stats[cat + "Shares"]++;
   if (action === "warning") stats[cat + "Warning"]++;
 
-  // Speichern
   localStorage.setItem("stats", JSON.stringify(stats));
 
-  // Tracking an Server
   trackClick(post.id, action, correct);
-  // Punktevergabe für LIKE & SHARE
+
+  // Punktevergabe
+  let points = 0;
+
   if (action === "like" || action === "share") {
-
-    let points = 0;
-
     switch (post.category) {
-
-      case "neutralPost":
-        points = 1;
-        break;
-
-      case "neutralNews":
-        points = 5;
-        break;
-
-      case "disinfo":
-        points = -2;
-        break;
-
+      case "neutralPost": points = 1; break;
+      case "neutralNews": points = 5; break;
+      case "disinfo": points = -2; break;
       case "emotionalNews":
-      case "emotionalDisinfo":
-        points = -5;
-        break;
+      case "emotionalDisinfo": points = -5; break;
     }
-
-    stats.points += points;
-    showPointsPopup(points);
   }
 
-
-  //  Punktevergabe für WARNING
-  if (action === "warning") {
-
-    let points = 0;
-
-    switch (post.category) {
-
-      case "neutralPost":
-      case "neutralNews":
-        points = 0;
-        break;
-
-      case "disinfo":
-      case "emotionalNews":
-      case "emotionalDisinfo":
-        points = 5;
-        break;
+if (action === "warning") {
+  switch (post.category) {
+    case "neutralPost": points = -1; break;
+    case "neutralNews": points = -5; break;
+    case "disinfo":
+    case "emotionalNews":
+    case "emotionalDisinfo": points = 5; break;
+    default: points = 0;
     }
-
-    stats.points += points;
-    if (points !== 0) showPointsPopup(points);
   }
 
+  stats.points += points;
+  if (points !== 0) showPointsPopup(points);
 }
 
 
@@ -291,7 +252,7 @@ function toggleComments(post, section) {
 }
 
 
-// Info öffnen
+// Quelle öffnen
 function openSource(post) {
   const modalBody = document.getElementById("modal-body");
   const modalFooter = document.getElementById("modal-footer");
@@ -300,26 +261,16 @@ function openSource(post) {
 
   modalBody.innerHTML = `
     <div class="info-page">
-
       <div class="info-banner">${post.info?.tag || ""}</div>
-
-      ${showImage ? `<img src="${post.image}" class="info-image" alt="Artikelbild">` : ""}
-
-      <h1 class="info-headline">
-        ${post.info?.headline || ""}
-      </h1>
-
-      <p class="info-text">
-        ${post.info?.text || ""}
-      </p>
-
+      ${showImage ? `<img src="${post.image}" class="info-image">` : ""}
+      <h1 class="info-headline">${post.info?.headline || ""}</h1>
+      <p class="info-text">${post.info?.text || ""}</p>
       <div class="info-fade"></div>
-
     </div>
   `;
 
   if (post.sourcesCount > 1) {
-    modalFooter.textContent = `${post.sourcesCount} weitere unabhängige Medien im Netz gefunden`;
+    modalFooter.textContent = `${post.sourcesCount} weitere unabhängige Medien gefunden`;
     modalFooter.style.color = "#1f5e36";
   } else {
     modalFooter.textContent = `⚠️ Keine weiteren Quellen gefunden`;
@@ -329,15 +280,13 @@ function openSource(post) {
   document.getElementById("modal").style.display = "flex";
 }
 
-
-// Modal schließen
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
 
-// Tracking
-async function trackClick(postId, userChoice, isCorrect) {
+// Tracking – InfinityFree-kompatibel
+async function trackClick(postId, userChoice) {
   try {
     await fetch("https://seriousgame.42web.io/save.php", {
       method: "POST",
@@ -345,78 +294,30 @@ async function trackClick(postId, userChoice, isCorrect) {
       body: JSON.stringify({
         session_id: localStorage.getItem("sessionId"),
         post_id: postId,
-        user_choice: userChoice,
-        correct: isCorrect !== null ? (isCorrect ? 1 : 0) : null,
+        user_choice: userChoice
       })
     });
-  } catch (error) {
-    console.error("Tracking-Fehler:", error);
+  } catch (err) {
+    console.error("Tracking-Fehler:", err);
   }
 }
 
+// Navigation
 function startGame() {
   localStorage.removeItem("stats");
+  localStorage.removeItem("actionHistory");
+  localStorage.removeItem("sessionId"); // optional
   window.location.href = "spiel.html";
 }
 
 
-
-// Weiterleitung + Stats speichern
 function goToEndScreen() {
   localStorage.setItem("stats", JSON.stringify(stats));
   window.location.href = "end.html";
 }
 
-function generateMiniFeedback(stats) {
 
-  const correct = stats.realLikes + stats.realShares + stats.realWarning;
-  const wrong = stats.fakeLikes + stats.fakeShares + stats.fakeWarning;
-
-  const disinfoClicked = stats.disinfoLikes + stats.disinfoShares;
-  const disinfoWarned = stats.disinfoWarning;
-
-  let level = "";
-  let text = "";
-
-  // Bewertung
-  if (correct > wrong + 5) {
-    level = "sehr gut";
-    text = "Du hast viele Inhalte richtig eingeschätzt und sehr aufmerksam reagiert.";
-  } else if (correct > wrong) {
-    level = "gut";
-    text = "Du hast die meisten Inhalte korrekt erkannt. Einige Posts waren tricky, aber insgesamt solide.";
-  } else if (wrong > correct) {
-    level = "mittelmäßig";
-    text = "Du hast einige Inhalte gut erkannt, aber auch viele Desinformation positiv bewertet. Achte stärker auf emotionale Sprache und übertriebene Behauptungen.";
-  } else {
-    level = "schwach";
-    text = "Du hast viele problematische Inhalte positiv bewertet. Schau dir kritisch an, welche Muster Desinformation oft nutzt.";
-  }
-
-  return `
-    <h3 class="font-semibold mt-6">Feedback</h3>
-
-    <strong>Einordnung:</strong> ${level}<br>
-    ${text}<br><br>
-
-    <strong>Umgang mit Desinformation:</strong><br>
-    Kritisch markiert: <strong>${disinfoWarned}</strong><br>
-    Positiv bewertet (Like/Share): <strong>${disinfoClicked}</strong><br><br>
-
-    <strong>Hinweis:</strong><br>
-    ${level === "sehr gut"
-      ? "Du erkennst problematische Inhalte sehr zuverlässig. Weiter so!"
-      : level === "gut"
-        ? "Du bist auf einem guten Weg. Achte bei emotionalen Posts auf übertriebene Formulierungen."
-        : level === "mittelmäßig"
-          ? "Du hast einiges richtig erkannt, aber emotionale oder polarisierende Inhalte können täuschen. Schau genauer hin."
-          : "Viele Inhalte waren schwer einzuschätzen. Achte besonders auf Quellen, Sprache und übertriebene Behauptungen."
-    }
-  `;
-}
-
-
-// Button zur Auswertung
+// Buttons aktivieren
 const auswertungBtn = document.getElementById("auswertungBtn");
 if (auswertungBtn) {
   auswertungBtn.addEventListener("click", goToEndScreen);

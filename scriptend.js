@@ -112,5 +112,7 @@ if (document.getElementById("punkteAnzeige")) {
 --------------------------------------------------------- */
 function restartGame() {
     localStorage.removeItem("stats");
+    localStorage.removeItem("actionHistory");
+    localStorage.removeItem("sessionId");
     window.location.href = "spiel.html";
 }
