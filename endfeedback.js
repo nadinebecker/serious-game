@@ -36,3 +36,31 @@ function generateMiniFeedback(stats) {
 `;
 
 }
+// Feedback erzeugen
+const feedbackHTML = generateMiniFeedback(stats);
+document.getElementById("miniFeedback").innerHTML = feedbackHTML;
+
+// Level aus dem HTML extrahieren
+const levelMatch = feedbackHTML.match(/Wie du dich geschlagen hast:<\/strong>\s*(.*?)</);
+const level = levelMatch ? levelMatch[1] : "unbekannt";
+
+// Session-ID laden
+let sessionId = localStorage.getItem("sessionId");
+if (!sessionId) {
+  sessionId = crypto.randomUUID();
+  localStorage.setItem("sessionId", sessionId);
+}
+
+// Nur das speichern, was du wirklich brauchst
+const form = new FormData();
+form.append("session_id", sessionId);
+form.append("level", level);
+
+// Ergebnis speichern
+fetch("https://seriousgame.42web.io/save.php", {
+  method: "POST",
+  body: form
+})
+  .then(r => r.text())
+  .then(t => console.log("RESULT:", t))
+  .catch(err => console.error("Result-Fehler:", err));

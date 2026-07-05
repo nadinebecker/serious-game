@@ -1,6 +1,8 @@
 <?php
-header("Content-Type: application/json");
 
+header("Content-Type: text/plain");
+
+// DB verbinden
 $pdo = new PDO(
     "mysql:host=sql113.infinityfree.com;dbname=if0_41880197_game_db;charset=utf8",
     "if0_41880197",
@@ -8,35 +10,37 @@ $pdo = new PDO(
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
-// JSON einlesen
-$raw = file_get_contents("php://input");
-$data = json_decode($raw, true);
+// Daten einlesen
+$data = $_POST;
 
-// Fallback für InfinityFree
 if (!$data || !is_array($data)) {
-    $data = $_POST;
+    $raw = file_get_contents("php://input");
+    $json = json_decode($raw, true);
+    if ($json && is_array($json)) {
+        $data = $json;
+    }
 }
 
 /* ---------------------------------------------------------
-   1) REACTION TRACKING (like, share, warning, comment_open, source_open)
+   1) REACTION
 --------------------------------------------------------- */
-if (isset($data["session_id"]) && isset($data["post_id"]) && isset($data["user_choice"])) {
+if (
+    isset($data["session_id"]) &&
+    isset($data["post_id"]) &&
+    isset($data["user_choice"])
+) {
 
     $stmt = $pdo->prepare("
         INSERT INTO reaction (
             session_id,
             post_id,
             user_choice,
-            correct,
-            comment_text,
             timestamp
         )
         VALUES (
             :session_id,
             :post_id,
             :user_choice,
-            :correct,
-            :comment_text,
             :timestamp
         )
     ");
@@ -44,18 +48,16 @@ if (isset($data["session_id"]) && isset($data["post_id"]) && isset($data["user_c
     $stmt->execute([
         ":session_id" => $data["session_id"],
         ":post_id" => $data["post_id"],
-        ":user_choice" => $data["user_choice"],   // like/share/warning/comment_open/source_open
-        ":correct" => $data["correct"] ?? null,   // 1/0 oder null
-        ":comment_text" => $data["comment_text"] ?? null,
+        ":user_choice" => $data["user_choice"],
         ":timestamp" => date("Y-m-d H:i:s")
     ]);
 
-    echo json_encode(["status" => "reaction_saved"]);
+    echo "reaction_saved";
     exit;
 }
 
 /* ---------------------------------------------------------
-   2) FEEDBACK (neues Schema)
+   2) FEEDBACK
 --------------------------------------------------------- */
 
 $required = [
@@ -79,16 +81,14 @@ foreach ($required as $field) {
 
 if ($allFieldsPresent) {
 
-    // Prüfen, ob Session schon Feedback abgegeben hat
     $check = $pdo->prepare("SELECT id FROM feedback WHERE session_id = :session_id");
     $check->execute([":session_id" => $data["session_id"]]);
 
     if ($check->rowCount() > 0) {
-        echo json_encode(["status" => "feedback_exists"]);
+        echo "feedback_exists";
         exit;
     }
 
-    // Feedback speichern
     $stmt = $pdo->prepare("
         INSERT INTO feedback (
             session_id,
@@ -129,8 +129,40 @@ if ($allFieldsPresent) {
         ":timestamp" => date("Y-m-d H:i:s")
     ]);
 
-    echo json_encode(["status" => "feedback_saved"]);
+    echo "feedback_saved";
     exit;
 }
 
-echo json_encode(["status" => "ok"]);
+/* ---------------------------------------------------------
+   3) RESULTS (nur Level speichern)
+--------------------------------------------------------- */
+
+if (
+    isset($data["session_id"]) &&
+    isset($data["level"])
+) {
+
+    $stmt = $pdo->prepare("
+        INSERT INTO results (
+            session_id,
+            level,
+            timestamp
+        )
+        VALUES (
+            :session_id,
+            :level,
+            :timestamp
+        )
+    ");
+
+    $stmt->execute([
+        ":session_id" => $data["session_id"],
+        ":level" => $data["level"],
+        ":timestamp" => date("Y-m-d H:i:s")
+    ]);
+
+    echo "results_saved";
+    exit;
+}
+
+echo "ok";
