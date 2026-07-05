@@ -1,5 +1,5 @@
 // Session-ID laden oder erzeugen
-let sessionId = localStorage.getItem("sessionId");
+sessionId = localStorage.getItem("sessionId");
 if (!sessionId) {
     sessionId = crypto.randomUUID();
     localStorage.setItem("sessionId", sessionId);

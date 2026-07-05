@@ -15,10 +15,10 @@ h1 {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  padding: 60px 0; 
+  padding: 60px 0;
   justify-content: center;
-  align-items: flex-start; 
-  overflow-y: auto; 
+  align-items: flex-start;
+  overflow-y: auto;
   z-index: 50;
 }
 
@@ -26,11 +26,11 @@ h1 {
   background: white;
   width: 380px;
   max-width: 90vw;
-  max-height: calc(100vh - 120px); 
-  overflow-y: auto; 
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
   border-radius: 14px;
   padding: 20px;
-  margin: auto; 
+  margin: auto;
   animation: popup 0.25s ease-out;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
@@ -49,6 +49,7 @@ h1 {
     transform: scale(0.85);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -119,7 +120,7 @@ h1 {
   }
 
   #modal {
-    padding: 40px 0; 
+    padding: 40px 0;
   }
 
   .info-headline {
@@ -162,10 +163,12 @@ h1 {
     opacity: 1;
     transform: translate(-50%, 0);
   }
+
   60% {
     opacity: 1;
     transform: translate(-50%, -25px);
   }
+
   100% {
     opacity: 0;
     transform: translate(-50%, -45px);
