@@ -97,13 +97,9 @@ if (document.getElementById("punkteAnzeige")) {
     const stats = JSON.parse(localStorage.getItem("stats")) || { points: 0 };
     document.getElementById("punkteAnzeige").textContent = stats.points;
 
-    // MINI-FEEDBACK EINSETZEN
     const feedbackBox = document.getElementById("miniFeedback");
-
-    if (feedbackBox && typeof generateMiniFeedback === "function") {
-        feedbackBox.innerHTML = generateMiniFeedback(stats);
-    } else {
-        console.error("miniFeedback oder generateMiniFeedback nicht gefunden");
+    if (!feedbackBox) {
+        console.error("miniFeedback nicht gefunden");
     }
 }
 

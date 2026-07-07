@@ -1,3 +1,5 @@
+const stats = JSON.parse(localStorage.getItem("stats")) || {};
+
 function generateMiniFeedback(stats) {
 
   const correct = stats.realLikes + stats.realShares + stats.fakeWarning;
