@@ -1,4 +1,4 @@
-const stats = JSON.parse(localStorage.getItem("stats")) || {};
+
 
 function generateMiniFeedback(stats) {
 
@@ -53,7 +53,6 @@ if (!sessionId) {
   localStorage.setItem("sessionId", sessionId);
 }
 
-// Nur das speichern, was du wirklich brauchst
 const form = new FormData();
 form.append("session_id", sessionId);
 form.append("level", level);

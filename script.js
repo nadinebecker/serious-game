@@ -175,10 +175,9 @@ function handleAction(action, post) {
     actionHistory[postId] = { like: false, share: false, warning: false };
   }
 
-  if (actionHistory[postId][action] === true) {
-    return;
+  if (actionHistory[postId].like || actionHistory[postId].share || actionHistory[postId].warning) {
+      return;
   }
-
   actionHistory[postId][action] = true;
   localStorage.setItem("actionHistory", JSON.stringify(actionHistory));
 
@@ -307,13 +306,13 @@ function startGame() {
   localStorage.removeItem("stats");
   localStorage.removeItem("actionHistory");
   localStorage.removeItem("sessionId"); // optional
-  window.location.href = "spiel.html";
+  window.location.href = "spiel.html?v=20260707";
 }
 
 
 function goToEndScreen() {
   localStorage.setItem("stats", JSON.stringify(stats));
-  window.location.href = "end.html";
+  window.location.href = "end.html?v=20260707";
 }
 
 
