@@ -167,7 +167,7 @@ function showPointsPopup(value) {
 
 // Aktionen zählen
 function handleAction(action, post) {
-  // --- Doppelaktionen verhindern ---
+
   let actionHistory = JSON.parse(localStorage.getItem("actionHistory")) || {};
   const postId = post.id;
 
@@ -176,7 +176,7 @@ function handleAction(action, post) {
   }
 
   if (actionHistory[postId].like || actionHistory[postId].share || actionHistory[postId].warning) {
-      return;
+    return;
   }
   actionHistory[postId][action] = true;
   localStorage.setItem("actionHistory", JSON.stringify(actionHistory));
@@ -305,7 +305,7 @@ async function trackClick(postId, userChoice) {
 function startGame() {
   localStorage.removeItem("stats");
   localStorage.removeItem("actionHistory");
-  localStorage.removeItem("sessionId"); // optional
+  localStorage.removeItem("sessionId");
   window.location.href = "spiel.html?v=20260707";
 }
 

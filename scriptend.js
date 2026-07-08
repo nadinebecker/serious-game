@@ -97,14 +97,14 @@ if (document.getElementById("punkteAnzeige")) {
     const stats = JSON.parse(localStorage.getItem("stats")) || { points: 0 };
     document.getElementById("punkteAnzeige").textContent = stats.points;
 
-   const feedbackBox = document.getElementById("miniFeedback");
-if (!feedbackBox) {
-    console.error("miniFeedback nicht gefunden");
-}
+    const feedbackBox = document.getElementById("miniFeedback");
+    if (!feedbackBox) {
+        console.error("miniFeedback nicht gefunden");
+    }
 }
 
 /* ---------------------------------------------------------
-   3) restartGame() FUNKTION
+   3) restartGame
 --------------------------------------------------------- */
 function restartGame() {
     localStorage.removeItem("stats");
